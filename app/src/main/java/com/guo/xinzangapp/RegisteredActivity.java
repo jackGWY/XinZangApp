@@ -1,9 +1,5 @@
 package com.guo.xinzangapp;
 
-/**
- * Created by guo_w on 2018/10/28.
- */
-
 //package com.example.slope.androiddriver;
 
 import android.content.Context;
@@ -18,6 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.guo.http.MyURL;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.xutils.common.Callback;
@@ -27,7 +25,7 @@ import org.xutils.x;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-//import com.example.slope.androiddriver.http.MyURL;
+
 
 /**
  * Created by Slope on 2016/9/11.
@@ -51,7 +49,7 @@ public class RegisteredActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registered_activity);
+        setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
     }
 
@@ -160,4 +158,3 @@ public class RegisteredActivity extends AppCompatActivity {
     }
 
 }
-
