@@ -58,9 +58,17 @@ public class RegisteredActivity extends AppCompatActivity {
         hideKeyboard();//隐藏键盘
 
         RequestParams params = new RequestParams(MyURL.MY_SERVWE_REGISTER);
-        params.addQueryStringParameter("phone", registerPhone.getText().toString().trim());
-        params.addQueryStringParameter("uname", registerName.getText().toString().trim());
-        params.addQueryStringParameter("regpass", registerPassword.getText().toString().trim());
+        params.setConnectTimeout(1000 * 20);
+        params.setCharset("UTF-8");
+
+        params.addParameter("phone", registerPhone.getText().toString().trim());
+        params.addParameter("uname", registerName.getText().toString().trim());
+        params.addParameter("regpass", registerPassword.getText().toString().trim());
+        String json = params.toJSONString();
+        //清空参数
+        params.clearParams();
+        params.setBodyContent(json);
+
         if (registerPhone.length() == 0) {
             Snackbar.make(view, "错误", Snackbar.LENGTH_INDEFINITE)
                     .setAction("请填写手机号", new View.OnClickListener() {

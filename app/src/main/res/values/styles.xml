@@ -15,7 +15,7 @@
 
     <style name="MenuText">
         <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/menu_text_color</item>
+        <item name="android:textColor">#FF4081</item>
         <item name="android:padding">14dp</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
