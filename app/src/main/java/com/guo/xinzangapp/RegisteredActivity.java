@@ -14,11 +14,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.guo.http.HttpRequestor;
 import com.guo.http.MyURL;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.xutils.common.Callback;
+import org.xutils.http.HttpMethod;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
@@ -57,18 +59,6 @@ public class RegisteredActivity extends AppCompatActivity {
     public void onClick(final View view) {
         hideKeyboard();//隐藏键盘
 
-        RequestParams params = new RequestParams(MyURL.MY_SERVWE_REGISTER);
-        params.setConnectTimeout(1000 * 20);
-        params.setCharset("UTF-8");
-
-        params.addParameter("phone", registerPhone.getText().toString().trim());
-        params.addParameter("uname", registerName.getText().toString().trim());
-        params.addParameter("regpass", registerPassword.getText().toString().trim());
-        String json = params.toJSONString();
-        //清空参数
-        params.clearParams();
-        params.setBodyContent(json);
-
         if (registerPhone.length() == 0) {
             Snackbar.make(view, "错误", Snackbar.LENGTH_INDEFINITE)
                     .setAction("请填写手机号", new View.OnClickListener() {
@@ -102,15 +92,24 @@ public class RegisteredActivity extends AppCompatActivity {
             registerPassword.requestFocus();      // 控件获取焦点
             return;                     // 结束函数的执行
         }
-        x.http().get(params, new Callback.CommonCallback<String>() {
+
+        new Thread(new Runnable(){
+
             @Override
-            public void onSuccess(String result) {
+            public void run() {
+                String phone = registerPhone.getText().toString().trim();
+                String uname = registerName.getText().toString().trim();
+                String regpass=registerPassword.getText().toString().trim();
+                String url = MyURL.SERVER+"/heart/login/register?phone="+phone+"&uname="+
+                        uname+"&regpass="+regpass;
                 try {
-                    JSONObject rootObj = new JSONObject(result);
-                    if ("0".equals(rootObj.getString("result"))) {
+                    String jsonString=new HttpRequestor().doGet(url);
+                    JSONObject jsonObject = new JSONObject(jsonString);
+                    final String result = jsonObject.getString("result");
+                    if ("0".equals(jsonObject.getString("result"))) {
                         startActivity(new Intent(RegisteredActivity.this, LoginActivity.class));
                         finish();
-                    } else if ("1".equals(rootObj.getString("result"))) {
+                    } else if ("1".equals(jsonObject.getString("result"))) {
                         Snackbar.make(view, "错误", Snackbar.LENGTH_INDEFINITE)
                                 .setAction("该手机已近注册过", new View.OnClickListener() {
                                     @Override
@@ -120,7 +119,7 @@ public class RegisteredActivity extends AppCompatActivity {
                                 }).show();
                         registerPhone.requestFocus();      // 控件获取焦点
                         return;                     // 结束函数的执行
-                    } else if ("3".equals(rootObj.getString("result"))) {
+                    } else if ("3".equals(jsonObject.getString("result"))) {
                         Snackbar.make(view, "错误", Snackbar.LENGTH_INDEFINITE)
                                 .setAction("该用户名已经存在", new View.OnClickListener() {
                                     @Override
@@ -131,27 +130,12 @@ public class RegisteredActivity extends AppCompatActivity {
                         registerName.requestFocus();      // 控件获取焦点
                         return;                     // 结束函数的执行
                     }
-                } catch (JSONException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
-
             }
-
-            @Override
-            public void onError(Throwable ex, boolean isOnCallback) {
-
-            }
-
-            @Override
-            public void onCancelled(CancelledException cex) {
-
-            }
-
-            @Override
-            public void onFinished() {
-
-            }
-        });
+        }).start();
+        //startActivity(new Intent(RegisteredActivity.this, LoginActivity.class));
     }
 
     /**

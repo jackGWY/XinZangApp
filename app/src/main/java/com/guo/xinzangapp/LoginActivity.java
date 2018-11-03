@@ -94,56 +94,13 @@ public class LoginActivity extends AppCompatActivity {
                     loginPassword.requestFocus();       // 控件获取焦点
                     return;                     // 结束函数的执行
                 }
-                RequestParams params=new RequestParams(MyURL.MY_SERVWE_LOGIN);
-                params.addQueryStringParameter("uname",loginName.getText().toString().trim());
-                params.addQueryStringParameter("upass",loginPassword.getText().toString().trim());
-                x.http().get(params, new Callback.CommonCallback<String>() {
-                    @Override
-                    public void onSuccess(String result) {
-                        Log.e("slope===", result);
+                String uname=loginName.getText().toString().trim();
+                String password=loginPassword.getText().toString().trim();
+                
+//                RequestParams params=new RequestParams(MyURL.MY_SERVWE_LOGIN);
+//                params.addQueryStringParameter("uname",loginName.getText().toString().trim());
+//                params.addQueryStringParameter("upass",loginPassword.getText().toString().trim());
 
-                        try {
-                            JSONObject rootObj=new JSONObject(result);
-                            if ("0".equals(rootObj.getString("result"))){
-//                                SharedPreferencesManager.setLogin(LoginActivity.this,true);
-                                startActivity(new Intent(LoginActivity.this,homepageActivity.class));
-                                SharedPreferences.Editor editor=getSharedPreferences("name",MODE_PRIVATE).edit();
-                                editor.putString("name",loginName.getText().toString().trim());
-                                editor.commit();
-                                finish();
-                            }
-                            else if ("1".equals(rootObj.getString("result"))){
-                                Snackbar.make(view,"错误",Snackbar.LENGTH_INDEFINITE)
-                                        .setAction("用户名或密码错误", new View.OnClickListener() {
-                                            @Override
-                                            public void onClick(View v) {
-                                                Toast.makeText(LoginActivity.this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
-                                            }
-                                        }).show();
-
-                                return;                     // 结束函数的执行
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-
-                    @Override
-                    public void onError(Throwable ex, boolean isOnCallback) {
-
-                    }
-
-                    @Override
-                    public void onCancelled(CancelledException cex) {
-
-                    }
-
-                    @Override
-                    public void onFinished() {
-
-                    }
-                });
                 break;
             case R.id.login_registered:
                 startActivity(new Intent(this,RegisteredActivity.class));
