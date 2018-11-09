@@ -108,7 +108,7 @@ public class RegisteredActivity extends AppCompatActivity {
                     final String result = jsonObject.getString("result");
                     if ("0".equals(jsonObject.getString("result"))) {
                         startActivity(new Intent(RegisteredActivity.this, LoginActivity.class));
-                        finish();
+                        //finish();
                     } else if ("1".equals(jsonObject.getString("result"))) {
                         Snackbar.make(view, "错误", Snackbar.LENGTH_INDEFINITE)
                                 .setAction("该手机已近注册过", new View.OnClickListener() {

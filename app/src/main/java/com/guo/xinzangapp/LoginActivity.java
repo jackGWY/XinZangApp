@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 //import com.example.slope.androiddriver.shared.SharedPreferencesManager;
 
+import com.guo.http.HttpRequestor;
 import com.guo.http.MyURL;
 import com.guo.util.SharedPreferencesManager;
 
@@ -94,9 +95,37 @@ public class LoginActivity extends AppCompatActivity {
                     loginPassword.requestFocus();       // 控件获取焦点
                     return;                     // 结束函数的执行
                 }
-                String uname=loginName.getText().toString().trim();
-                String password=loginPassword.getText().toString().trim();
-                
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String uname=loginName.getText().toString().trim();
+                        String regpass=loginPassword.getText().toString().trim();
+                        String url = "http://192.168.123.226:8080/heart/login/doLogin?uname="+uname+"&regpass="+regpass;
+                        try {
+                            String jsonString = new HttpRequestor().doGet(url);
+                            JSONObject jsonObject = new JSONObject(jsonString);
+                            String count=jsonObject.getString("count");
+                            if (count.equals("1")){
+                                startActivity(new Intent(LoginActivity.this,homepageActivity.class));
+                                //finish();
+                            }
+                            else if (count.equals("0")){
+                                Snackbar.make(view, "错误", Snackbar.LENGTH_INDEFINITE)
+                                        .setAction("用户名或密码错误", new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                Toast.makeText(LoginActivity.this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }).show();
+                                loginName.requestFocus();      // 控件获取焦点
+                                return;
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
 //                RequestParams params=new RequestParams(MyURL.MY_SERVWE_LOGIN);
 //                params.addQueryStringParameter("uname",loginName.getText().toString().trim());
 //                params.addQueryStringParameter("upass",loginPassword.getText().toString().trim());
