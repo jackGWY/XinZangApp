@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="50dp"
     android:background="#deffffff"
     android:orientation="horizontal" >
 
@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:background="#00000000"
             android:clickable="false"
+            android:scaleType="centerInside"
             android:src="@drawable/android" />
 
         <TextView
@@ -41,6 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#00000000"
+            android:scaleType="centerInside"
             android:clickable="false"
             android:src="@drawable/shezhi" />
 
@@ -64,6 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#00000000"
+            android:scaleType="centerInside"
             android:clickable="false"
             android:src="@drawable/talk" />
 
@@ -87,6 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#00000000"
+            android:scaleType="centerInside"
             android:clickable="false"
             android:src="@drawable/me" />
 
