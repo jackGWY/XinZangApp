@@ -8,6 +8,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.guo.beans.drugInfo;
+import com.guo.http.GetDrugInfo;
+
+import java.util.List;
+
 /**
  * Created by guo_w on 2017/11/22.
  */
@@ -36,7 +41,34 @@ public class LinearAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        ((LinearViewHolder)holder).textView1.setText("hello world!");
+        GetDrugInfo getDrugInfo = new GetDrugInfo();
+        List<drugInfo> drugInfoList =getDrugInfo.getDrugInfoFromServer();
+        for (int i=0;i<drugInfoList.size();i++){
+            for(int j=0;j<6;j++){
+                if (position == (j+i*6)){
+                    if (j==0){
+                        ((LinearViewHolder)holder).textView1.setText(drugInfoList.get(i).getA1());
+                    }
+                    if (j==1){
+                        ((LinearViewHolder)holder).textView2.setText(drugInfoList.get(i).getA2());
+                    }
+                    if (j==2){
+                        ((LinearViewHolder)holder).textView3.setText(drugInfoList.get(i).getA3());
+                    }
+                    if (j==3){
+                        ((LinearViewHolder)holder).textView4.setText(drugInfoList.get(i).getA4());
+                    }
+                    if (j==4){
+                        ((LinearViewHolder)holder).textView5.setText(drugInfoList.get(i).getA5());
+                    }
+                    if (j==5){
+                        ((LinearViewHolder)holder).textView6.setText(drugInfoList.get(i).getA6());
+                    }
+
+                }
+            }
+        }
+
 //        if(getItemViewType(position)==0){
 //            ((LinearViewHolder)holder).textView.setText("hello world!");
 //        }
@@ -69,7 +101,9 @@ public class LinearAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public int getItemCount() {//itemCount 列表长度
-        return 30;
+        GetDrugInfo getDrugInfo = new GetDrugInfo();
+        List<drugInfo> drugInfoList =getDrugInfo.getDrugInfoFromServer();
+        return drugInfoList.size() * 6;
     }
 
 //    class LinearViewHolder extends RecyclerView.ViewHolder{
