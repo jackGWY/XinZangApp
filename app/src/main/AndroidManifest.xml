@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisteredActivity" />
-        <activity android:name=".homepageActivity"></activity>
+        <activity android:name=".homepageActivity" />
+        <activity android:name=".LinearRecycleViewActivity"></activity>
     </application>
 
 </manifest>
