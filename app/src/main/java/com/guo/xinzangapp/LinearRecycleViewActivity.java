@@ -1,20 +1,59 @@
 package com.guo.xinzangapp;
 
 import android.graphics.Rect;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
+
+import com.guo.beans.drugInfo;
+import com.guo.http.GetDrugInfo;
+
+import org.json.JSONObject;
+
+import java.util.List;
 
 public class LinearRecycleViewActivity extends AppCompatActivity {
     private RecyclerView mRvMain;
+    private Button mButton2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tab01);
+        mButton2 = (Button)findViewById(R.id.btn_2);
+        mButton2.setOnClickListener(new View.OnClickListener(){
 
+            @Override
+            public void onClick(View v) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+//                            GetDrugInfo getDrugInfo = new GetDrugInfo();
+//                            final List<drugInfo> drugInfoList =getDrugInfo.getDrugInfoFromServer();
+//                            System.out.println(drugInfoList.get(0).getA2());
+                            Handler handler = new Handler(Looper.getMainLooper());
+                            //Toast.makeText(ButtonActivity.this,number,Toast.LENGTH_SHORT).show();
+                            handler.post(new Runnable() {
+
+                                @Override
+                                public void run() {
+                                    //放在UI线程弹Toast
+                                    Toast.makeText(LinearRecycleViewActivity.this,"fff",Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
+            }
+        });
         mRvMain=(RecyclerView)findViewById(R.id.rv_main);
         mRvMain.setLayoutManager(new LinearLayoutManager(LinearRecycleViewActivity.this));
         mRvMain.addItemDecoration(new MyDecoration());//自己新建的类,RecycleView.addItemDecoration有很多方法

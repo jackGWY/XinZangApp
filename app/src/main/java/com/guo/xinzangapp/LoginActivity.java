@@ -104,10 +104,11 @@ public class LoginActivity extends AppCompatActivity {
                         String url = "http://192.168.123.226:8080/heart/login/doLogin?uname="+uname+"&regpass="+regpass;
                         try {
                             String jsonString = new HttpRequestor().doGet(url);
+                            System.out.println("jsonString:"+jsonString);
                             JSONObject jsonObject = new JSONObject(jsonString);
                             String count=jsonObject.getString("count");
                             if (count.equals("1")){
-                                startActivity(new Intent(LoginActivity.this,homepageActivity.class));
+                                startActivity(new Intent(LoginActivity.this,homeActivity.class));
                                 //finish();
                             }
                             else if (count.equals("0")){

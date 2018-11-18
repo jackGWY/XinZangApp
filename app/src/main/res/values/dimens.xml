@@ -4,4 +4,9 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="spacing">32dp</dimen>
     <dimen name="registered">15dp</dimen>
+    <dimen name="medicine_title">25sp</dimen>
+    <dimen name="medicine_content">18sp</dimen>
+    <dimen name="medicine_margin_bottom">25dp</dimen>
+    <dimen name="lineSpacingExtra_medicine">8dp</dimen>
+    <dimen name="medicineTextListSize">25sp</dimen>
 </resources>

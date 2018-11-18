@@ -1,17 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="这里是tab02"
+        android:text="阿司匹林肠溶片"
         android:layout_centerVertical="true"
         android:textColor="#000000"
-        android:textSize="40sp"
+        android:textSize="25sp"
+        android:layout_marginBottom="20dp"
         android:textStyle="bold"
         />
+    <View
+        android:layout_height="1px"
+        android:background="#000000"
+        android:layout_width="fill_parent">
+    </View>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="批准文号: 国药准字H10960304"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
+        />
+    <View
+        android:layout_height="1px"
+        android:background="#000000"
+        android:layout_width="fill_parent">
+    </View>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="成分: 要成分及其化学名称为2-（乙酰氧基）苯甲酸其结构式为：分子式为：C9H8O4分子量为：180.16"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
+        />
+    <View
+        android:layout_height="1px"
+        android:background="#000000"
+        android:layout_width="fill_parent">
+    </View>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="适应症:本品为非甾体抗炎药。临床可用于下列情况。1、镇痛、解热：可缓解轻度或中度的疼痛,如头痛、牙痛、神经痛、肌肉痛及月经痛,也用于感冒和流感等退热。本品仅能缓解症状不能治疗引起疼痛和发热的病因，故需同时应用其他药物对病因进行治疗。2、抗炎、抗风湿：为治疗风湿热的常用药物，用药后可解热、使关节症状好转并使血沉下降，但不能去除风湿热的基本病理改变，也不能治疗和预防心脏损害及其他合并症。3、关节炎：除风湿性关节炎外，本品也用于治疗类风湿关节炎，可改善症状，但须同时进行病因治疗。此外，本品也用于骨关节炎、强直性脊柱炎、幼年型关节炎以及其他非风湿性炎症的骨骼肌肉疼痛，也能缓解症状。但近年在这些疾病已很少应用本品。4、抗血栓：本品对血小板聚集有抑制作用，可防止血栓形成，临床用于预防一过性脑缺血发作、心肌梗死、心房颤动、人工心脏瓣膜、动静脉瘘或其他手术后的血栓形成。也可用于治疗不稳定型心绞痛。5、儿科用于皮肤粘膜淋巴结综合征(川崎病)的治疗。"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
+        />
+    <View
+        android:layout_height="1px"
+        android:background="#000000"
+        android:layout_width="fill_parent">
+    </View>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:text="不良反应:一般用于解热镇痛的剂量很少引起不良反应。长期大量用药（如治疗风湿热）、尤其当药物血浓度〉200μg/ml时较易出现不良反应。血药浓度愈高，不良反应愈明显。（1）见的有恶心、呕吐、上腹部不适或疼痛（由于本品对胃粘膜的直接刺激引起）等胃肠道反应（发生率3%～9%），停药后多可消失。长期或大剂量服用可有胃肠道出血或溃疡。（2）中枢神经：出现可逆性耳鸣、听力下降，多在服用一定疗程，血药浓度达200～300g/L后出现。（3）过敏反应：出现于0．2%的病人,表现为哮喘、荨麻疹、血管神经性水肿或休克。多为易感者，服药后迅速出现呼吸困难，严重者可致死亡，称为阿司匹林哮喘。有的是阿司匹林过敏、哮喘和鼻息肉三联征，往往与遗传和环境因素有关。（4）肝、肾功能损害，与剂量大小有关，尤其是剂量过大使血药浓度达250μg/ml时易发生。损害均是可逆性的，停药后可恢复。但有引起肾乳头坏死的报道。（5）逾量或中毒表现：①轻度，即水杨酸反应（salicylism），多见于风湿病用本品治疗者，表现为头痛、头晕、耳鸣、耳聋、恶心、呕吐、腹泻、嗜睡、精神紊乱、多汗、呼吸深快、烦渴、手足不自主运动（多见于老年人）及视力障碍等；②重度，可出现血尿、抽搐、幻觉、重症精神紊乱、呼吸困难及无名热等；儿童患者精神及呼吸障碍更明显；过量时实验室检查可有脑电图异常、酸碱平衡改变（呼吸性碱中毒及代谢性酸中毒）、低血糖或高血糖、酮尿、低钠血症、低钾血症及蛋白尿。"
+        />
+    <View
+        android:layout_height="1px"
+        android:background="#000000"
+        android:layout_width="fill_parent">
+    </View>
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

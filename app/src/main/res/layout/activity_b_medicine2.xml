@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:orientation="vertical"
+    tools:context="com.guo.xinzangapp.medicine.bMedicine2Activity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="硝酸甘油片"
+            android:layout_centerVertical="true"
+            android:textColor="#000000"
+            android:textSize="@dimen/medicine_title"
+            android:layout_marginBottom="@dimen/medicine_margin_bottom"
+            android:textStyle="bold"
+            />
+        <View
+            android:layout_height="1px"
+            android:background="#000000"
+            android:layout_width="fill_parent">
+        </View>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="功能主治	:用于冠心病心绞痛的治疗及预防,也可用于降低血压或治疗充血性心力衰竭,成分/原料:	本品主要成份为:硝酸甘油。"
+            android:lineSpacingExtra="@dimen/lineSpacingExtra_medicine"
+            android:textColor="#000000"
+            android:textSize="@dimen/medicine_content"
+            android:layout_marginBottom="@dimen/medicine_margin_bottom"
+            />
+        <View
+            android:layout_height="1px"
+            android:background="#000000"
+            android:layout_width="fill_parent">
+        </View>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="@dimen/lineSpacingExtra_medicine"
+            android:text="用法用量:片剂:成人一次用0.25~0.5mg(1片)舌下含服。每5分钟可重复1片,直至疼痛缓解。如果15分钟内总量达3片后疼痛持续存在,应立即就医。在活动或大便之前5~10分钟预防性使用,可避免诱发心绞痛。"
+            android:textColor="#000000"
+            android:textSize="@dimen/medicine_content"
+            android:layout_marginBottom="@dimen/medicine_margin_bottom"
+            />
+        <View
+            android:layout_height="1px"
+            android:background="#000000"
+            android:layout_width="fill_parent">
+        </View>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="@dimen/lineSpacingExtra_medicine"
+            android:text="适应症:本品为非甾体抗炎药。临床可用于下列情况。1、镇痛、解热：可缓解轻度或中度的疼痛,如头痛、牙痛、神经痛、肌肉痛及月经痛,也用于感冒和流感等退热。本品仅能缓解症状不能治疗引起疼痛和发热的病因，故需同时应用其他药物对病因进行治疗。2、抗炎、抗风湿：为治疗风湿热的常用药物，用药后可解热、使关节症状好转并使血沉下降，但不能去除风湿热的基本病理改变，也不能治疗和预防心脏损害及其他合并症。3、关节炎：除风湿性关节炎外，本品也用于治疗类风湿关节炎，可改善症状，但须同时进行病因治疗。此外，本品也用于骨关节炎、强直性脊柱炎、幼年型关节炎以及其他非风湿性炎症的骨骼肌肉疼痛，也能缓解症状。但近年在这些疾病已很少应用本品。4、抗血栓：本品对血小板聚集有抑制作用，可防止血栓形成，临床用于预防一过性脑缺血发作、心肌梗死、心房颤动、人工心脏瓣膜、动静脉瘘或其他手术后的血栓形成。也可用于治疗不稳定型心绞痛。5、儿科用于皮肤粘膜淋巴结综合征(川崎病)的治疗。"
+            android:textColor="#000000"
+            android:textSize="@dimen/medicine_content"
+            android:layout_marginBottom="@dimen/medicine_margin_bottom"
+            />
+        <View
+            android:layout_height="1px"
+            android:background="#000000"
+            android:layout_width="fill_parent">
+        </View>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="@dimen/lineSpacingExtra_medicine"
+            android:textColor="#000000"
+            android:textSize="@dimen/medicine_content"
+            android:layout_marginBottom="@dimen/medicine_margin_bottom"
+            android:text="药物相互作用:	1.中度或过量饮酒时,使用本药可致低血压。2.与降压药或血管扩张药合用可增强硝酸盐的致体位性低血压作用。3.阿司匹林可减少舌下含服硝酸甘油的清除,并增强其血流动力学效应。4.使用长效硝酸盐可降低舌下用药的治疗作用。5.枸橼酸西地那非(万艾可)加强有机硝酸盐的降压作用。6.与乙酰胆碱、组胺及拟交感胺类药合用时,疗效可能减弱。药物过量	:过量可引起严重低血压、心动过速、心动过缓、传导阻滞、心悸、循环衰竭导致死亡、 晕厥、持续搏动性头痛、眩晕、视力障碍、颅内压增高、瘫痪和昏迷并抽搐、脸红与出汗、 恶心与呕吐、腹部绞痛与腹泻、呼吸困难与高铁血红蛋白血症。药理毒理	:松弛血管平滑肌。硝酸甘油释放一氧化氮(NO),激活鸟苷酸环化酶,使平滑肌和其他组织内的环鸟苷酸(cGMP)增多,导致肌球蛋白轻链去磷酸化,调节平滑肌收缩状态,引起血管扩张。硝酸甘油扩张动静脉血管床,以扩张静脉为主,其作用强度呈剂量相关性。外周静脉扩张,使血液潴留在外周,回心血量减少,左室舒张末压(前负荷)降低。扩张动脉使外周阻力(后负荷)降低。动静脉扩张使心肌耗氧量减少,缓解心绞痛。对心外膜冠状动脉分支也有扩张作用。治疗剂量可降低收缩压、舒张压和平均动脉压,有效冠状动脉灌注压常能维持,但血压过度降低或心率增快使舒张期充盈时间缩短时,有效冠状动脉灌注压则降低。使增高的中心静脉压与肺毛细血管楔嵌压、肺血管阻力与体循环血管阻力降低。心率通常稍增快,估计是血压下降的反射性作用。心脏指数可增加、降低或不变。左室充盈压和外周阻力增高伴心脏指数低的患者,心脏指数可能会有增高。相反,左室充盈压和心脏指数正常者,静脉注射用药可使心脏指数稍有降低。">
+
+        </TextView>
+        <View
+            android:layout_height="1px"
+            android:background="#000000"
+            android:layout_width="fill_parent">
+        </View>
+
+    </LinearLayout>
+
+</ScrollView>

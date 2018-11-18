@@ -43,7 +43,7 @@ public class homepageActivity extends AppCompatActivity implements
         mTabAddress.setOnClickListener(this);
         mTabFrd.setOnClickListener(this);
         mTabSetting.setOnClickListener(this);
-        mViewPager.setOnPageChangeListener(new OnPageChangeListener() {
+        mViewPager.addOnPageChangeListener(new OnPageChangeListener() {
             /**
              *ViewPage左右滑动时
              */
