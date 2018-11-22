@@ -25,7 +25,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".medicineActivity" />
         <activity android:name=".medicine.bMedicine1Activity" />
-        <activity android:name=".medicine.bMedicine2Activity"></activity>
+        <activity android:name=".medicine.bMedicine2Activity" />
+        <activity android:name=".medicineArticle.medicineAticle1Activity"></activity>
     </application>
 
 </manifest>

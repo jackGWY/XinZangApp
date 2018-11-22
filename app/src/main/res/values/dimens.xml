@@ -9,4 +9,5 @@
     <dimen name="medicine_margin_bottom">25dp</dimen>
     <dimen name="lineSpacingExtra_medicine">8dp</dimen>
     <dimen name="medicineTextListSize">25sp</dimen>
+    <dimen name="medicineArtical">18sp</dimen>
 </resources>
