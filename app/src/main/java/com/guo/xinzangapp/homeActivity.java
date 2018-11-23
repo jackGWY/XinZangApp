@@ -13,9 +13,9 @@ import butterknife.BindView;
 
 public class homeActivity extends AppCompatActivity {
 
-   private ImageButton imageMedicine;
+   private ImageButton imageMedicine, imageFood;
 
-    private TextView mtvMedicine;
+    private TextView mtvMedicine, mtvFood;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,9 @@ public class homeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         mtvMedicine = (TextView) findViewById(R.id.textView_medicine2);
         imageMedicine =(ImageButton)findViewById(R.id.image_button_medicine);
+
+        imageFood = (ImageButton) findViewById(R.id.image_button_food);
+        mtvFood = findViewById(R.id.textView_food);
 
         mtvMedicine.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +40,22 @@ public class homeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(homeActivity.this, medicineActivity.class));
 //                Toast.makeText(homeActivity.this,"btn_4我被点击了",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        imageFood.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(homeActivity.this, FoodActivity.class));
+            }
+        });
+
+        mtvFood.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(homeActivity.this, FoodActivity.class));
             }
         });
     }
