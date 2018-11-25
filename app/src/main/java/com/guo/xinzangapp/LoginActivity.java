@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -53,18 +54,15 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.login_registered)
     TextView loginRegistered;
 
+    private SharedPreferences pref;
+    private SharedPreferences.Editor editor;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        if (SharedPreferencesManager.checkIsLogin(this)){
-//            startActivity(new Intent(this,ExamActivity.class));
-//            finish();
-//            return;
-//        }
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        SharedPreferences.Editor shares=getSharedPreferences("has4", Context.MODE_PRIVATE).edit();
-        shares.commit();
+        pref = PreferenceManager.getDefaultSharedPreferences(this);
     }
 
 
@@ -108,6 +106,10 @@ public class LoginActivity extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(jsonString);
                             String count=jsonObject.getString("count");
                             if (count.equals("1")){
+                                editor = pref.edit();
+                                editor.putString("userName", uname);
+                                editor.putString("userPassword", regpass);
+                                editor.apply();
                                 startActivity(new Intent(LoginActivity.this,homeActivity.class));
                                 //finish();
                             }
