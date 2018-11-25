@@ -10,4 +10,8 @@
     <dimen name="lineSpacingExtra_medicine">8dp</dimen>
     <dimen name="medicineTextListSize">25sp</dimen>
     <dimen name="medicineArtical">18sp</dimen>
+    <!--指标名目大小-->
+    <dimen name="indexText">20sp</dimen>
+    <!--指标和输入之间的间隔-->
+    <dimen name="indexMarginBottom">10dp</dimen>
 </resources>

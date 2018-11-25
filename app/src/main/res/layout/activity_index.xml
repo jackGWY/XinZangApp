@@ -1,16 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="15dp"
+    android:orientation="vertical"
     tools:context="com.guo.xinzangapp.index.indexActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="index"
 
-        />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="3dp"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="60dp">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="请输入相关指标："
+            android:layout_marginBottom="20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/indexText"
+            android:text="年龄："
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/age_layout_name"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="age" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/indexText"
+            android:text="性别："
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/sex_layout_name"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="sex" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/indexText"
+            android:text="胸部疼痛类别："
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/cp_layout_name"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/cp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="chest pain type(1,2,3,4)" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/indexText"
+            android:text="静息血压："
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/trestbps_layout_name"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/trestbps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="resting blood pressure" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/indexText"
+            android:text="血清胆固醇："
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/chol_layout_name"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/chol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="serum cholestoral in mg/dl" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/indexText"
+            android:text="空腹血糖："
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/fbs_layout_name"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/fbs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="fasting blood sugar mg/dl" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="预测"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="40dp"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+</ScrollView>

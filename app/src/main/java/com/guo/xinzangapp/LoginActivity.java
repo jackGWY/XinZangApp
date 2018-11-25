@@ -38,7 +38,7 @@ import butterknife.OnClick;
 import static android.R.attr.id;
 
 /**
- * Created by Slope on 2016/9/11.
+ * Created by guoweiye on 2018/11/11.
  */
 public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.login_name)
