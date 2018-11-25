@@ -70,33 +70,6 @@ public class medicineActivity extends AppCompatActivity {
         setListener();
     }
 
-    //通过线程获取服务器数据
-    private List<drugInfo> getDrugInfoWithOkHttp() {
-
-        List<drugInfo> res = null;
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    OkHttpClient client = new OkHttpClient();
-                    Request request = new Request.Builder().url("http://192.168.123.226:8080/heart/drug/getDrugInfo").build();
-                    Response response = client.newCall(request).execute();
-                    String responseData = response.body().string();
-
-                    Gson gson = new Gson();
-                    List<drugInfo> drugList = gson.fromJson(responseData, new TypeToken<List<drugInfo>>(){}.getType());
-                    for (drugInfo dInfo : drugList) {
-                        Log.d("medicineActivity","a1:"+dInfo.getA1());
-                    }
-
-                } catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-        return null;
-    }
-
     private void setListener(){
         OnClick onClick = new OnClick();
         artical1.setOnClickListener(onClick);

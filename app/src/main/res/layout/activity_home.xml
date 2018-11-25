@@ -100,6 +100,67 @@
                     </LinearLayout>
                 </LinearLayout>
 
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:layout_height="300dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/item_color"
+                        android:padding="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView_index"
+                            android:textSize="25sp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="20dp"
+                            android:text="指标管理"/>
+
+                        <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/image_index"
+                            android:scaleType="centerInside"
+                            android:background="@color/item_color"
+                            android:src="@drawable/index"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView_doctor"
+                            android:textSize="25sp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="20dp"
+                            android:text="咨询医生"/>
+
+                        <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/image_doctor"
+                            android:src="@drawable/doctor3"
+                            android:background="@color/item_color"
+                            android:scaleType="centerInside"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
             </LinearLayout>
 
         </ScrollView>

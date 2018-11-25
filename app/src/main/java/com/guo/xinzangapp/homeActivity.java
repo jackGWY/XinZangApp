@@ -1,6 +1,7 @@
 package com.guo.xinzangapp;
 
 import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,12 +13,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
+import com.guo.xinzangapp.consult.consultActivity;
+import com.guo.xinzangapp.index.indexActivity;
+
 import butterknife.BindView;
 
 public class homeActivity extends AppCompatActivity {
 
-    private ImageButton imageMedicine, imageFood;
-    private TextView mtvMedicine, mtvFood;
+    private ImageButton imageMedicine, imageFood,imageIndex,imageDoctor;
+    private TextView mtvMedicine, mtvFood,mtvIndex,mtvDoctor;
 
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.toolbar,menu);
@@ -45,7 +49,13 @@ public class homeActivity extends AppCompatActivity {
         imageMedicine =(ImageButton)findViewById(R.id.image_button_medicine);
 
         imageFood = (ImageButton) findViewById(R.id.image_button_food);
-        mtvFood = findViewById(R.id.textView_food);
+        mtvFood = (TextView)findViewById(R.id.textView_food);
+
+        imageIndex = (ImageButton) findViewById(R.id.image_index);
+        mtvIndex = (TextView) findViewById(R.id.textView_index);
+
+        imageDoctor = (ImageButton) findViewById(R.id.image_doctor);
+        mtvDoctor =  (TextView) findViewById(R.id.textView_doctor);
 
 
         mtvMedicine.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +87,35 @@ public class homeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(homeActivity.this, FoodActivity.class));
+            }
+        });
+
+        imageIndex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(homeActivity.this, indexActivity.class));
+            }
+        });
+
+        mtvIndex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(homeActivity.this, indexActivity.class));
+            }
+        });
+
+        imageDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(homeActivity.this, consultActivity.class));
+            }
+        });
+
+        //mtvDoctor
+        mtvDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(homeActivity.this, consultActivity.class));
             }
         });
     }
