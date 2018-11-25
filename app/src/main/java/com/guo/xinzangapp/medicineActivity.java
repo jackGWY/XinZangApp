@@ -11,11 +11,17 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.guo.beans.drugInfo;
+import com.guo.http.GetDrugInfo;
 import com.guo.xinzangapp.medicine.bMedicine1Activity;
 import com.guo.xinzangapp.medicine.bMedicine2Activity;
 import com.guo.xinzangapp.medicineArticle.medicineAticle1Activity;
 
 import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -29,7 +35,20 @@ public class medicineActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medicine);
 
-        sendRequestWithOkHttp();
+        ExecutorService exec = Executors.newCachedThreadPool();
+        Future<List<drugInfo>> result = exec.submit(new GetDrugInfo());
+        List<drugInfo> durgInfoList =null;
+        try {
+            durgInfoList = result.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        for (drugInfo dInfo : durgInfoList) {
+            Log.d("medicineActivity","a1:"+dInfo.getA1());
+        }
 
         bMedicine1 = (TextView) findViewById(R.id.bMedicine1);
         bMedicine2 = (TextView) findViewById(R.id.bMedicine2);
@@ -52,7 +71,9 @@ public class medicineActivity extends AppCompatActivity {
     }
 
     //通过线程获取服务器数据
-    private List<drugInfo> sendRequestWithOkHttp() {
+    private List<drugInfo> getDrugInfoWithOkHttp() {
+
+        List<drugInfo> res = null;
         new Thread(new Runnable() {
             @Override
             public void run() {
