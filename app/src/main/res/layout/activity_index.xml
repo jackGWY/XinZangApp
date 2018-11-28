@@ -152,7 +152,156 @@
                 android:hint="fasting blood sugar mg/dl" />
         </android.support.design.widget.TextInputLayout>
 
-        <Button android:id="@+id/btn_register"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/indexText"
+            android:text="静息心电图扫描结果："
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/restecg_layout_name"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/restecg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="resting electrocard iographic results(value,0,1,2)" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/indexText"
+            android:text="达到最高心率："
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/thalach_layout_name"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/thalach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="maximum heart rate achieved" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/indexText"
+            android:text="运动诱发心绞痛："
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/exang_layout_name"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/exang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="exercise induced angina" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/indexText"
+            android:text="运动相对于休息的ST depression"
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/oldpeak_layout_name"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/oldpeak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="ST depression exercise relative to rest" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/indexText"
+            android:text="心电图ST segment的倾斜度"
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/slop_layout_name"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/slop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="the slope of the peak exercise ST segment" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/indexText"
+            android:text="透视检查看到的血管数"
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/ca_layout_name"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/ca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="number of major vessels (0-3) colored by flourosopy" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/indexText"
+            android:text="缺陷种类:并发种类，由轻到重norm、fix、rev"
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/thal_layout_name"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/indexMarginBottom"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/thal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:singleLine="true"
+                android:hint="number of major vessels (0-3) colored by flourosopy" />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <Button android:id="@+id/prediction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="预测"

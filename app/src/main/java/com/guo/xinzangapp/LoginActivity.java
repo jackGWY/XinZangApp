@@ -26,9 +26,6 @@ import com.guo.util.SharedPreferencesManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.xutils.common.Callback;
-import org.xutils.http.RequestParams;
-import org.xutils.x;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

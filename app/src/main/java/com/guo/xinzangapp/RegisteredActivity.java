@@ -19,10 +19,7 @@ import com.guo.http.MyURL;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.xutils.common.Callback;
-import org.xutils.http.HttpMethod;
-import org.xutils.http.RequestParams;
-import org.xutils.x;
+
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
