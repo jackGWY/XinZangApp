@@ -97,7 +97,7 @@ public class RegisteredActivity extends AppCompatActivity {
                 String phone = registerPhone.getText().toString().trim();
                 String uname = registerName.getText().toString().trim();
                 String regpass=registerPassword.getText().toString().trim();
-                String url = "http://192.168.123.226:8080/heart/login/register?phone="+phone+"&uname="+uname+"&regpass="+regpass;
+                String url = MyURL.SERVER+"/login/register?phone="+phone+"&uname="+uname+"&regpass="+regpass;
                 //url = "http://192.168.123.226:8080/heart/login/register?phone=111&uname=zfj&regpass=123456";
                 try {
                     String jsonString=new HttpRequestor().doGet(url);

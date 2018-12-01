@@ -15,6 +15,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import com.guo.http.HttpRequestor;
+import com.guo.http.MyURL;
 import com.guo.xinzangapp.R;
 
 import org.json.JSONObject;
@@ -80,7 +81,7 @@ public class indexActivity extends AppCompatActivity {
                 String ca2=ca.getText().toString().trim();
                 String thal2=thal.getText().toString().trim();
 
-                String url = "http://192.168.123.226:8080/heart/zhibiao/saveInput?userName="+userName+"&age="+age2+"&sex="+sex2+"&cp="+cp2+"&trestbps="+trestbps2+"&chol="+chol2+"&fbs="+fbs2+"&restecg="+restecg2+"&thalach="+thalach2+"&exang="+exang2+"&oldpeak="+oldpeak2+"&slop="+slop2+"&ca="+ca2+"&thal="+thal2;
+                String url = MyURL.SERVER+"/zhibiao/saveInput?userName="+userName+"&age="+age2+"&sex="+sex2+"&cp="+cp2+"&trestbps="+trestbps2+"&chol="+chol2+"&fbs="+fbs2+"&restecg="+restecg2+"&thalach="+thalach2+"&exang="+exang2+"&oldpeak="+oldpeak2+"&slop="+slop2+"&ca="+ca2+"&thal="+thal2;
                 try {
                     String jsonString=new HttpRequestor().doGet(url);
                     JSONObject jsonObject = new JSONObject(jsonString);

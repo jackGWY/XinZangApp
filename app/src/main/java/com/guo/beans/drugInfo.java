@@ -1,10 +1,12 @@
 package com.guo.beans;
 
+import java.io.Serializable;
+
 /**
  * Created by guo_w on 2018/11/11.
  */
 
-public class drugInfo {
+public class drugInfo implements Serializable {
     private String a1;
     private String a2;
     private String a3;

@@ -16,13 +16,13 @@ import okhttp3.Response;
  */
 
 public class GetDrugInfo implements Callable<List<drugInfo>> {
-    private static final String url = "http://192.168.123.226:8080/heart/drug/getDrugInfo";
+    private static final String url = MyURL.SERVER+"/drug/getDrugInfo";
 
     public List<drugInfo> getDrugInfoFromServer() {
         List<drugInfo> List2 = null;
         try {
             OkHttpClient client = new OkHttpClient();
-            Request request = new Request.Builder().url("http://192.168.123.226:8080/heart/drug/getDrugInfo").build();
+            Request request = new Request.Builder().url(url).build();
             Response response = client.newCall(request).execute();
             String responseData = response.body().string();
 

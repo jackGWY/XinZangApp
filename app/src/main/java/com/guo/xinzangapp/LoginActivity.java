@@ -96,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void run() {
                         String uname=loginName.getText().toString().trim();
                         String regpass=loginPassword.getText().toString().trim();
-                        String url = "http://192.168.123.226:8080/heart/login/doLogin?uname="+uname+"&regpass="+regpass;
+                        String url = MyURL.SERVER+"/login/doLogin?uname="+uname+"&regpass="+regpass;
                         try {
                             String jsonString = new HttpRequestor().doGet(url);
                             System.out.println("jsonString:"+jsonString);

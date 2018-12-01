@@ -14,4 +14,7 @@
     <dimen name="indexText">20sp</dimen>
     <!--指标和输入之间的间隔-->
     <dimen name="indexMarginBottom">10dp</dimen>
+
+    <dimen name="druglistItemMarginTop">10dp</dimen>
+    <dimen name="druglistTextPadding">20dp</dimen>
 </resources>
