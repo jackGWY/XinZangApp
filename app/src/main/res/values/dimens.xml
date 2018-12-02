@@ -5,10 +5,10 @@
     <dimen name="spacing">32dp</dimen>
     <dimen name="registered">15dp</dimen>
     <dimen name="medicine_title">25sp</dimen>
-    <dimen name="medicine_content">18sp</dimen>
+    <dimen name="medicine_content">15sp</dimen>
     <dimen name="medicine_margin_bottom">25dp</dimen>
-    <dimen name="lineSpacingExtra_medicine">8dp</dimen>
-    <dimen name="medicineTextListSize">25sp</dimen>
+    <dimen name="lineSpacingExtra_medicine">15dp</dimen>
+    <dimen name="medicineTextListSize">20sp</dimen>
     <dimen name="medicineArtical">18sp</dimen>
     <!--指标名目大小-->
     <dimen name="indexText">20sp</dimen>
@@ -16,5 +16,5 @@
     <dimen name="indexMarginBottom">10dp</dimen>
 
     <dimen name="druglistItemMarginTop">10dp</dimen>
-    <dimen name="druglistTextPadding">20dp</dimen>
+    <dimen name="druglistTextPadding">10dp</dimen>
 </resources>

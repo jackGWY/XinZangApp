@@ -10,7 +10,7 @@ import com.guo.xinzangapp.R;
 
 public class bMedicine1Activity extends AppCompatActivity {
 
-    private TextView a1,a2,a3,a4,a5,a6;
+    private TextView a1,a2,a3,a4,a5,a6,a7;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,12 +26,14 @@ public class bMedicine1Activity extends AppCompatActivity {
         a4 = (TextView) findViewById(R.id.drugDetail_a4);
         a5 = (TextView) findViewById(R.id.drugDetail_a5);
         a6 = (TextView) findViewById(R.id.drugDetail_a6);
+        a7 = (TextView) findViewById(R.id.drugDetail_a7);
 
         a1.setText(dInfo.getA1());
         a2.setText(dInfo.getA2());
         a3.setText(dInfo.getA3());
         a4.setText(dInfo.getA4());
         a5.setText(dInfo.getA5());
+        a6.setText(dInfo.getA6());
         a6.setText(dInfo.getA6());
     }
 }
