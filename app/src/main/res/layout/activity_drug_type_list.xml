@@ -125,7 +125,7 @@
             android:layout_width="wrap_content"
             android:id="@+id/drugtype7"
             android:layout_height="wrap_content"
-            android:text="抗心律失常"
+            android:text="抗心律失常药"
             android:lineSpacingExtra="@dimen/lineSpacingExtra_medicine"
             android:textColor="@color/drugTextColor"
             android:textSize="@dimen/drugTypeListTitle"

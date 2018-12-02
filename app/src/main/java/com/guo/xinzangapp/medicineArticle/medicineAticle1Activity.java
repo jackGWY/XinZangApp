@@ -1,5 +1,6 @@
 package com.guo.xinzangapp.medicineArticle;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,18 +11,24 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.guo.beans.News;
 import com.guo.xinzangapp.R;
 
 public class medicineAticle1Activity extends AppCompatActivity {
     private WebView mWv1;
+    private String url = "https://mp.weixin.qq.com/s/6-oVK4SIecYfuGW7sEdsAg";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medicine_aticle1);
+        Intent intent = getIntent();
+        Bundle bundle=intent.getExtras();
+        News news =(News) bundle.getSerializable("news");
+        url = news.getNews_url();
         mWv1=(WebView) findViewById(R.id.wv1);
         mWv1.getSettings().setJavaScriptEnabled(true);//设置支持javascript
         mWv1.setWebViewClient(new MyWebViewClient());
-        mWv1.loadUrl("https://mp.weixin.qq.com/s/6-oVK4SIecYfuGW7sEdsAg");//公司的移动站点都是m.
+        mWv1.loadUrl(url);//公司的移动站点都是m.
         mWv1.setWebChromeClient(new MyWebChromeClient());
     }
 

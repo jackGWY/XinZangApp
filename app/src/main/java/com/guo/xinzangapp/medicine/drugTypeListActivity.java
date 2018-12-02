@@ -63,6 +63,8 @@ public class drugTypeListActivity extends AppCompatActivity {
     @OnClick({R.id.drugtype1,R.id.drugtype2,R.id.drugtype3,R.id.drugtype4,R.id.drugtype5,R.id.drugtype6,R.id.drugtype7})
     public void onClick(final View view) {
         ArrayList<drugInfo> ResDrugList = new ArrayList<>();
+        Bundle bundle = new Bundle();
+        Intent intent = new Intent(drugTypeListActivity.this,medicineActivity.class);
         switch (view.getId()) {
             case R.id.drugtype1:
                 ResDrugList.clear();
@@ -71,24 +73,58 @@ public class drugTypeListActivity extends AppCompatActivity {
                         ResDrugList.add(dInfo);
                     }
                 }
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("ResDrugList",ResDrugList);
-                Intent intent = new Intent(drugTypeListActivity.this,medicineActivity.class);
-                intent.putExtras(bundle);
-                startActivity(intent);
                 break;
             case R.id.drugtype2:
+                ResDrugList.clear();
+                for (drugInfo dInfo:DrugList) {
+                    if (dInfo.getA2().equals("洋地黄制剂")) {
+                        ResDrugList.add(dInfo);
+                    }
+                }
                 break;
             case R.id.drugtype3:
+                ResDrugList.clear();
+                for (drugInfo dInfo:DrugList) {
+                    if (dInfo.getA2().equals("升压药")) {
+                        ResDrugList.add(dInfo);
+                    }
+                }
                 break;
             case R.id.drugtype4:
+                ResDrugList.clear();
+                for (drugInfo dInfo:DrugList) {
+                    if (dInfo.getA2().equals("降压药")) {
+                        ResDrugList.add(dInfo);
+                    }
+                }
                 break;
             case R.id.drugtype5:
+                ResDrugList.clear();
+                for (drugInfo dInfo:DrugList) {
+                    if (dInfo.getA2().equals("利尿剂")) {
+                        ResDrugList.add(dInfo);
+                    }
+                }
                 break;
             case R.id.drugtype6:
+                ResDrugList.clear();
+                for (drugInfo dInfo:DrugList) {
+                    if (dInfo.getA2().equals("受体阻滞剂")) {
+                        ResDrugList.add(dInfo);
+                    }
+                }
                 break;
             case R.id.drugtype7:
+                ResDrugList.clear();
+                for (drugInfo dInfo:DrugList) {
+                    if (dInfo.getA2().equals("抗心律失常药")) {
+                        ResDrugList.add(dInfo);
+                    }
+                }
                 break;
         }
+        bundle.putSerializable("ResDrugList",ResDrugList);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }
