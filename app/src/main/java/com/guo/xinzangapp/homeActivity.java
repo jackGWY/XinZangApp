@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.guo.xinzangapp.consult.consultActivity;
 import com.guo.xinzangapp.index.indexActivity;
+import com.guo.xinzangapp.medicine.drugSwitchActivity;
 
 import butterknife.BindView;
 
@@ -61,7 +62,7 @@ public class homeActivity extends AppCompatActivity {
         mtvMedicine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this, medicineActivity.class));
+                startActivity(new Intent(homeActivity.this, drugSwitchActivity.class));
 //                Toast.makeText(homeActivity.this,"btn_4我被点击了",Toast.LENGTH_SHORT).show();
             }
         });
@@ -69,7 +70,7 @@ public class homeActivity extends AppCompatActivity {
         imageMedicine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this, medicineActivity.class));
+                startActivity(new Intent(homeActivity.this, drugSwitchActivity.class));
 //                Toast.makeText(homeActivity.this,"btn_4我被点击了",Toast.LENGTH_SHORT).show();
             }
         });

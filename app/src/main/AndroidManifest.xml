@@ -29,7 +29,9 @@
         <activity android:name=".medicineArticle.medicineAticle1Activity" />
         <activity android:name=".FoodActivity" />
         <activity android:name=".index.indexActivity" />
-        <activity android:name=".consult.consultActivity"></activity>
+        <activity android:name=".consult.consultActivity" />
+        <activity android:name=".medicine.drugSwitchActivity" />
+        <activity android:name=".medicine.drugTypeListActivity"></activity>
     </application>
 
 </manifest>

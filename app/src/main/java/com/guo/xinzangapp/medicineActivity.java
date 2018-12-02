@@ -32,26 +32,18 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class medicineActivity extends AppCompatActivity {
-    private List<drugInfo> DrugList = new ArrayList<>();
+    private ArrayList<drugInfo> DrugList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medicine);
+        Intent intent=getIntent();
+        // 实例化一个Bundle
+        Bundle bundle=intent.getExtras();
+        //获取里面的Persion里面的数据
+        DrugList= (ArrayList<drugInfo>) bundle.getSerializable("ResDrugList");
 
-        ExecutorService exec = Executors.newCachedThreadPool();
-        Future<List<drugInfo>> result = exec.submit(new GetDrugInfo());
-        try {
-            DrugList = result.get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-
-        for (drugInfo dInfo : DrugList) {
-            Log.d("medicineActivity","a1:"+dInfo.getA1());
-        }
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView1);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);

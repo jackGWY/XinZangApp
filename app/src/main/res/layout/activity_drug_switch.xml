@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.guo.xinzangapp.medicine.drugSwitchActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="@dimen/drugSwitchLinearLayoutLong"
+            android:layout_height="@dimen/drugSwitchLinearLayoutLong"
+            android:id="@+id/linear_drug"
+            android:background="@color/item_color"
+            android:padding="10dp"
+
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView_classification"
+                android:textSize="25sp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:text="心脏病药物分类"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/image_button_classification"
+                android:scaleType="centerInside"
+                android:background="@color/item_color"
+                android:src="@drawable/drugclassification"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/drugSwitchLinearLayoutLong"
+            android:layout_height="@dimen/drugSwitchLinearLayoutLong"
+            android:padding="10dp"
+
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_news"
+                android:textSize="25sp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:text="心脏病资讯"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/image_button_news"
+                android:src="@drawable/news"
+                android:background="@color/item_color"
+                android:scaleType="centerInside"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/drugSwitchLinearLayoutLong"
+            android:layout_height="@dimen/drugSwitchLinearLayoutLong"
+            android:padding="10dp"
+
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_diary"
+                android:textSize="25sp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:text="用药日记"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/image_button_diary"
+                android:src="@drawable/diary"
+                android:background="@color/item_color"
+                android:scaleType="centerInside"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

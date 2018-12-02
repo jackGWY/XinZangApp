@@ -16,6 +16,7 @@
             android:background="@color/colorAccent"
             app:layout_scrollFlags="scroll"
             android:minHeight="40dp"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/AppTheme">
 
         </android.support.v7.widget.Toolbar>

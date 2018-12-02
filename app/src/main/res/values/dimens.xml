@@ -17,4 +17,10 @@
 
     <dimen name="druglistItemMarginTop">10dp</dimen>
     <dimen name="druglistTextPadding">10dp</dimen>
+    <dimen name="drugTypeTitle">25sp</dimen>
+    <dimen name="drugTypeTitlePadding">10dp</dimen>
+    <dimen name="drugTypeTitleLeft">10dp</dimen>
+    <dimen name="drugTypeTitleRight">10dp</dimen>
+    <dimen name="drugSwitchLinearLayoutLong">300dp</dimen>
+    <dimen name="drugTypeListTitle">20sp</dimen>
 </resources>
