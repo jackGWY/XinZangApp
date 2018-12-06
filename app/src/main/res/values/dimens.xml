@@ -23,4 +23,7 @@
     <dimen name="drugTypeTitleRight">10dp</dimen>
     <dimen name="drugSwitchLinearLayoutLong">300dp</dimen>
     <dimen name="drugTypeListTitle">20sp</dimen>
+    <dimen name="diaryItemTextSize">18sp</dimen>
+    <dimen name="diaryItemPadding">10dp</dimen>
+    <dimen name="diaryItemMargingTop">10dp</dimen>
 </resources>

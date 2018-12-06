@@ -32,7 +32,10 @@
         <activity android:name=".consult.consultActivity" />
         <activity android:name=".medicine.drugSwitchActivity" />
         <activity android:name=".medicine.drugTypeListActivity" />
-        <activity android:name=".medicineArticle.newListActivity"></activity>
+        <activity android:name=".medicineArticle.newListActivity" />
+        <activity android:name=".diary.diaryActivity" />
+        <activity android:name=".diary.diaryListActivity" />
+        <activity android:name=".diary.DiaryDetailActivity"></activity>
     </application>
 
 </manifest>

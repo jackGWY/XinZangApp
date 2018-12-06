@@ -22,8 +22,6 @@ import org.json.JSONObject;
 
 public class indexActivity extends AppCompatActivity {
 
-
-
     @BindView(R.id.age)
     EditText age;
     @BindView(R.id.sex)
@@ -90,7 +88,6 @@ public class indexActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
             }
         }).start();
     }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp" >
+
+    <TextView
+        android:id="@+id/my_time"
+        android:layout_width="match_parent"
+        android:text="time"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/diaryItemPadding"
+        android:textSize="@dimen/diaryItemTextSize"
+        android:layout_marginTop="@dimen/diaryItemMargingTop" />
+
+    <TextView
+        android:id="@+id/diary_reason"
+        android:layout_width="match_parent"
+        android:text="reason "
+        android:layout_height="wrap_content"
+        android:padding="@dimen/diaryItemPadding"
+        android:textSize="@dimen/diaryItemTextSize"
+        android:layout_marginTop="@dimen/diaryItemMargingTop" />
+    <TextView
+        android:id="@+id/diary_drug_used"
+        android:layout_width="match_parent"
+        android:text="drug_used "
+        android:layout_height="wrap_content"
+        android:padding="@dimen/diaryItemPadding"
+        android:textSize="@dimen/diaryItemTextSize"
+        android:layout_marginTop="@dimen/diaryItemMargingTop" />
+
+    <TextView
+        android:id="@+id/diary_hospital"
+        android:layout_width="match_parent"
+        android:text="hospital "
+        android:layout_height="wrap_content"
+        android:padding="@dimen/diaryItemPadding"
+        android:textSize="@dimen/diaryItemTextSize"
+        android:layout_marginTop="@dimen/diaryItemMargingTop" />
+
+    <View
+        android:layout_height="1px"
+        android:layout_marginTop="18dp"
+        android:background="#000000"
+        android:layout_width="fill_parent">
+    </View>
+
+</LinearLayout>

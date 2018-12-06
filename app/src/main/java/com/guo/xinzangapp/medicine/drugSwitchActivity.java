@@ -8,6 +8,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.guo.xinzangapp.R;
+import com.guo.xinzangapp.diary.diaryActivity;
+import com.guo.xinzangapp.diary.diaryListActivity;
 import com.guo.xinzangapp.medicineArticle.newListActivity;
 
 import butterknife.BindView;
@@ -52,8 +54,10 @@ public class drugSwitchActivity extends AppCompatActivity {
                 startActivity(new Intent(drugSwitchActivity.this,newListActivity.class));
                 break;
             case R.id.tv_diary:
+                startActivity(new Intent(drugSwitchActivity.this,diaryActivity.class));
                 break;
             case R.id.image_button_diary:
+                startActivity(new Intent(drugSwitchActivity.this,diaryActivity.class));
                 break;
         }
     }
