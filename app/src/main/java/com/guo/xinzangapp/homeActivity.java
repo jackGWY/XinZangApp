@@ -14,6 +14,7 @@ import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
 import com.guo.xinzangapp.consult.consultActivity;
+import com.guo.xinzangapp.index.IndexSwitchActivity;
 import com.guo.xinzangapp.index.indexActivity;
 import com.guo.xinzangapp.medicine.drugSwitchActivity;
 
@@ -94,14 +95,14 @@ public class homeActivity extends AppCompatActivity {
         imageIndex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this, indexActivity.class));
+                startActivity(new Intent(homeActivity.this, IndexSwitchActivity.class));
             }
         });
 
         mtvIndex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this, indexActivity.class));
+                startActivity(new Intent(homeActivity.this, IndexSwitchActivity.class));
             }
         });
 
