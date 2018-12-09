@@ -35,7 +35,8 @@
         <activity android:name=".medicineArticle.newListActivity" />
         <activity android:name=".diary.diaryActivity" />
         <activity android:name=".diary.diaryListActivity" />
-        <activity android:name=".diary.DiaryDetailActivity"></activity>
+        <activity android:name=".diary.DiaryDetailActivity" />
+        <activity android:name=".medicine.NotFoundActivity"></activity>
     </application>
 
 </manifest>

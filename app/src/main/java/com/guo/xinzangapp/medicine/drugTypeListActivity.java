@@ -4,11 +4,17 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.guo.beans.drugInfo;
 import com.guo.http.GetDrugInfo;
+import com.guo.http.getDrugByA1;
 import com.guo.xinzangapp.R;
 import com.guo.xinzangapp.medicineActivity;
 
@@ -25,6 +31,7 @@ import butterknife.OnClick;
 
 public class drugTypeListActivity extends AppCompatActivity {
     private List<drugInfo> DrugList = new ArrayList<>();
+    private drugInfo dInfo;
     @BindView(R.id.drugtype1)
     TextView drugtype1;
     @BindView(R.id.drugtype2)
@@ -39,6 +46,24 @@ public class drugTypeListActivity extends AppCompatActivity {
     TextView drugtype6;
     @BindView(R.id.drugtype7)
     TextView drugtype7;
+    @BindView(R.id.drug_search)
+    ImageButton drug_search;
+    @BindView(R.id.durg_edit)
+    EditText drug_edit;
+
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.toolbar,menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.addtion:
+                Toast.makeText(this,"you click add",Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return true;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,18 +79,43 @@ public class drugTypeListActivity extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-
         for (drugInfo dInfo : DrugList) {
-            Log.d("medicineActivity","a1:"+dInfo.getA1());
+            Log.d("drugTypeListActivity","a1:"+dInfo.getA1());
         }
+
     }
 
-    @OnClick({R.id.drugtype1,R.id.drugtype2,R.id.drugtype3,R.id.drugtype4,R.id.drugtype5,R.id.drugtype6,R.id.drugtype7})
+    @OnClick({R.id.drugtype1,R.id.drugtype2,R.id.drugtype3,R.id.drugtype4,R.id.drugtype5,R.id.drugtype6,R.id.drugtype7,R.id.drug_search})
     public void onClick(final View view) {
         ArrayList<drugInfo> ResDrugList = new ArrayList<>();
         Bundle bundle = new Bundle();
         Intent intent = new Intent(drugTypeListActivity.this,medicineActivity.class);
         switch (view.getId()) {
+            case R.id.drug_search:
+                //从数据库中搜索
+                String drugToSearch = drug_edit.getText().toString().trim();
+                Log.d("drugToSearch:",drugToSearch);
+                ExecutorService executorService = Executors.newCachedThreadPool();
+                Future<drugInfo> result2 = executorService.submit(new getDrugByA1(drugToSearch));
+                try {
+                    dInfo = result2.get();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+                if (dInfo!=null) {
+                    bundle.putSerializable("drugInfo",dInfo);
+                    Intent intent2 = new Intent(drugTypeListActivity.this,bMedicine1Activity.class);
+                    intent2.putExtras(bundle);
+                    startActivity(intent2);
+                    return;
+                }
+                else {
+                    Intent intent3 = new Intent(drugTypeListActivity.this,NotFoundActivity.class);
+                    startActivity(intent3);
+                    return;
+                }
             case R.id.drugtype1:
                 ResDrugList.clear();
                 for (drugInfo dInfo:DrugList) {
