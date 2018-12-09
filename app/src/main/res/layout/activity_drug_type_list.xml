@@ -10,7 +10,7 @@
 
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/Search_toolbar"
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
             android:background="@color/colorAccent"

@@ -3,6 +3,7 @@ package com.guo.xinzangapp.medicine;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -59,7 +60,7 @@ public class drugTypeListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case R.id.addtion:
-                Toast.makeText(this,"you click add",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"we will add function late",Toast.LENGTH_SHORT).show();
                 break;
         }
         return true;
@@ -70,6 +71,11 @@ public class drugTypeListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drug_type_list);
         ButterKnife.bind(this);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.inflateMenu(R.menu.toolbar);
+        //setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
+
         ExecutorService exec = Executors.newCachedThreadPool();
         Future<List<drugInfo>> result = exec.submit(new GetDrugInfo());
         try {
