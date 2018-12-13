@@ -14,6 +14,7 @@ import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
 import com.guo.xinzangapp.consult.consultActivity;
+import com.guo.xinzangapp.hospital.hospitalActivity;
 import com.guo.xinzangapp.index.IndexSwitchActivity;
 import com.guo.xinzangapp.index.indexActivity;
 import com.guo.xinzangapp.medicine.drugSwitchActivity;
@@ -22,8 +23,8 @@ import butterknife.BindView;
 
 public class homeActivity extends AppCompatActivity {
 
-    private ImageButton imageMedicine, imageFood,imageIndex,imageDoctor;
-    private TextView mtvMedicine, mtvFood,mtvIndex,mtvDoctor;
+    private ImageButton imageMedicine, imageFood,imageIndex,imageDoctor,imageHospital;
+    private TextView mtvMedicine, mtvFood,mtvIndex,mtvDoctor,mtvHospital;
 
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.toolbar,menu);
@@ -58,6 +59,9 @@ public class homeActivity extends AppCompatActivity {
 
         imageDoctor = (ImageButton) findViewById(R.id.image_doctor);
         mtvDoctor =  (TextView) findViewById(R.id.textView_doctor);
+
+        imageHospital = (ImageButton) findViewById(R.id.image_hospital);
+        mtvHospital = (TextView) findViewById(R.id.textView_hospital);
 
 
         mtvMedicine.setOnClickListener(new View.OnClickListener() {
@@ -118,6 +122,14 @@ public class homeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(homeActivity.this, consultActivity.class));
+            }
+        });
+
+        imageHospital.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(homeActivity.this, hospitalActivity.class));
             }
         });
     }
