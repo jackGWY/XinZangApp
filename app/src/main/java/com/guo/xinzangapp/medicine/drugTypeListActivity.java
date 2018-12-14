@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.guo.beans.drugInfo;
 import com.guo.http.GetDrugInfo;
 import com.guo.http.getDrugByA1;
+import com.guo.http.getDrugByRandom;
 import com.guo.xinzangapp.R;
 import com.guo.xinzangapp.medicineActivity;
 
@@ -102,7 +103,7 @@ public class drugTypeListActivity extends AppCompatActivity {
                 String drugToSearch = drug_edit.getText().toString().trim();
                 Log.d("drugToSearch:",drugToSearch);
                 ExecutorService executorService = Executors.newCachedThreadPool();
-                Future<drugInfo> result2 = executorService.submit(new getDrugByA1(drugToSearch));
+                Future<drugInfo> result2 = executorService.submit(new getDrugByRandom(drugToSearch));
                 try {
                     dInfo = result2.get();
                 } catch (InterruptedException e) {

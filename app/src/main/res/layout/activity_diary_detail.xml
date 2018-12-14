@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp" >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="20sp"
+        android:padding="@dimen/diaryItemPadding"
+        android:text="时间："
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/my_time"
@@ -16,6 +29,13 @@
         android:layout_marginTop="@dimen/diaryItemMargingTop" />
 
     <TextView
+        android:layout_width="match_parent"
+        android:textSize="20sp"
+        android:padding="@dimen/diaryItemPadding"
+        android:text="病因："
+        android:layout_height="wrap_content" />
+
+    <TextView
         android:id="@+id/diary_reason"
         android:layout_width="match_parent"
         android:text="reason "
@@ -24,6 +44,14 @@
         android:padding="@dimen/diaryItemPadding"
         android:textSize="@dimen/diaryItemTextSize"
         android:layout_marginTop="@dimen/diaryItemMargingTop" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="20sp"
+        android:padding="@dimen/diaryItemPadding"
+        android:text="使用药物："
+        android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/diary_drug_used"
         android:layout_width="match_parent"
@@ -35,6 +63,14 @@
         android:layout_marginTop="@dimen/diaryItemMargingTop" />
 
     <TextView
+        android:layout_width="match_parent"
+        android:textSize="20sp"
+        android:padding="@dimen/diaryItemPadding"
+        android:text="就诊医院：："
+        android:layout_height="wrap_content" />
+
+
+    <TextView
         android:id="@+id/diary_hospital"
         android:layout_width="match_parent"
         android:text="hospital "
@@ -44,6 +80,6 @@
         android:background="@drawable/edit_bg"
         android:layout_marginTop="@dimen/diaryItemMargingTop" />
 
+    </LinearLayout>
 
-
-</LinearLayout>
+</ScrollView>

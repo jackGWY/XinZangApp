@@ -54,6 +54,7 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.ViewHolder>{
     public void onBindViewHolder(ViewHolder holder, int position) {
         diary d = diaryList.get(position);
         holder.reason.setText(d.getReason());
+        holder.time.setText(d.getTime());
     }
 
     @Override
@@ -66,11 +67,13 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.ViewHolder>{
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         TextView reason;
+        TextView time;
         View drugListView;
         public ViewHolder(View view) {
             super(view);
             drugListView = view;
             reason = (TextView) view.findViewById(R.id.diary_title_reason);
+            time = (TextView) view.findViewById(R.id.diary_title_time);
         }
     }
 }

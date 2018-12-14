@@ -6,6 +6,16 @@
     android:layout_margin="5dp" >
 
     <TextView
+        android:id="@+id/diary_title_time"
+        android:layout_width="match_parent"
+        android:text="time"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/diaryItemPadding"
+        android:textSize="@dimen/diaryItemTextSize"
+        android:layout_marginTop="@dimen/diaryItemMargingTop" />
+
+
+    <TextView
         android:id="@+id/diary_title_reason"
         android:layout_width="match_parent"
         android:text="reason"
