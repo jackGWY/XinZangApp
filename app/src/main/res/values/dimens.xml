@@ -23,7 +23,11 @@
     <dimen name="drugTypeTitleRight">10dp</dimen>
     <dimen name="drugSwitchLinearLayoutLong">300dp</dimen>
     <dimen name="drugTypeListTitle">20sp</dimen>
+    <!--病例单配置-->
     <dimen name="diaryItemTextSize">18sp</dimen>
     <dimen name="diaryItemPadding">10dp</dimen>
     <dimen name="diaryItemMargingTop">10dp</dimen>
+    <!--留言板字体间距大小等配置-->
+    <dimen name="messageTitleTextSize">18sp</dimen>
+    <dimen name="messageOwnerTextSize">10sp</dimen>
 </resources>
