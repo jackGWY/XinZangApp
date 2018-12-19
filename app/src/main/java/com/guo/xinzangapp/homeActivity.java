@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
+import com.guo.xinzangapp.consult.ConsultSwitchActivity;
 import com.guo.xinzangapp.consult.consultActivity;
 import com.guo.xinzangapp.hospital.hospitalActivity;
 import com.guo.xinzangapp.index.IndexSwitchActivity;
@@ -113,7 +114,7 @@ public class homeActivity extends AppCompatActivity {
         imageDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this, consultActivity.class));
+                startActivity(new Intent(homeActivity.this, ConsultSwitchActivity.class));
             }
         });
 
@@ -121,7 +122,7 @@ public class homeActivity extends AppCompatActivity {
         mtvDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this, consultActivity.class));
+                startActivity(new Intent(homeActivity.this, ConsultSwitchActivity.class));
             }
         });
 

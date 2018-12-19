@@ -60,7 +60,8 @@
             android:value="8vfpMRaXZPRK15QPC2P98nHPEejgffs1" />
 
         <activity android:name=".hospital.hospitalActivity" />
-        <activity android:name=".consult.MessageBoardDetailActivity"></activity>
+        <activity android:name=".consult.MessageBoardDetailActivity" />
+        <activity android:name=".consult.ConsultSwitchActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/create_user_dialog_view"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="200dp"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:paddingBottom="30dp"
+    android:paddingTop="30dp">
+
+
+    <EditText
+        android:id="@+id/edt_message_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edit_bg"
+        android:gravity="top|left"
+        android:hint="输入"
+        android:minHeight="145dp"
+        android:textSize="18sp" />
+
+    <!--<Button-->
+        <!--android:id="@+id/btn_save_message_tilte"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:text="保存" />-->
+
+</LinearLayout>

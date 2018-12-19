@@ -73,4 +73,14 @@ public class MessageTitleAdapter extends RecyclerView.Adapter<MessageTitleAdapte
             owner = (TextView) view.findViewById(R.id.message_owner);
         }
     }
+
+    //添加数据
+    public void addItem(MessageTitle data) {
+        MessageTitleList.add(data);
+        int position = MessageTitleList.size()-1;
+        notifyItemInserted(position);//通知演示插入动画
+        notifyDataSetChanged();//通知重新绑定所有数据与界面
+        //notifyItemRangeChanged(position,MessageTitleList.size()-position);//通知数据与界面重新绑定
+    }
+
 }
