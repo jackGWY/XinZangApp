@@ -41,6 +41,8 @@ public class consultActivity extends AppCompatActivity {
     FloatingActionButton imageAdd;
 
     List<MessageTitle> messageTitleList = new ArrayList<>();
+
+    private MessageTitleAdapter messageTitleAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +70,7 @@ public class consultActivity extends AppCompatActivity {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RecyclerView_message_board);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        MessageTitleAdapter messageTitleAdapter = new MessageTitleAdapter(messageTitleList,consultActivity.this);
+        messageTitleAdapter = new MessageTitleAdapter(messageTitleList,consultActivity.this);
         recyclerView.setAdapter(messageTitleAdapter);
     }
 
@@ -107,7 +109,8 @@ public class consultActivity extends AppCompatActivity {
                 ExecutorService exec = Executors.newCachedThreadPool();
                 exec.submit(new saveDialogQuestionTitle(edtMessageTitle,userName));
 
-                
+                MessageTitle messageTitle = new MessageTitle(edtMessageTitle,userName);
+                messageTitleAdapter.addItem(messageTitle);
             }
         });
 
