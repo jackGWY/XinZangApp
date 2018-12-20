@@ -1,14 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.guo.xinzangapp.consult.MessageBoardDetailActivity">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="detail"/>
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
 
-</android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/question_title"
+                android:textSize="25sp"
+                android:text="question title"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/PrimaryDarkColor"
+                    android:textSize="10sp"
+                    android:text="答主："
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/title_user"
+                    android:textColor="@color/PrimaryDarkColor"
+                    android:textSize="10sp"
+                    android:text="question title"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/questionScrollView"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/RecyclerView_question_discuss"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+        </android.support.v4.widget.NestedScrollView>
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:id="@+id/image_discuss"
+            android:layout_marginLeft="300dp"
+            android:scaleType="centerInside"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/discuss"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+
+</ScrollView>
