@@ -12,6 +12,9 @@ public class MessageBoard implements Serializable {
     private String comment;
     private String commentOwner;
 
+    public MessageBoard() {
+    }
+
     public MessageBoard(String topicTitle, String toppicOwner, String comment, String commentOwner) {
         this.topicTitle = topicTitle;
         this.toppicOwner = toppicOwner;

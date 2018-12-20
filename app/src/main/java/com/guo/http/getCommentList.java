@@ -17,7 +17,7 @@ import okhttp3.Response;
  */
 
 public class getCommentList implements Callable<List<MessageBoard>> {
-    private String url = MyURL.SERVER+"consult/getMessageBoardList";
+    private String url = MyURL.SERVER+"/consult/getMessageBoardList/";
     private String title;
 
     public getCommentList(String title) {
@@ -28,6 +28,7 @@ public class getCommentList implements Callable<List<MessageBoard>> {
     public List<MessageBoard> call() throws Exception {
         List<MessageBoard> MessageBoardList = null;
         url = url + "?title=" + title;
+        System.out.println("url:"+url);
         try {
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder().url(url).build();
@@ -38,6 +39,15 @@ public class getCommentList implements Callable<List<MessageBoard>> {
             List<MessageBoard> MessageBoardList1 = gson.fromJson(responseData, new TypeToken<List<MessageBoard>>(){}.getType());
 
             MessageBoardList = MessageBoardList1;
+            if (MessageBoardList != null) {
+                for (MessageBoard messageBoard : MessageBoardList) {
+                    System.out.println("getCommmetList:"+messageBoard);
+                }
+            }
+            else {
+                System.out.println("MessageBoardList is null!!!!!!!!!!!!!!!!!!!!!!!!");
+            }
+
         } catch (Exception e){
             e.printStackTrace();
         }

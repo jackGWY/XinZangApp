@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.guo.beans.MessageBoard;
+import com.guo.beans.MessageTitle;
 import com.guo.xinzangapp.R;
 
 import java.util.List;
@@ -59,5 +60,14 @@ public class MessageDetailAdapter extends RecyclerView.Adapter<MessageDetailAdap
             message_detail = (TextView) view.findViewById(R.id.message_detail);
             answer_owner = (TextView) view.findViewById(R.id.answer_owner);
         }
+    }
+
+    //添加数据
+    public void addItem(MessageBoard data) {
+        MessageBoardList.add(data);
+        int position = MessageBoardList.size()-1;
+        notifyItemInserted(position);//通知演示插入动画
+        notifyDataSetChanged();//通知重新绑定所有数据与界面
+        //notifyItemRangeChanged(position,MessageTitleList.size()-position);//通知数据与界面重新绑定
     }
 }
