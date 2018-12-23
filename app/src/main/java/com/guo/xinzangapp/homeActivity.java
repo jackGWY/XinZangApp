@@ -16,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import com.guo.xinzangapp.consult.ConsultSwitchActivity;
 import com.guo.xinzangapp.consult.consultActivity;
 import com.guo.xinzangapp.hospital.hospitalActivity;
+import com.guo.xinzangapp.hospital.hospitalSwitchActivity;
 import com.guo.xinzangapp.index.IndexSwitchActivity;
 import com.guo.xinzangapp.index.indexActivity;
 import com.guo.xinzangapp.medicine.drugSwitchActivity;
@@ -130,7 +131,7 @@ public class homeActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this, hospitalActivity.class));
+                startActivity(new Intent(homeActivity.this, hospitalSwitchActivity.class));
             }
         });
     }
