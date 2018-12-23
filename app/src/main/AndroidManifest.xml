@@ -20,6 +20,18 @@
     <!-- //获取统计数据 -->
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!--//鉴权所需该权限获取进程列表-->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!--//使用步行AR导航，配置Camera权限-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--//网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--//GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
     <!-- //使用步行AR导航，配置Camera权限 -->
     <application
         android:allowBackup="true"
@@ -58,6 +70,11 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="8vfpMRaXZPRK15QPC2P98nHPEejgffs1" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"></service>
 
         <activity android:name=".hospital.hospitalActivity" />
         <activity android:name=".consult.MessageBoardDetailActivity" />

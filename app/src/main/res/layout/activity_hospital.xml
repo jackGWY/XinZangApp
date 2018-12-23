@@ -1,54 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:id="@+id/linearLayout1"
-        android:visibility="gone"
-        >
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="在"></TextView>
+
         <EditText
-            android:layout_width="120dp"
+            android:id="@+id/city"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:hint="经度"
-            android:id="@+id/editText_lg" />
-        <EditText
-            android:layout_width="120dp"
-            android:layout_height="match_parent"
-            android:hint="纬度"
-            android:id="@+id/editText_la" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="前往"
-            android:id="@+id/button_llsearch"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:id="@+id/linearLayout2"
-        android:visibility="gone"
-        >
-        <EditText
-            android:layout_width="240dp"
-            android:layout_height="match_parent"
-            android:hint="地址"
-            android:id="@+id/editText_site" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="前往"
-            android:id="@+id/button_sitesearch"/>
+            android:text="北京" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="市内找"></TextView>
+
+        <AutoCompleteTextView
+            android:id="@+id/searchkey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.88"
+            android:text="餐厅" />
     </LinearLayout>
 
-    <com.baidu.mapapi.map.MapView
-        android:id="@+id/baiduMapView"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:clickable="true" />
+        android:layout_height="50dip"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="12"
+            android:onClick="searchButtonProcess"
+            android:padding="10dip"
+            android:text="城市内搜索" />
+
+        <Button
+            android:id="@+id/searchNearby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="12"
+            android:onClick="searchNearbyProcess"
+            android:padding="10dip"
+            android:text="周边搜索" />
+
+        <Button
+            android:id="@+id/searchBound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="12"
+            android:onClick="searchBoundProcess"
+            android:padding="10dip"
+            android:text="区域搜索" />
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/map"
+        class="com.baidu.mapapi.map.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </LinearLayout>
