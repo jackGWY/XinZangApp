@@ -45,6 +45,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -59,6 +60,10 @@ public class RoutePlanDemo extends Activity implements BaiduMap.OnMapClickListen
     // 浏览路线节点相关
     Button mBtnPre = null; // 上一个节点
     Button mBtnNext = null; // 下一个节点
+    Button mBtnSearch = null;
+    EditText edit_end;
+    EditText edit_start;
+    EditText city;
     int nodeIndex = -1; // 节点索引,供浏览节点时使用
     RouteLine route = null;
     MassTransitRouteLine massroute = null;
@@ -81,8 +86,9 @@ public class RoutePlanDemo extends Activity implements BaiduMap.OnMapClickListen
 
     int nowSearchType = -1; // 当前进行的检索，供判断浏览节点时结果使用。
 
-    String startNodeStr = "西二旗地铁站";
-    String endNodeStr = "百度科技园";
+    String startNodeStr = "上海南站";
+    String endNodeStr = "东方明珠";
+    String edit_city = "上海";
     boolean hasShownDialogue = false;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +101,11 @@ public class RoutePlanDemo extends Activity implements BaiduMap.OnMapClickListen
         mBaidumap = mMapView.getMap();
         mBtnPre = (Button) findViewById(R.id.pre);
         mBtnNext = (Button) findViewById(R.id.next);
+        mBtnSearch = (Button) findViewById(R.id.btn_search);
+        edit_end = (EditText) findViewById(R.id.edit_end);
+        edit_start = (EditText) findViewById(R.id.edit_start);
+        city = (EditText) findViewById(R.id.edit_city);
+
         mBtnPre.setVisibility(View.INVISIBLE);
         mBtnNext.setVisibility(View.INVISIBLE);
         // 地图点击事件处理
@@ -102,6 +113,16 @@ public class RoutePlanDemo extends Activity implements BaiduMap.OnMapClickListen
         // 初始化搜索模块，注册事件监听
         mSearch = RoutePlanSearch.newInstance();
         mSearch.setOnGetRoutePlanResultListener(this);
+
+        mBtnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startNodeStr = edit_start.getText().toString().trim();
+                endNodeStr = edit_end.getText().toString().trim();
+                edit_city = city.getText().toString().trim();
+
+            }
+        });
     }
 
     /**
@@ -117,8 +138,8 @@ public class RoutePlanDemo extends Activity implements BaiduMap.OnMapClickListen
         mBaidumap.clear();
         // 处理搜索按钮响应
         // 设置起终点信息，对于tranist search 来说，城市名无意义
-        PlanNode stNode = PlanNode.withCityNameAndPlaceName("北京", startNodeStr);
-        PlanNode enNode = PlanNode.withCityNameAndPlaceName("北京", endNodeStr);
+        PlanNode stNode = PlanNode.withCityNameAndPlaceName(edit_city, startNodeStr);
+        PlanNode enNode = PlanNode.withCityNameAndPlaceName(edit_city, endNodeStr);
 
         // 实际使用中请对起点终点城市进行正确的设定
 
@@ -134,7 +155,7 @@ public class RoutePlanDemo extends Activity implements BaiduMap.OnMapClickListen
             nowSearchType = 1;
         } else if (v.getId() == R.id.transit) {
             mSearch.transitSearch((new TransitRoutePlanOption())
-                    .from(stNode).city("北京").to(enNode));
+                    .from(stNode).city(edit_city).to(enNode));
             nowSearchType = 2;
         } else if (v.getId() == R.id.walk) {
             mSearch.walkingSearch((new WalkingRoutePlanOption())
