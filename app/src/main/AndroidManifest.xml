@@ -65,11 +65,11 @@
         <activity android:name=".diary.DiaryDetailActivity" />
         <activity android:name=".medicine.NotFoundActivity" />
         <activity android:name=".index.IndexSwitchActivity" />
-        <activity android:name=".hospital.BusLineSearchDemo"/>
-        <activity android:name=".hospital.PoiSearchDemo"/>
-        <activity android:name=".hospital.DistrictSearchDemo"/>
-        <activity android:name=".hospital.RoutePlanDemo"/>
-        <activity android:name=".hospital.GeoCoderDemo"/>
+        <activity android:name=".hospital.BusLineSearchDemo" />
+        <activity android:name=".hospital.PoiSearchDemo" />
+        <activity android:name=".hospital.DistrictSearchDemo" />
+        <activity android:name=".hospital.RoutePlanDemo" />
+        <activity android:name=".hospital.GeoCoderDemo" />
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
@@ -83,7 +83,8 @@
         <activity android:name=".hospital.hospitalActivity" />
         <activity android:name=".consult.MessageBoardDetailActivity" />
         <activity android:name=".consult.ConsultSwitchActivity" />
-        <activity android:name=".hospital.hospitalSwitchActivity"></activity>
+        <activity android:name=".hospital.hospitalSwitchActivity" />
+        <activity android:name=".index.indexHistoryActivity"></activity>
     </application>
 
 </manifest>

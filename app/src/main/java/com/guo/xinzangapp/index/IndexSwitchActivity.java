@@ -26,13 +26,15 @@ public class IndexSwitchActivity extends AppCompatActivity {
     }
     @OnClick({R.id.index_history,R.id.index_input})
     public void OnClick (View view) {
+        Intent intent = new Intent();
         switch (view.getId()) {
             case R.id.index_input:
-                Intent intent = new Intent(IndexSwitchActivity.this,indexActivity.class);
+                intent = new Intent(IndexSwitchActivity.this,indexActivity.class);
                 startActivity(intent);
                 break;
             case R.id.index_history:
-
+                intent = new Intent(IndexSwitchActivity.this,indexHistoryActivity.class);
+                startActivity(intent);
                 break;
         }
     }
