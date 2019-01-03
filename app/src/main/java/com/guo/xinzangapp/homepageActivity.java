@@ -125,7 +125,6 @@ public class homepageActivity extends AppCompatActivity implements
             public void destroyItem(ViewGroup container, int position,
                                     Object object) {
                 container.removeView(mViews.get(position));
-
             }
 
             @Override

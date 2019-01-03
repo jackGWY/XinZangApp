@@ -10,11 +10,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.guo.beans.drugInfo;
+import com.guo.http.GetDrugInfo;
 import com.guo.http.HttpRequestor;
 import com.guo.http.MyURL;
+import com.guo.http.saveDiary;
 import com.guo.xinzangapp.R;
 
 import org.json.JSONObject;
+
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,21 +61,9 @@ public class diaryActivity extends AppCompatActivity {
                 pref = PreferenceManager.getDefaultSharedPreferences(this);
                 final String userName = pref.getString("userName","");
 
-                final String url = MyURL.SERVER+"/drug/saveDiary?time="+date2+"+&reason="+reason2+"&drugUsed="+drug_used2+"&hospital="+hospital2+"&userName="+userName;
+                ExecutorService exec = Executors.newCachedThreadPool();
+                exec.submit(new saveDiary(date2,reason2,hospital2,drug_used2,userName));
 
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            String jsonString=new HttpRequestor().doGet(url);
-                            JSONObject jsonObject = new JSONObject(jsonString);
-                            final String result = jsonObject.getString("result");
-                            Log.d("result",result);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }).start();
                 Intent intent = new Intent(diaryActivity.this,diaryListActivity.class);
                 startActivity(intent);
                 break;
