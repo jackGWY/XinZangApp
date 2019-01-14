@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.guo.xinzangapp.R;
+import com.guo.xinzangapp.ViewPagerActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,12 +30,15 @@ public class ConsultSwitchActivity extends AppCompatActivity {
     }
     @OnClick({R.id.discuss, R.id.communicate})
     public void onClick(final View view) {
+        Intent intent = new Intent();
         switch (view.getId()) {
             case R.id.discuss:
-                Intent intent = new Intent(ConsultSwitchActivity.this, consultActivity.class);
+                intent = new Intent(ConsultSwitchActivity.this, consultActivity.class);
                 startActivity(intent);
                 break;
             case R.id.communicate:
+                intent = new Intent(ConsultSwitchActivity.this, ViewPagerActivity.class);
+                startActivity(intent);
                 break;
         }
     }

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.guo.beans.MessageTitle;
 import com.guo.beans.drugInfo;
 import com.guo.xinzangapp.R;
 
@@ -71,5 +72,14 @@ public class DrugAdapter extends RecyclerView.Adapter<DrugAdapter.ViewHolder> {
             drugListView = view;
             a1 = (TextView) view.findViewById(R.id.item_textview);
         }
+    }
+
+    //添加数据
+    public void addItem(drugInfo dInfo) {
+        mDrugList.add(dInfo);
+        int position = mDrugList.size()-1;
+        notifyItemInserted(position);//通知演示插入动画
+        notifyDataSetChanged();//通知重新绑定所有数据与界面
+        //notifyItemRangeChanged(position,MessageTitleList.size()-position);//通知数据与界面重新绑定
     }
 }

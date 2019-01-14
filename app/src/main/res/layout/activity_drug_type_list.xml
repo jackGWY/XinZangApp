@@ -157,11 +157,28 @@
                     android:background="#000000"
                     android:layout_width="fill_parent">
                 </View>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:id="@+id/drugtype7"
                     android:layout_height="wrap_content"
                     android:text="抗心律失常药"
+                    android:lineSpacingExtra="@dimen/lineSpacingExtra_medicine"
+                    android:textColor="@color/drugTextColor"
+                    android:textSize="@dimen/drugTypeListTitle"
+                    android:layout_marginBottom="@dimen/medicine_margin_bottom"
+                    />
+                <View
+                    android:layout_height="1px"
+                    android:background="#000000"
+                    android:layout_width="fill_parent">
+                </View>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/drugtype8"
+                    android:layout_height="wrap_content"
+                    android:text="常规药"
                     android:lineSpacingExtra="@dimen/lineSpacingExtra_medicine"
                     android:textColor="@color/drugTextColor"
                     android:textSize="@dimen/drugTypeListTitle"

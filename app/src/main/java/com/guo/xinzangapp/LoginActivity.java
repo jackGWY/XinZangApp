@@ -20,12 +20,21 @@ import android.widget.Toast;
 
 //import com.example.slope.androiddriver.shared.SharedPreferencesManager;
 
+import com.guo.beans.MessageBoard;
 import com.guo.http.HttpRequestor;
 import com.guo.http.MyURL;
+import com.guo.http.saveDiary;
+import com.guo.http.saveUserNamePassword;
 import com.guo.util.SharedPreferencesManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -90,42 +99,49 @@ public class LoginActivity extends AppCompatActivity {
                     loginPassword.requestFocus();       // 控件获取焦点
                     return;                     // 结束函数的执行
                 }
-
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        String uname=loginName.getText().toString().trim();
-                        String regpass=loginPassword.getText().toString().trim();
-                        String url = MyURL.SERVER+"/login/doLogin?uname="+uname+"&regpass="+regpass;
-                        try {
-                            String jsonString = new HttpRequestor().doGet(url);
-                            System.out.println("jsonString:"+jsonString);
-                            JSONObject jsonObject = new JSONObject(jsonString);
-                            String count=jsonObject.getString("count");
-                            if (count.equals("1")){
-                                editor = pref.edit();
-                                editor.putString("userName", uname);
-                                editor.putString("userPassword", regpass);
-                                editor.apply();
-                                startActivity(new Intent(LoginActivity.this,homeActivity.class));
-                                //finish();
-                            }
-                            else if (count.equals("0")){
-                                Snackbar.make(view, "错误", Snackbar.LENGTH_INDEFINITE)
-                                        .setAction("用户名或密码错误", new View.OnClickListener() {
-                                            @Override
-                                            public void onClick(View v) {
-                                                Toast.makeText(LoginActivity.this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
-                                            }
-                                        }).show();
-                                loginName.requestFocus();      // 控件获取焦点
-                                return;
-                            }
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }).start();
+                String uname=loginName.getText().toString().trim();
+                String regpass=loginPassword.getText().toString().trim();
+                ExecutorService exec = Executors.newCachedThreadPool();
+                Future<String> result = exec.submit(new saveUserNamePassword(uname, regpass));
+                String count = "";
+                try {
+                    count = result.get();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("in LoginActivity: count =" + count);
+                if (count.equals("1")){
+                    editor = pref.edit();
+                    editor.putString("userName", uname);
+                    editor.putString("userPassword", regpass);
+                    editor.apply();
+                    startActivity(new Intent(LoginActivity.this,homeActivity.class));
+                    //finish();
+                }
+                else if (count.equals("0")){
+                    Snackbar.make(view, "错误", Snackbar.LENGTH_INDEFINITE)
+                            .setAction("用户名或密码错误", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Toast.makeText(LoginActivity.this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
+                                }
+                            }).show();
+                    loginName.requestFocus();      // 控件获取焦点
+                    return;
+                }
+                else {
+                    Snackbar.make(view, "错误", Snackbar.LENGTH_INDEFINITE)
+                            .setAction("服务器或者网络错误", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Toast.makeText(LoginActivity.this, "服务器或者网络错误", Toast.LENGTH_SHORT).show();
+                                }
+                            }).show();
+                    loginName.requestFocus();      // 控件获取焦点
+                    return;
+                }
 //                RequestParams params=new RequestParams(MyURL.MY_SERVWE_LOGIN);
 //                params.addQueryStringParameter("uname",loginName.getText().toString().trim());
 //                params.addQueryStringParameter("upass",loginPassword.getText().toString().trim());

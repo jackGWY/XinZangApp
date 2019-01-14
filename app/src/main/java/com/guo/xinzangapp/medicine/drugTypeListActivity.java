@@ -48,6 +48,8 @@ public class drugTypeListActivity extends AppCompatActivity {
     TextView drugtype6;
     @BindView(R.id.drugtype7)
     TextView drugtype7;
+    @BindView(R.id.drugtype8)
+    TextView drugtype8;
     @BindView(R.id.drug_search)
     ImageButton drug_search;
     @BindView(R.id.durg_edit)
@@ -175,6 +177,14 @@ public class drugTypeListActivity extends AppCompatActivity {
                 ResDrugList.clear();
                 for (drugInfo dInfo:DrugList) {
                     if (dInfo.getA2().equals("抗心律失常药")) {
+                        ResDrugList.add(dInfo);
+                    }
+                }
+                break;
+            case R.id.drugtype8:
+                ResDrugList.clear();
+                for (drugInfo dInfo:DrugList) {
+                    if (dInfo.getA2().equals("常规药")) {
                         ResDrugList.add(dInfo);
                     }
                 }

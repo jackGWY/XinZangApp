@@ -84,7 +84,8 @@
         <activity android:name=".consult.MessageBoardDetailActivity" />
         <activity android:name=".consult.ConsultSwitchActivity" />
         <activity android:name=".hospital.hospitalSwitchActivity" />
-        <activity android:name=".index.indexHistoryActivity"></activity>
+        <activity android:name=".index.indexHistoryActivity" />
+        <activity android:name=".ViewPagerActivity"></activity>
     </application>
 
 </manifest>
