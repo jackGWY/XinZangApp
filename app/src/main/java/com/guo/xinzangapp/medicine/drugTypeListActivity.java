@@ -94,7 +94,7 @@ public class drugTypeListActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.drugtype1,R.id.drugtype2,R.id.drugtype3,R.id.drugtype4,R.id.drugtype5,R.id.drugtype6,R.id.drugtype7,R.id.drug_search})
+    @OnClick({R.id.drugtype1,R.id.drugtype2,R.id.drugtype3,R.id.drugtype4,R.id.drugtype5,R.id.drugtype6,R.id.drugtype7,R.id.drugtype8,R.id.drug_search})
     public void onClick(final View view) {
         ArrayList<drugInfo> ResDrugList = new ArrayList<>();
         Bundle bundle = new Bundle();
