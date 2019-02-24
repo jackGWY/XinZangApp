@@ -6,11 +6,219 @@
     android:layout_height="match_parent"
     tools:context="com.guo.xinzangapp.FoodActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="food"
-        android:textSize="25sp"
-        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="30sp"
+            android:layout_marginBottom="10dp"
+            android:text="宜吃"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="山楂"
+                android:layout_marginBottom="10dp"
+                android:textSize="@dimen/foodTypeTitleSize"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="山楂中的黄酮类与三萜类物质为最主要的降压功臣，能够防治心血管疾病，降低血压和胆固醇、软化血管，对预防动脉粥样硬化、心血管疾病有益。"
+
+                android:textSize="@dimen/foodContentSize"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@drawable/shanza"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="无花果"
+                android:layout_marginBottom="10dp"
+                android:textSize="@dimen/foodTypeTitleSize"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="无花果所含的脂肪酶、水解酶等有降低血脂和分解血脂的功能，可减少脂肪在血管内的沉积，进而起到降血压、预防冠心病、动脉粥样硬化的作用，对高血压、高血脂、脂肪肝、肥胖、心脏病等人群有保健作用。 "
+
+                android:textSize="@dimen/foodContentSize"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@drawable/wuhuaguo"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="金桔"
+                android:layout_marginBottom="10dp"
+                android:textSize="@dimen/foodTypeTitleSize"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="金桔含维生素P，对维护心血管功能，防止血管硬化、高血压等疾病有一定的作用，可作为高血压、高血脂、心脏病人群预防心脑血管并发症的食疗之品。"
+
+                android:textSize="@dimen/foodContentSize"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@drawable/jinji"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="梨"
+                android:layout_marginBottom="10dp"
+                android:textSize="@dimen/foodTypeTitleSize"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="梨中含有多种B族维生素，能保护心脏，减轻疲劳，增强心肌活力，对心脏病患者有很好的食疗作用。 "
+
+                android:textSize="@dimen/foodContentSize"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@drawable/li"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="苹果"
+                android:layout_marginBottom="10dp"
+                android:textSize="@dimen/foodTypeTitleSize"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="苹果含有大量的苹果酸和果胶，具有阻止胆酸被重新吸收、调节血压、降低血中胆固醇的作用，从而降低心脏病风险。 "
+
+                android:textSize="@dimen/foodContentSize"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@drawable/pingguo"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="不宜吃"
+            android:textSize="30sp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="苦瓜"
+                android:layout_marginBottom="10dp"
+                android:textSize="@dimen/foodTypeTitleSize"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="苦瓜属苦寒食物，风心病病人多为心脾阳气不足，如过食苦寒食品，会损伤人体阳气，加重病情，故心脏病者应少食。"
+
+                android:textSize="@dimen/foodContentSize"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@drawable/kugua"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="虾米"
+                android:layout_marginBottom="10dp"
+                android:textSize="@dimen/foodTypeTitleSize"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="虾米含有很多钠盐，会导致钠水潴留，增加血容量，加重心脏负担，而且虾米还富含胆固醇，对心血管不利，心脏病等心血管病患者应少食。"
+
+                android:textSize="@dimen/foodContentSize"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@drawable/xiami"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="肥肉"
+                android:layout_marginBottom="10dp"
+                android:textSize="@dimen/foodTypeTitleSize"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="肥肉的脂肪含量可高达90.8%，而且多为饱和脂肪酸，多吃肥肉会导致体内形成更多的粥样硬化板块，对肥胖、高血脂、糖尿病、心脏病、脂肪肝、高血脂等人群均有害无益。"
+
+                android:textSize="@dimen/foodContentSize"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@drawable/feirou"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="鸡肝"
+                android:layout_marginBottom="10dp"
+                android:textSize="@dimen/foodTypeTitleSize"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="鸡肝含有大量的胆固醇，长期食用可导致动脉粥样硬化，对心血管健康极为不利，高胆固醇血症、肝病、高血压和冠心病患者应少食。"
+
+                android:textSize="@dimen/foodContentSize"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@drawable/jigan"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+
 
 </android.support.constraint.ConstraintLayout>
