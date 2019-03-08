@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.guo.http.HttpRequestor;
@@ -44,12 +46,23 @@ public class RegisteredActivity extends AppCompatActivity {
     TextInputLayout registerLayoutPassword;
     @BindView(R.id.btn_register)
     Button btnRegister;
-
+    @BindView(R.id.radioButton)
+    RadioGroup mRg1;
+    String userType = "patient";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        mRg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton radioButton=(RadioButton)group.findViewById(checkedId);
+                userType = (String)radioButton.getText();
+                System.out.println("userType" + userType);
+            }
+        });
     }
 
     @OnClick(R.id.btn_register)
@@ -91,13 +104,13 @@ public class RegisteredActivity extends AppCompatActivity {
         }
 
         new Thread(new Runnable(){
-
             @Override
             public void run() {
                 String phone = registerPhone.getText().toString().trim();
                 String uname = registerName.getText().toString().trim();
                 String regpass=registerPassword.getText().toString().trim();
-                String url = MyURL.SERVER+"/login/register?phone="+phone+"&uname="+uname+"&regpass="+regpass;
+
+                String url = MyURL.SERVER+"/login/register?phone="+phone+"&uname="+uname+"&regpass="+regpass+"&userType="+userType;
                 //url = "http://192.168.123.226:8080/heart/login/register?phone=111&uname=zfj&regpass=123456";
                 try {
                     String jsonString=new HttpRequestor().doGet(url);

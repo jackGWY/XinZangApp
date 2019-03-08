@@ -12,6 +12,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:padding="20dp"
         android:orientation="vertical"
         android:layout_height="match_parent">
 
@@ -42,9 +43,11 @@
                 android:textSize="@dimen/foodContentSize"
                 />
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/pictureWeight"
+                android:layout_height="@dimen/pictureHeight"
+                android:layout_gravity="center"
                 android:src="@drawable/shanza"
-                android:layout_height="wrap_content" />
+               />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -62,9 +65,10 @@
                 android:textSize="@dimen/foodContentSize"
                 />
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/pictureHeight"
                 android:src="@drawable/wuhuaguo"
-                android:layout_height="wrap_content" />
+                android:layout_height="@dimen/pictureHeight"
+                android:layout_gravity="center" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -82,9 +86,10 @@
                 android:textSize="@dimen/foodContentSize"
                 />
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/pictureHeight"
                 android:src="@drawable/jinji"
-                android:layout_height="wrap_content" />
+                android:layout_gravity="center"
+                android:layout_height="@dimen/pictureHeight" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -102,9 +107,10 @@
                 android:textSize="@dimen/foodContentSize"
                 />
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/pictureHeight"
                 android:src="@drawable/li"
-                android:layout_height="wrap_content" />
+                android:layout_gravity="center"
+                android:layout_height="@dimen/pictureHeight" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -122,10 +128,14 @@
                 android:textSize="@dimen/foodContentSize"
                 />
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/pictureHeight"
                 android:src="@drawable/pingguo"
-                android:layout_height="wrap_content" />
+                android:layout_gravity="center"
+                android:layout_height="@dimen/pictureHeight" />
         </LinearLayout>
+
+
+
         <TextView
             android:layout_width="wrap_content"
             android:text="不宜吃"
@@ -153,9 +163,10 @@
                 android:textSize="@dimen/foodContentSize"
                 />
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/pictureHeight"
                 android:src="@drawable/kugua"
-                android:layout_height="wrap_content" />
+                android:layout_gravity="center"
+                android:layout_height="@dimen/pictureHeight" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -173,9 +184,10 @@
                 android:textSize="@dimen/foodContentSize"
                 />
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/pictureHeight"
                 android:src="@drawable/xiami"
-                android:layout_height="wrap_content" />
+                android:layout_gravity="center"
+                android:layout_height="@dimen/pictureHeight" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -193,9 +205,10 @@
                 android:textSize="@dimen/foodContentSize"
                 />
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/pictureHeight"
                 android:src="@drawable/feirou"
-                android:layout_height="wrap_content" />
+                android:layout_gravity="center"
+                android:layout_height="@dimen/pictureHeight" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -213,9 +226,10 @@
                 android:textSize="@dimen/foodContentSize"
                 />
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/pictureHeight"
                 android:src="@drawable/jigan"
-                android:layout_height="wrap_content" />
+                android:layout_gravity="center"
+                android:layout_height="@dimen/pictureHeight" />
         </LinearLayout>
     </LinearLayout>
     </ScrollView>

@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -60,6 +62,10 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.login_registered)
     TextView loginRegistered;
 
+    @BindView(R.id.radio_login)
+    RadioGroup mRg1;
+    String userType = "patient";
+
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
 
@@ -69,8 +75,17 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         pref = PreferenceManager.getDefaultSharedPreferences(this);
-    }
 
+        mRg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton radioButton=(RadioButton)group.findViewById(checkedId);
+                userType = (String)radioButton.getText();
+//                System.out.println("userType" + userType);
+
+            }
+        });
+    }
 
     @OnClick({R.id.btn_login, R.id.login_registered})
     public void onClick(final View view) {
@@ -116,6 +131,7 @@ public class LoginActivity extends AppCompatActivity {
                     editor = pref.edit();
                     editor.putString("userName", uname);
                     editor.putString("userPassword", regpass);
+                    editor.putString("userType", userType);
                     editor.apply();
                     startActivity(new Intent(LoginActivity.this,homeActivity.class));
                     //finish();

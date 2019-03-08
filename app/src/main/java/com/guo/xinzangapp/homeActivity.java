@@ -1,7 +1,9 @@
 package com.guo.xinzangapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Image;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.guo.xinzangapp.consult.ConsultSwitchActivity;
 import com.guo.xinzangapp.consult.consultActivity;
+import com.guo.xinzangapp.doctors.DocSwitchActivity;
 import com.guo.xinzangapp.hospital.hospitalActivity;
 import com.guo.xinzangapp.hospital.hospitalSwitchActivity;
 import com.guo.xinzangapp.index.IndexSwitchActivity;
@@ -44,7 +47,11 @@ public class homeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        SharedPreferences pref;
+        SharedPreferences.Editor editor;
+        pref = PreferenceManager.getDefaultSharedPreferences(this);
+        final String userName = pref.getString("userName","");
+        final String userType = pref.getString("userType","");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.toolbar);
         //setSupportActionBar(toolbar);
@@ -115,7 +122,12 @@ public class homeActivity extends AppCompatActivity {
         imageDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this, ConsultSwitchActivity.class));
+                if (userType.equals("doctor")) {
+                    startActivity(new Intent(homeActivity.this, DocSwitchActivity.class));
+                } else {
+                    startActivity(new Intent(homeActivity.this, ConsultSwitchActivity.class));
+                }
+
             }
         });
 

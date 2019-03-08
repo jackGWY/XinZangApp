@@ -32,4 +32,8 @@
     <dimen name="messageOwnerTextSize">10sp</dimen>
     <dimen name="foodTypeTitleSize">25sp</dimen>
     <dimen name="foodContentSize">18sp</dimen>
+    <dimen name="docSize">18sp</dimen>
+    <dimen name="docMarginBottom">20dp</dimen>
+    <dimen name="pictureHeight">200dp</dimen>
+    <dimen name="pictureWeight">200dp</dimen>
 </resources>

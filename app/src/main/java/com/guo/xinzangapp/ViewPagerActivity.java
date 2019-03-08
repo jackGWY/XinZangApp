@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class ViewPagerActivity extends AppCompatActivity {
-    private String[] TITLES = {"语文", "数学", "英语", "化学", "物理", "生物"};
+    private String[] TITLES = {"宜吃", "禁忌", "食谱推荐"};
 
     SwipeRefreshLayout mSwipeRefreshLayout;
     TabLayout mTabLayout;
@@ -67,7 +67,7 @@ public class ViewPagerActivity extends AppCompatActivity {
     }
 
     private void loadData() {
-        String[] titles = {"语文1", "数学1", "英语1", "化学1", "物理1", "生物1"};
+        String[] titles = {"宜吃1", "禁忌1", "食谱推荐1"};
         mAdapter.setTitles(titles);
     }
 }
