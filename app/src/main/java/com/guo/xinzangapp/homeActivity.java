@@ -23,13 +23,14 @@ import com.guo.xinzangapp.hospital.hospitalSwitchActivity;
 import com.guo.xinzangapp.index.IndexSwitchActivity;
 import com.guo.xinzangapp.index.indexActivity;
 import com.guo.xinzangapp.medicine.drugSwitchActivity;
+import com.guo.xinzangapp.sports.SportsActivity;
 
 import butterknife.BindView;
 
 public class homeActivity extends AppCompatActivity {
 
-    private ImageButton imageMedicine, imageFood,imageIndex,imageDoctor,imageHospital;
-    private TextView mtvMedicine, mtvFood,mtvIndex,mtvDoctor,mtvHospital;
+    private ImageButton imageMedicine, imageFood,imageIndex,imageDoctor,imageHospital,imageRun;
+    private TextView mtvMedicine, mtvFood,mtvIndex,mtvDoctor,mtvHospital,mtvRun;
 
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.toolbar,menu);
@@ -71,6 +72,9 @@ public class homeActivity extends AppCompatActivity {
 
         imageHospital = (ImageButton) findViewById(R.id.image_hospital);
         mtvHospital = (TextView) findViewById(R.id.textView_hospital);
+
+        imageRun = (ImageButton) findViewById(R.id.image_run);
+        mtvRun = (TextView) findViewById(R.id.textView_run);
 
 
         mtvMedicine.setOnClickListener(new View.OnClickListener() {
@@ -144,6 +148,22 @@ public class homeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(homeActivity.this, hospitalSwitchActivity.class));
+            }
+        });
+
+        imageRun.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(homeActivity.this, SportsActivity.class));
+            }
+        });
+
+        mtvRun.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(homeActivity.this, SportsActivity.class));
             }
         });
     }

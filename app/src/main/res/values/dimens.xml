@@ -4,14 +4,14 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="spacing">32dp</dimen>
     <dimen name="registered">15dp</dimen>
-    <dimen name="medicine_title">25sp</dimen>
+    <dimen name="medicine_title">18sp</dimen>
     <dimen name="medicine_content">15sp</dimen>
     <dimen name="medicine_margin_bottom">25dp</dimen>
     <dimen name="lineSpacingExtra_medicine">15dp</dimen>
     <dimen name="medicineTextListSize">20sp</dimen>
     <dimen name="medicineArtical">18sp</dimen>
     <!--指标名目大小-->
-    <dimen name="indexText">20sp</dimen>
+    <dimen name="indexText">15sp</dimen>
     <!--指标和输入之间的间隔-->
     <dimen name="indexMarginBottom">10dp</dimen>
 
@@ -21,7 +21,7 @@
     <dimen name="drugTypeTitlePadding">10dp</dimen>
     <dimen name="drugTypeTitleLeft">10dp</dimen>
     <dimen name="drugTypeTitleRight">10dp</dimen>
-    <dimen name="drugSwitchLinearLayoutLong">300dp</dimen>
+    <dimen name="drugSwitchLinearLayoutLong">200dp</dimen>
     <dimen name="drugTypeListTitle">20sp</dimen>
     <!--病例单配置-->
     <dimen name="diaryItemTextSize">18sp</dimen>
@@ -30,10 +30,11 @@
     <!--留言板字体间距大小等配置-->
     <dimen name="messageTitleTextSize">18sp</dimen>
     <dimen name="messageOwnerTextSize">10sp</dimen>
-    <dimen name="foodTypeTitleSize">25sp</dimen>
-    <dimen name="foodContentSize">18sp</dimen>
+    <dimen name="foodTypeTitleSize">18sp</dimen>
+    <dimen name="foodContentSize">15sp</dimen>
     <dimen name="docSize">18sp</dimen>
     <dimen name="docMarginBottom">20dp</dimen>
     <dimen name="pictureHeight">200dp</dimen>
     <dimen name="pictureWeight">200dp</dimen>
+    <dimen name="marginBottomHome">1dp</dimen>
 </resources>

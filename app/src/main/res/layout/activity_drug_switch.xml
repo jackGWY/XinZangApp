@@ -7,26 +7,27 @@
     android:orientation="vertical"
     tools:context="com.guo.xinzangapp.medicine.drugSwitchActivity">
 
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:padding="10dp"
         android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
+            android:layout_marginLeft="50dp"
             android:layout_width="@dimen/drugSwitchLinearLayoutLong"
             android:layout_height="@dimen/drugSwitchLinearLayoutLong"
             android:id="@+id/linear_drug"
             android:background="@color/item_color"
             android:padding="10dp"
-
             android:orientation="vertical"
             >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView_classification"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="20dp"
                 android:text="心脏病药物分类"/>
@@ -42,6 +43,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_marginLeft="50dp"
             android:layout_width="@dimen/drugSwitchLinearLayoutLong"
             android:layout_height="@dimen/drugSwitchLinearLayoutLong"
             android:padding="10dp"
@@ -52,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_news"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="20dp"
                 android:text="心脏病资讯"/>
@@ -68,6 +70,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_marginLeft="50dp"
             android:layout_width="@dimen/drugSwitchLinearLayoutLong"
             android:layout_height="@dimen/drugSwitchLinearLayoutLong"
             android:padding="10dp"
@@ -78,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_diary"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="20dp"
                 android:text="用药日记"/>
@@ -92,6 +95,7 @@
                 android:scaleType="centerInside"
                 />
         </LinearLayout>
+
     </LinearLayout>
 
 </ScrollView>

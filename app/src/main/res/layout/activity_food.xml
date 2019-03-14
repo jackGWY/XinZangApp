@@ -21,7 +21,13 @@
             android:textSize="30sp"
             android:layout_marginBottom="10dp"
             android:text="宜吃"
+            android:textColor="@color/colorAccent"
             android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/hint"
+            android:layout_height="1dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,6 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="山楂"
+                android:textColor="@color/PrimaryDarkColor"
                 android:layout_marginBottom="10dp"
                 android:textSize="@dimen/foodTypeTitleSize"
                 />
@@ -48,11 +55,16 @@
                 android:layout_gravity="center"
                 android:src="@drawable/shanza"
                />
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/hint"
+                android:layout_height="1dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="无花果"
+                android:textColor="@color/PrimaryDarkColor"
                 android:layout_marginBottom="10dp"
                 android:textSize="@dimen/foodTypeTitleSize"
                 />
@@ -69,11 +81,16 @@
                 android:src="@drawable/wuhuaguo"
                 android:layout_height="@dimen/pictureHeight"
                 android:layout_gravity="center" />
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/hint"
+                android:layout_height="1dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="金桔"
+                android:textColor="@color/PrimaryDarkColor"
                 android:layout_marginBottom="10dp"
                 android:textSize="@dimen/foodTypeTitleSize"
                 />
@@ -85,16 +102,21 @@
 
                 android:textSize="@dimen/foodContentSize"
                 />
-            <ImageView
-                android:layout_width="@dimen/pictureHeight"
-                android:src="@drawable/jinji"
-                android:layout_gravity="center"
-                android:layout_height="@dimen/pictureHeight" />
+            <!--<ImageView-->
+                <!--android:layout_width="@dimen/pictureHeight"-->
+                <!--android:src="@drawable/jinji"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_height="@dimen/pictureHeight" />-->
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/hint"
+                android:layout_height="1dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="梨"
+                android:textColor="@color/PrimaryDarkColor"
                 android:layout_marginBottom="10dp"
                 android:textSize="@dimen/foodTypeTitleSize"
                 />
@@ -111,11 +133,16 @@
                 android:src="@drawable/li"
                 android:layout_gravity="center"
                 android:layout_height="@dimen/pictureHeight" />
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/hint"
+                android:layout_height="1dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="苹果"
+                android:textColor="@color/PrimaryDarkColor"
                 android:layout_marginBottom="10dp"
                 android:textSize="@dimen/foodTypeTitleSize"
                 />
@@ -127,11 +154,15 @@
 
                 android:textSize="@dimen/foodContentSize"
                 />
-            <ImageView
-                android:layout_width="@dimen/pictureHeight"
-                android:src="@drawable/pingguo"
-                android:layout_gravity="center"
-                android:layout_height="@dimen/pictureHeight" />
+            <!--<ImageView-->
+                <!--android:layout_width="@dimen/pictureHeight"-->
+                <!--android:src="@drawable/pingguo"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_height="@dimen/pictureHeight" />-->
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/hint"
+                android:layout_height="1dp"/>
         </LinearLayout>
 
 
@@ -139,6 +170,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:text="不宜吃"
+            android:textColor="@color/colorAccent"
             android:textSize="30sp"
             android:layout_marginBottom="10dp"
             android:layout_height="wrap_content" />
@@ -151,6 +183,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="苦瓜"
+                android:textColor="@color/PrimaryDarkColor"
                 android:layout_marginBottom="10dp"
                 android:textSize="@dimen/foodTypeTitleSize"
                 />
@@ -172,6 +205,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="虾米"
+                android:textColor="@color/PrimaryDarkColor"
                 android:layout_marginBottom="10dp"
                 android:textSize="@dimen/foodTypeTitleSize"
                 />
@@ -183,16 +217,17 @@
 
                 android:textSize="@dimen/foodContentSize"
                 />
-            <ImageView
-                android:layout_width="@dimen/pictureHeight"
-                android:src="@drawable/xiami"
-                android:layout_gravity="center"
-                android:layout_height="@dimen/pictureHeight" />
+            <!--<ImageView-->
+                <!--android:layout_width="@dimen/pictureHeight"-->
+                <!--android:src="@drawable/xiami"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_height="@dimen/pictureHeight" />-->
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="肥肉"
+                android:textColor="@color/PrimaryDarkColor"
                 android:layout_marginBottom="10dp"
                 android:textSize="@dimen/foodTypeTitleSize"
                 />
@@ -204,16 +239,17 @@
 
                 android:textSize="@dimen/foodContentSize"
                 />
-            <ImageView
-                android:layout_width="@dimen/pictureHeight"
-                android:src="@drawable/feirou"
-                android:layout_gravity="center"
-                android:layout_height="@dimen/pictureHeight" />
+            <!--<ImageView-->
+                <!--android:layout_width="@dimen/pictureHeight"-->
+                <!--android:src="@drawable/feirou"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_height="@dimen/pictureHeight" />-->
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="鸡肝"
+                android:textColor="@color/PrimaryDarkColor"
                 android:layout_marginBottom="10dp"
                 android:textSize="@dimen/foodTypeTitleSize"
                 />
