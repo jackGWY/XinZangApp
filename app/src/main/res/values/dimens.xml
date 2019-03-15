@@ -37,4 +37,7 @@
     <dimen name="pictureHeight">200dp</dimen>
     <dimen name="pictureWeight">200dp</dimen>
     <dimen name="marginBottomHome">1dp</dimen>
+    <dimen name="btn_marginleft">15dp</dimen>
+    <dimen name="btn_height">40dp</dimen>
+    <dimen name="btn_weight">60dp</dimen>
 </resources>
