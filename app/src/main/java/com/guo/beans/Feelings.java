@@ -1,10 +1,12 @@
 package com.guo.beans;
 
+import java.io.Serializable;
+
 /**
  * Created by guo_w on 2019/3/13.
  */
 
-public class Feelings {
+public class Feelings implements Serializable {
 
     private String userName;
     private String sports;
@@ -12,6 +14,18 @@ public class Feelings {
     private String bloodPressure;
     private String heartRate;
     private String remark;
+
+    @Override
+    public String toString() {
+        return "Feelings{" +
+                "userName='" + userName + '\'' +
+                ", sports='" + sports + '\'' +
+                ", feeling='" + feeling + '\'' +
+                ", bloodPressure='" + bloodPressure + '\'' +
+                ", heartRate='" + heartRate + '\'' +
+                ", remark='" + remark + '\'' +
+                '}';
+    }
 
     public Feelings() {
     }

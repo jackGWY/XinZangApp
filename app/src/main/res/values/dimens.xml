@@ -24,9 +24,9 @@
     <dimen name="drugSwitchLinearLayoutLong">200dp</dimen>
     <dimen name="drugTypeListTitle">20sp</dimen>
     <!--病例单配置-->
-    <dimen name="diaryItemTextSize">18sp</dimen>
-    <dimen name="diaryItemPadding">10dp</dimen>
-    <dimen name="diaryItemMargingTop">10dp</dimen>
+    <dimen name="diaryItemTextSize">15sp</dimen>
+    <dimen name="diaryItemPadding">5dp</dimen>
+    <dimen name="diaryItemMargingTop">5dp</dimen>
     <!--留言板字体间距大小等配置-->
     <dimen name="messageTitleTextSize">18sp</dimen>
     <dimen name="messageOwnerTextSize">10sp</dimen>
