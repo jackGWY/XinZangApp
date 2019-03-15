@@ -7,7 +7,7 @@
     <color name="PrimaryColor">#f32159</color>
     <color name="PrimaryDarkColor">#1976D2</color>
     <color name="item_color">#FAFAFA</color>
-
+    <color name="green">#32CD32</color>
     <color name="white">#FAFAFA</color>
     <color name="hint">#212121</color>
     <color name="hint2">#727272</color>
