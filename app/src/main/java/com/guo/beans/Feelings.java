@@ -11,9 +11,21 @@ public class Feelings implements Serializable {
     private String userName;
     private String sports;
     private String feeling;
-    private String bloodPressure;
-    private String heartRate;
+    private double bloodPressure;
+    private double heartRate;
     private String remark;
+
+    public Feelings() {
+    }
+
+    public Feelings(String userName, String sports, String feeling, double bloodPressure, double heartRate, String remark) {
+        this.userName = userName;
+        this.sports = sports;
+        this.feeling = feeling;
+        this.bloodPressure = bloodPressure;
+        this.heartRate = heartRate;
+        this.remark = remark;
+    }
 
     @Override
     public String toString() {
@@ -21,22 +33,10 @@ public class Feelings implements Serializable {
                 "userName='" + userName + '\'' +
                 ", sports='" + sports + '\'' +
                 ", feeling='" + feeling + '\'' +
-                ", bloodPressure='" + bloodPressure + '\'' +
-                ", heartRate='" + heartRate + '\'' +
+                ", bloodPressure=" + bloodPressure +
+                ", heartRate=" + heartRate +
                 ", remark='" + remark + '\'' +
                 '}';
-    }
-
-    public Feelings() {
-    }
-
-    public Feelings(String userName, String sports, String feeling, String bloodPressure, String heartRate, String remark) {
-        this.userName = userName;
-        this.sports = sports;
-        this.feeling = feeling;
-        this.bloodPressure = bloodPressure;
-        this.heartRate = heartRate;
-        this.remark = remark;
     }
 
     public String getUserName() {
@@ -63,19 +63,19 @@ public class Feelings implements Serializable {
         this.feeling = feeling;
     }
 
-    public String getBloodPressure() {
+    public double getBloodPressure() {
         return bloodPressure;
     }
 
-    public void setBloodPressure(String bloodPressure) {
+    public void setBloodPressure(double bloodPressure) {
         this.bloodPressure = bloodPressure;
     }
 
-    public String getHeartRate() {
+    public double getHeartRate() {
         return heartRate;
     }
 
-    public void setHeartRate(String heartRate) {
+    public void setHeartRate(double heartRate) {
         this.heartRate = heartRate;
     }
 

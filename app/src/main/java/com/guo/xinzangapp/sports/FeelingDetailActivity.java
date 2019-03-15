@@ -36,8 +36,8 @@ public class FeelingDetailActivity extends AppCompatActivity {
         Feelings feelings= (Feelings) bundle.getSerializable("feelings");
         sports.setText(feelings.getSports());
         feeling.setText(feelings.getFeeling());
-        heartRate.setText(feelings.getHeartRate());
-        bloodPressure.setText(feelings.getBloodPressure());
+        heartRate.setText(feelings.getHeartRate()+"");
+        bloodPressure.setText(feelings.getBloodPressure()+"");
         remark.setText(feelings.getRemark());
     }
 }

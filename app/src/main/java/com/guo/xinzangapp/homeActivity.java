@@ -23,6 +23,7 @@ import com.guo.xinzangapp.hospital.hospitalSwitchActivity;
 import com.guo.xinzangapp.index.IndexSwitchActivity;
 import com.guo.xinzangapp.index.indexActivity;
 import com.guo.xinzangapp.medicine.drugSwitchActivity;
+import com.guo.xinzangapp.sports.FeelingListActivity;
 import com.guo.xinzangapp.sports.SportsActivity;
 
 import butterknife.BindView;
@@ -155,7 +156,7 @@ public class homeActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this, SportsActivity.class));
+                startActivity(new Intent(homeActivity.this, FeelingListActivity.class));
             }
         });
 
@@ -163,7 +164,7 @@ public class homeActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this, SportsActivity.class));
+                startActivity(new Intent(homeActivity.this, FeelingListActivity.class));
             }
         });
     }
