@@ -143,14 +143,14 @@
             android:layout_marginTop="10dip"
             android:orientation="vertical" >
 
-            <Button
-                android:id="@+id/customicon"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginTop="10dip"
-                android:layout_weight="1.0"
-                android:onClick="changeRouteIcon"
-                android:text="自定义起终点图标" />
+            <!--<Button-->
+                <!--android:id="@+id/customicon"-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="fill_parent"-->
+                <!--android:layout_marginTop="10dip"-->
+                <!--android:layout_weight="1.0"-->
+                <!--android:onClick="changeRouteIcon"-->
+                <!--android:text="自定义起终点图标" />-->
         </LinearLayout>
 
         <LinearLayout
@@ -165,8 +165,8 @@
 
             <Button
                 android:id="@+id/pre"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
                 android:layout_marginLeft="2dip"
                 android:layout_marginRight="2dip"
                 android:layout_weight="1.0"
@@ -175,8 +175,8 @@
 
             <Button
                 android:id="@+id/next"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
                 android:layout_marginLeft="2dip"
                 android:layout_marginRight="2dip"
                 android:layout_weight="1.0"

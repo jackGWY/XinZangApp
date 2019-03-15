@@ -50,6 +50,20 @@ public class FeelingAdapter extends RecyclerView.Adapter<FeelingAdapter.ViewHold
                 context.startActivity(intent);
             }
         });
+        holder.feeling.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                int position = holder.getAdapterPosition();
+                Feelings d = feelingList.get(position);
+                System.out.println(d.getFeeling());
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("feelings",d);
+                Intent intent = new Intent(context,FeelingDetailActivity.class);
+                intent.putExtras(bundle);
+                context.startActivity(intent);
+            }
+        });
         return holder;
     }
 

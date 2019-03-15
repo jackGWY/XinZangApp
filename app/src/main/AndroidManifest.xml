@@ -90,7 +90,8 @@
         <activity android:name=".doctors.DocPatientRecordActivity" />
         <activity android:name=".sports.SportsActivity" />
         <activity android:name=".sports.FeelingListActivity" />
-        <activity android:name=".sports.FeelingDetailActivity"></activity>
+        <activity android:name=".sports.FeelingDetailActivity" />
+        <activity android:name=".hospital.TestActivity"></activity>
     </application>
 
 </manifest>

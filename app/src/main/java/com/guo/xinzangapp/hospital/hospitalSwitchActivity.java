@@ -53,8 +53,8 @@ public class hospitalSwitchActivity extends AppCompatActivity {
         Button searchPoi = (Button) findViewById(R.id.btn_search_poi);
         Button searchDistrict = (Button) findViewById(R.id.btn_search_district);
         Button searchRouteplan = (Button) findViewById(R.id.btn_search_routeplan);
-        Button searchBusline = (Button) findViewById(R.id.btn_search_busline);
-        Button geocoder = (Button) findViewById(R.id.btn_geocoder);
+//        Button searchBusline = (Button) findViewById(R.id.btn_search_busline);
+//        Button geocoder = (Button) findViewById(R.id.btn_geocoder);
 
         searchPoi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,20 +79,20 @@ public class hospitalSwitchActivity extends AppCompatActivity {
             }
         });
 
-        searchBusline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(hospitalSwitchActivity.this,BusLineSearchDemo.class);
-                startActivity(intent);
-            }
-        });
-        geocoder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(hospitalSwitchActivity.this,GeoCoderDemo.class);
-                startActivity(intent);
-            }
-        });
+//        searchBusline.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(hospitalSwitchActivity.this,BusLineSearchDemo.class);
+//                startActivity(intent);
+//            }
+//        });
+//        geocoder.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(hospitalSwitchActivity.this,GeoCoderDemo.class);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 
