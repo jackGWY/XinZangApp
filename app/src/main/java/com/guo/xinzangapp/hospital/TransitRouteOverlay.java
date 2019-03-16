@@ -55,7 +55,7 @@ public class TransitRouteOverlay extends OverlayManager {
                     overlayOptionses.add((new MarkerOptions())
                             .position(step.getEntrance().getLocation())
                                     .anchor(0.5f, 0.5f).zIndex(10).extraInfo(b)
-                                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.position2)));
+                                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.position3)));
                 }
                 // 最后路段绘制出口点
                 if (mRouteLine.getAllStep().indexOf(step) == (mRouteLine
@@ -63,7 +63,7 @@ public class TransitRouteOverlay extends OverlayManager {
                     overlayOptionses.add((new MarkerOptions())
                             .position(step.getExit().getLocation())
                                     .anchor(0.5f, 0.5f).zIndex(10)
-                                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.position2)));
+                                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.position3)));
                 }
             }
         }
@@ -72,14 +72,14 @@ public class TransitRouteOverlay extends OverlayManager {
             overlayOptionses.add((new MarkerOptions())
                     .position(mRouteLine.getStarting().getLocation())
                             .icon(getStartMarker() != null ? getStartMarker() :
-                                    BitmapDescriptorFactory.fromResource(R.drawable.position2)).zIndex(10));
+                                    BitmapDescriptorFactory.fromResource(R.drawable.position3)).zIndex(10));
         }
         if (mRouteLine.getTerminal() != null) {
             overlayOptionses
                     .add((new MarkerOptions())
                             .position(mRouteLine.getTerminal().getLocation())
                                     .icon(getTerminalMarker() != null ? getTerminalMarker() :
-                                            BitmapDescriptorFactory.fromResource(R.drawable.position2))
+                                            BitmapDescriptorFactory.fromResource(R.drawable.position3))
                                                             .zIndex(10));
         }
         // polyline
@@ -109,13 +109,13 @@ public class TransitRouteOverlay extends OverlayManager {
     private BitmapDescriptor getIconForStep(TransitRouteLine.TransitStep step) {
         switch (step.getStepType()) {
             case BUSLINE:
-                return BitmapDescriptorFactory.fromResource(R.drawable.position2);
+                return BitmapDescriptorFactory.fromResource(R.drawable.position3);
             case SUBWAY:
-                return BitmapDescriptorFactory.fromResource(R.drawable.position2);
+                return BitmapDescriptorFactory.fromResource(R.drawable.position3);
 //                return BitmapDescriptorFactory.fromAssetWithDpi("Icon_subway_station.png");
 
             case WAKLING:
-                return BitmapDescriptorFactory.fromResource(R.drawable.position2);
+                return BitmapDescriptorFactory.fromResource(R.drawable.position3);
 //                return BitmapDescriptorFactory.fromAssetWithDpi("Icon_walk_route.png");
             default:
                 return null;

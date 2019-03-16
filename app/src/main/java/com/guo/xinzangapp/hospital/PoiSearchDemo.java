@@ -319,7 +319,7 @@ public class PoiSearchDemo extends FragmentActivity implements
      */
     public void showNearbyArea(LatLng center, int radius) {
         BitmapDescriptor centerBitmap = BitmapDescriptorFactory
-                .fromResource(R.drawable.icon_geo);
+                .fromResource(R.drawable.position3);
         MarkerOptions ooMarker = new MarkerOptions().position(center).icon(centerBitmap);
         mBaiduMap.addOverlay(ooMarker);
 

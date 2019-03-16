@@ -60,7 +60,7 @@ public class DrivingRouteOverlay extends OverlayManager {
                                             .zIndex(10)
                                                     .rotate((360 - step.getDirection()))
                                                             .extraInfo(b)
-                                                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.position2)));
+                                                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.position3)));
                 }
                 // 最后路段绘制出口点
                 if (mRouteLine.getAllStep().indexOf(step) == (mRouteLine
@@ -69,7 +69,7 @@ public class DrivingRouteOverlay extends OverlayManager {
                             .position(step.getExit().getLocation())
                                     .anchor(0.5f, 0.5f)
                                             .zIndex(10)
-                                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.position2)));
+                                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.position3)));
 
                 }
             }
@@ -79,14 +79,14 @@ public class DrivingRouteOverlay extends OverlayManager {
             overlayOptionses.add((new MarkerOptions())
                     .position(mRouteLine.getStarting().getLocation())
                             .icon(getStartMarker() != null ? getStartMarker() :
-                                    BitmapDescriptorFactory.fromResource(R.drawable.position2)).zIndex(10));
+                                    BitmapDescriptorFactory.fromResource(R.drawable.position3)).zIndex(10));
         }
         if (mRouteLine.getTerminal() != null) {
             overlayOptionses
                     .add((new MarkerOptions())
                             .position(mRouteLine.getTerminal().getLocation())
                                     .icon(getTerminalMarker() != null ? getTerminalMarker() :
-                                            BitmapDescriptorFactory.fromResource(R.drawable.position2))
+                                            BitmapDescriptorFactory.fromResource(R.drawable.position3))
                                                             .zIndex(10));
         }
         // poly line

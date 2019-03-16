@@ -61,7 +61,7 @@ public class WalkingRouteOverlay extends OverlayManager {
                                                     .anchor(0.5f, 0.5f)
                                                             .extraInfo(b)
                                                                     .icon(BitmapDescriptorFactory
-                                                                            .fromResource(R.drawable.position2)));
+                                                                            .fromResource(R.drawable.position3)));
                 }
 
                 // 最后路段绘制出口点
@@ -72,7 +72,7 @@ public class WalkingRouteOverlay extends OverlayManager {
                                     .anchor(0.5f, 0.5f)
                                             .zIndex(10)
                                                     .icon(BitmapDescriptorFactory
-                                                            .fromResource(R.drawable.position2)));
+                                                            .fromResource(R.drawable.position3)));
 
                 }
             }
@@ -83,7 +83,7 @@ public class WalkingRouteOverlay extends OverlayManager {
                     .position(mRouteLine.getStarting().getLocation())
                             .icon(getStartMarker() != null ? getStartMarker() :
                                     BitmapDescriptorFactory
-                                            .fromResource(R.drawable.position2)).zIndex(10));
+                                            .fromResource(R.drawable.position3)).zIndex(10));
         }
         // terminal
         if (mRouteLine.getTerminal() != null) {
@@ -92,7 +92,7 @@ public class WalkingRouteOverlay extends OverlayManager {
                             .position(mRouteLine.getTerminal().getLocation())
                                     .icon(getTerminalMarker() != null ? getTerminalMarker() :
                                             BitmapDescriptorFactory
-                                                    .fromResource(R.drawable.position2))
+                                                    .fromResource(R.drawable.position3))
                                                             .zIndex(10));
         }
 

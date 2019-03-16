@@ -63,7 +63,7 @@ public class BikingRouteOverlay extends OverlayManager {
                                             .zIndex(10)
                                                     .anchor(0.5f, 0.5f)
                                                             .extraInfo(b)
-                                                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.position2)));
+                                                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.position3)));
                 }
 
                 // 最后路段绘制出口点
@@ -73,7 +73,7 @@ public class BikingRouteOverlay extends OverlayManager {
                             .position(step.getExit().getLocation())
                                     .anchor(0.5f, 0.5f)
                                             .zIndex(10)
-                                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.position2)));
+                                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.position3)));
 
                 }
             }
@@ -83,7 +83,7 @@ public class BikingRouteOverlay extends OverlayManager {
             overlayList.add((new MarkerOptions())
                     .position(mRouteLine.getStarting().getLocation())
                             .icon(getStartMarker() != null ? getStartMarker() :
-                                    BitmapDescriptorFactory.fromResource(R.drawable.position2)).zIndex(10));
+                                    BitmapDescriptorFactory.fromResource(R.drawable.position3)).zIndex(10));
         }
         // terminal
         if (mRouteLine.getTerminal() != null) {
@@ -91,7 +91,7 @@ public class BikingRouteOverlay extends OverlayManager {
                     .add((new MarkerOptions())
                             .position(mRouteLine.getTerminal().getLocation())
                                     .icon(getTerminalMarker() != null ? getTerminalMarker() :
-                                            BitmapDescriptorFactory.fromResource(R.drawable.position2))
+                                            BitmapDescriptorFactory.fromResource(R.drawable.position3))
                                                             .zIndex(10));
         }
 

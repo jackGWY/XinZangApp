@@ -59,7 +59,7 @@ public class PoiOverlay extends OverlayManager {
             Bundle bundle = new Bundle();
             bundle.putInt("index", i);
             markerList.add(new MarkerOptions()
-                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.position2)).extraInfo(bundle)
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.position3)).extraInfo(bundle)
                     .position(mPoiResult.getAllPoi().get(i).location));
             
         }
