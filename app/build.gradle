@@ -62,4 +62,5 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'com.google.code.gson:gson:2.7'
     implementation files('libs/BaiduLBS_Android.jar')
+    compile 'com.ashokvarma.android:bottom-navigation-bar:2.0.5'
 }

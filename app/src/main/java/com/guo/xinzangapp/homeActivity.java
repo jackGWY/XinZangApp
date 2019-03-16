@@ -6,6 +6,8 @@ import android.media.Image;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.view.menu.ActionMenuItemView;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +19,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.guo.xinzangapp.consult.ConsultSwitchActivity;
 import com.guo.xinzangapp.consult.consultActivity;
+import com.guo.xinzangapp.diary.diaryListActivity;
 import com.guo.xinzangapp.doctors.DocSwitchActivity;
 import com.guo.xinzangapp.hospital.hospitalActivity;
 import com.guo.xinzangapp.hospital.hospitalSwitchActivity;
@@ -31,7 +34,9 @@ import butterknife.BindView;
 public class homeActivity extends AppCompatActivity {
 
     private ImageButton imageMedicine, imageFood,imageIndex,imageDoctor,imageHospital,imageRun;
+    ActionMenuItemView imageAdd;
     private TextView mtvMedicine, mtvFood,mtvIndex,mtvDoctor,mtvHospital,mtvRun;
+    private CustomPopWindow mCustomPopWindow;
 
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.toolbar,menu);
@@ -41,6 +46,7 @@ public class homeActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.addtion:
                 Toast.makeText(this,"you click add",Toast.LENGTH_SHORT).show();
+                showPopMenu();
                 break;
         }
         return true;
@@ -76,6 +82,8 @@ public class homeActivity extends AppCompatActivity {
 
         imageRun = (ImageButton) findViewById(R.id.image_run);
         mtvRun = (TextView) findViewById(R.id.textView_run);
+
+        imageAdd =  (ActionMenuItemView)findViewById(R.id.addtion);
 
 
         mtvMedicine.setOnClickListener(new View.OnClickListener() {
@@ -169,4 +177,53 @@ public class homeActivity extends AppCompatActivity {
         });
     }
 
+    private void showPopMenu(){
+        View contentView = LayoutInflater.from(this).inflate(R.layout.pop_menu,null);
+        //处理popWindow 显示内容
+        handleLogic(contentView);
+        //创建并显示popWindow
+        mCustomPopWindow= new CustomPopWindow.PopupWindowBuilder(this)
+                .setView(contentView)
+                .create()
+                .showAsDropDown(imageAdd,0,20);
+    }
+
+    /**
+     * 处理弹出显示内容、点击事件等逻辑
+     * @param contentView
+     */
+    private void handleLogic(View contentView){
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mCustomPopWindow!=null){
+                    mCustomPopWindow.dissmiss();
+                }
+                String showContent = "";
+                switch (v.getId()){
+                    case R.id.menu1:
+                        startActivity(new Intent(homeActivity.this, diaryListActivity.class));
+                        break;
+                    case R.id.menu2:
+                        startActivity(new Intent(homeActivity.this, FeelingListActivity.class));
+                        break;
+                    case R.id.menu3:
+                        startActivity(new Intent(homeActivity.this, diaryListActivity.class));
+                        break;
+//                    case R.id.menu4:
+//                        showContent = "点击 Item菜单4";
+//                        break;
+//                    case R.id.menu5:
+//                        showContent = "点击 Item菜单5" ;
+//                        break;
+                }
+//                Toast.makeText(homeActivity.this,showContent,Toast.LENGTH_SHORT).show();
+            }
+        };
+        contentView.findViewById(R.id.menu1).setOnClickListener(listener);
+        contentView.findViewById(R.id.menu2).setOnClickListener(listener);
+        contentView.findViewById(R.id.menu3).setOnClickListener(listener);
+//        contentView.findViewById(R.id.menu4).setOnClickListener(listener);
+//        contentView.findViewById(R.id.menu5).setOnClickListener(listener);
+    }
 }

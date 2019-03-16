@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:layout_height="200dp"
+    android:orientation="vertical">
+
+    <!--<TextView-->
+        <!--android:id="@+id/tv_good"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:paddingBottom="8dp"-->
+        <!--android:paddingTop="8dp"-->
+        <!--android:text="我"-->
+        <!--android:textColor="@color/popwindow_text"-->
+        <!--android:textSize="@dimen/popwindow_title" />-->
+
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.5dp"-->
+        <!--android:background="@color/popwindow_text" />-->
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menu_diary"
+        android:gravity="left"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:text="日记"
+        android:textColor="@color/popwindow_text"
+        android:textSize="@dimen/popwindow_title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/popwindow_text" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menu_feeling"
+        android:gravity="left"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:text="感受|运动"
+        android:textColor="@color/popwindow_text"
+        android:textSize="@dimen/popwindow_title" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/popwindow_text" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menu_doctor_patient"
+        android:gravity="left"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:text="医生或患者"
+        android:textColor="@color/popwindow_text"
+        android:textSize="@dimen/popwindow_title" />
+</LinearLayout>

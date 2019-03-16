@@ -13,5 +13,6 @@
     <color name="hint2">#727272</color>
     <color name="window_background">#FFF5F5F5</color>
     <color name="drugTextColor">#000000</color>
+    <color name="popwindow_text">#000000</color>
 
 </resources>
