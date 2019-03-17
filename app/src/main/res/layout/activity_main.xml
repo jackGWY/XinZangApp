@@ -21,23 +21,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:singleLine="true"
-                android:hint="user name" />
+                android:hint="用户名字" />
         </android.support.design.widget.TextInputLayout>
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/register_layout_phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/register_phone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:hint="phone number"
-                android:inputType="textPhonetic"
-                />
-
-        </android.support.design.widget.TextInputLayout>
-
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/register_layout_password"
@@ -49,9 +34,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:hint="password" />
+                android:hint="密码" />
 
         </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_layout_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/register_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:hint="手机号码"
+                android:inputType="textPhonetic"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
 
         <RadioGroup
             android:id="@+id/radioButton"

@@ -176,7 +176,7 @@
                             android:textSize="18sp"
                             android:layout_marginBottom="@dimen/marginBottomHome"
                             android:layout_marginTop="20dp"
-                            android:text="附近医院"/>
+                            android:text="寻找医院"/>
 
                         <ImageButton
                             android:layout_width="wrap_content"

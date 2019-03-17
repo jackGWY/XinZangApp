@@ -105,23 +105,36 @@ public class indexActivity extends AppCompatActivity {
             cp3 = Integer.parseInt(cp2);
             trestbps3= Integer.parseInt(trestbps2);
             fbs3=Integer.parseInt(fbs2);
+
+            if(age3>50 && cp3==1 && (trestbps3>160 || trestbps3<60) && fbs3>120){
+                posibility=(int)(1+Math.random()*(49-1+1))+50;
+            }
+            else {
+                posibility=20-(int)(1+Math.random()*(20-1+1));
+            }
+            String str_posible = posibility + "%";
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("str_posible",str_posible);
+            Intent intent = new Intent(indexActivity.this,PosibleActivity.class);
+            intent.putExtras(bundle);
+            startActivity(intent);
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(indexActivity.this,"请填写数字！", Toast.LENGTH_LONG).show();
         }
 
-        if(age3>50 && cp3==1 && (trestbps3>160 || trestbps3<60) && fbs3>120){
-            posibility=(int)(1+Math.random()*(49-1+1))+50;
-        }
-        else {
-            posibility=20-(int)(1+Math.random()*(20-1+1));
-        }
-        String str_posible = posibility + "%";
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("str_posible",str_posible);
-        Intent intent = new Intent(indexActivity.this,PosibleActivity.class);
-        intent.putExtras(bundle);
-        startActivity(intent);
+//        if(age3>50 && cp3==1 && (trestbps3>160 || trestbps3<60) && fbs3>120){
+//            posibility=(int)(1+Math.random()*(49-1+1))+50;
+//        }
+//        else {
+//            posibility=20-(int)(1+Math.random()*(20-1+1));
+//        }
+//        String str_posible = posibility + "%";
+//        Bundle bundle = new Bundle();
+//        bundle.putSerializable("str_posible",str_posible);
+//        Intent intent = new Intent(indexActivity.this,PosibleActivity.class);
+//        intent.putExtras(bundle);
+//        startActivity(intent);
     }
     private void hideKeyboard() {
         View view = getCurrentFocus();

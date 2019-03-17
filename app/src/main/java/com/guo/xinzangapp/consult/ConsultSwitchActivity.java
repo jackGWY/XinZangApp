@@ -41,6 +41,10 @@ public class ConsultSwitchActivity extends AppCompatActivity {
                 intent = new Intent(ConsultSwitchActivity.this, ViewPagerActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.btn_find_dorctor:
+                intent = new Intent(ConsultSwitchActivity.this, FindActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 }

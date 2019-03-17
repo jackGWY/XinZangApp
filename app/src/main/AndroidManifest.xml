@@ -105,6 +105,7 @@
         <activity
             android:name=".AActivity"
             android:label="@string/title_activity_a" />
+        <activity android:name=".consult.FindActivity"></activity>
     </application>
 
 </manifest>
