@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.guo.xinzangapp.index.IndexSwitchActivity">
-    <TextView
+    android:layout_height="match_parent">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:text="我的健康指标"
-        android:id="@+id/index_history"
-        android:textSize="25sp"
-        android:padding="20dp"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:padding="15dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:id="@+id/index_input"
-        android:text="录入健康指标"
-        android:textSize="25sp"
-        android:padding="20dp"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/index_input"
+            android:text="心脏病概率预测"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn4"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/index_history"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn_green"
+            android:text="我的数据"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
 
 
-
-</LinearLayout>
+</RelativeLayout>

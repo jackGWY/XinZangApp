@@ -31,6 +31,11 @@
     <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <!-- //使用步行AR导航，配置Camera权限 -->
     <application
         android:allowBackup="true"
@@ -92,7 +97,14 @@
         <activity android:name=".sports.FeelingListActivity" />
         <activity android:name=".sports.FeelingDetailActivity" />
         <activity android:name=".hospital.TestActivity" />
-        <activity android:name=".NavigationBarActivity"></activity>
+        <activity android:name=".NavigationBarActivity" />
+        <activity
+            android:name=".index.PosibleActivity"
+            android:label="@string/title_activity_posible"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AActivity"
+            android:label="@string/title_activity_a" />
     </application>
 
 </manifest>

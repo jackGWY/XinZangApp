@@ -13,7 +13,7 @@
     <!--指标名目大小-->
     <dimen name="indexText">15sp</dimen>
     <!--指标和输入之间的间隔-->
-    <dimen name="indexMarginBottom">10dp</dimen>
+    <dimen name="indexMarginBottom">5dp</dimen>
 
     <dimen name="druglistItemMarginTop">10dp</dimen>
     <dimen name="druglistTextPadding">10dp</dimen>
@@ -41,4 +41,5 @@
     <dimen name="btn_height">40dp</dimen>
     <dimen name="btn_weight">60dp</dimen>
     <dimen name="popwindow_title">15sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

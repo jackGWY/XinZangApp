@@ -25,4 +25,19 @@
     <string name="exam">温馨提示：全真模拟考试下不能修改答案，每做错1题扣1分，合格标准为90分</string>
     <string name="explanation">易驾考（测试版）1.0.0 个人地址：zjlope.cn</string>
     <string name="base">基于AndroidStudoid2.1</string>
+    <string name="title_activity_posible">PosibleActivity</string>
+    <string name="title_activity_a">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
 </resources>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.guo.xinzangapp.R;
@@ -15,9 +16,9 @@ import butterknife.OnClick;
 public class IndexSwitchActivity extends AppCompatActivity {
 
     @BindView(R.id.index_history)
-    TextView index_history;
+    Button index_history;
     @BindView(R.id.index_input)
-    TextView index_input;
+    Button index_input;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

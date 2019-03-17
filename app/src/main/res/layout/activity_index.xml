@@ -28,6 +28,7 @@
             android:layout_height="wrap_content"
             android:textSize="25sp"
             android:text="请输入相关指标："
+            android:textColor="@drawable/bg_btn_blue"
             android:layout_marginBottom="20dp"
             />
 

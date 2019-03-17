@@ -1,48 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.guo.xinzangapp.consult.ConsultSwitchActivity">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:padding="10dp"
-        android:orientation="horizontal"
-        android:layout_height="100dp">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:src="@drawable/rating_bar_bg"
-            android:layout_marginRight="25dp"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:id="@+id/discuss"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_find_dorctor"
+            android:text="寻找医生或者患者"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn_blue"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btn_discuss"
             android:text="发帖讨论"
-            android:textSize="25sp"
-            android:layout_height="wrap_content" />
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn4"
+            android:textSize="18sp"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:padding="10dp"
-        android:orientation="horizontal"
-        android:layout_height="100dp">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:src="@drawable/rating_bar_bg"
-            android:layout_marginRight="25dp"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:id="@+id/communicate"
-            android:textSize="25sp"
+        <Button
+            android:id="@+id/btn_consult_doctor"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn_green"
             android:text="图文问诊"
-            android:layout_height="wrap_content" />
+            android:textSize="18sp"/>
+
+
+
+        <!--<Button-->
+        <!--android:id="@+id/btn_search_busline"-->
+        <!--android:text="公交路线"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--android:background="@drawable/bg_btn4"-->
+        <!--android:textSize="18sp"/>-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btn_geocoder"-->
+        <!---->
+        <!--android:text="地理编码"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--android:background="@drawable/bg_btn4"-->
+        <!--android:textSize="18sp"/>-->
 
     </LinearLayout>
 
-</LinearLayout>
+
+</RelativeLayout>
