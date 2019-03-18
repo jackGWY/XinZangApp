@@ -18,8 +18,8 @@ public class ConsultSwitchActivity extends AppCompatActivity {
 
     @BindView(R.id.btn_discuss)
     Button dicuss;
-    @BindView(R.id.btn_consult_doctor)
-    Button communicate;
+//    @BindView(R.id.btn_consult_doctor)
+//    Button communicate;
     @BindView(R.id.btn_find_dorctor)
     Button find_doctor;
 
@@ -29,7 +29,7 @@ public class ConsultSwitchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_consult_switch);
         ButterKnife.bind(this);
     }
-    @OnClick({R.id.btn_discuss, R.id.btn_consult_doctor,R.id.btn_find_dorctor})
+    @OnClick({R.id.btn_discuss,R.id.btn_find_dorctor})
     public void onClick(final View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
@@ -37,10 +37,10 @@ public class ConsultSwitchActivity extends AppCompatActivity {
                 intent = new Intent(ConsultSwitchActivity.this, consultActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.btn_consult_doctor:
-                intent = new Intent(ConsultSwitchActivity.this, ViewPagerActivity.class);
-                startActivity(intent);
-                break;
+//            case R.id.btn_consult_doctor:
+//                intent = new Intent(ConsultSwitchActivity.this, ViewPagerActivity.class);
+//                startActivity(intent);
+//                break;
             case R.id.btn_find_dorctor:
                 intent = new Intent(ConsultSwitchActivity.this, FindActivity.class);
                 startActivity(intent);

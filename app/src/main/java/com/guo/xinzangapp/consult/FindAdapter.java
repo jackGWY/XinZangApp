@@ -1,6 +1,10 @@
 package com.guo.xinzangapp.consult;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +19,8 @@ import com.guo.http.GetMessageTitleList;
 import com.guo.http.saveRelation;
 import com.guo.xinzangapp.LoginActivity;
 import com.guo.xinzangapp.R;
+import com.guo.xinzangapp.homeActivity;
+import com.guo.xinzangapp.medicineArticle.medicineAticle1Activity;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -32,6 +38,9 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder>{
     private String userName;
     private Context context;
 
+//    private SharedPreferences.Editor editor;
+//    private SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+
     public FindAdapter(List<UserPatient> doctorList, String userName, Context context) {
         this.doctorList = doctorList;
         this.userName = userName;
@@ -43,6 +52,26 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder>{
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.add_doctor_item,parent,false);
         final FindAdapter.ViewHolder holder = new FindAdapter.ViewHolder(view);
+
+        holder.say.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+//                editor = pref.edit();
+//                editor.putString("userName", uname);
+//                editor.apply();
+
+                int position = holder.getAdapterPosition();
+                UserPatient userPatient = doctorList.get(position);
+
+                String doctor = userPatient.getUserName();
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("doctor",doctor);
+                Intent intent = new Intent(context,ChatActivity.class);
+                intent.putExtras(bundle);
+                context.startActivity(intent);
+            }
+        });
         holder.attach.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -87,12 +116,14 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder>{
     static class ViewHolder extends RecyclerView.ViewHolder{
         TextView tv_add;
         ImageView attach;
+        ImageView say;
         View MessageListView;
         public ViewHolder(View view) {
             super(view);
             MessageListView = view;
             tv_add = (TextView) view.findViewById(R.id.add_doctor);
             attach = (ImageView) view.findViewById(R.id.attach);
+            say = (ImageView) view.findViewById(R.id.say_y);
         }
     }
 }

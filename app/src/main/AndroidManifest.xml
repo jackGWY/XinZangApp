@@ -105,7 +105,8 @@
         <activity
             android:name=".AActivity"
             android:label="@string/title_activity_a" />
-        <activity android:name=".consult.FindActivity"></activity>
+        <activity android:name=".consult.FindActivity" />
+        <activity android:name=".consult.ChatActivity"></activity>
     </application>
 
 </manifest>

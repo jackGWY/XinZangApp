@@ -16,14 +16,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.guo.http.HttpRequestor;
-import com.guo.http.MyURL;
 import com.guo.http.SaveRegist;
-import com.guo.http.saveRelation;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
