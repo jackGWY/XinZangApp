@@ -19,9 +19,16 @@ import okhttp3.Response;
 public class GetUserPatients implements Callable<List<UserPatient>> {
     private String url = MyURL.SERVER+"/user/getDoctors";
 
+    private String userType;
+
+    public GetUserPatients(String userType) {
+        this.userType = userType;
+    }
+
     @Override
     public List<UserPatient> call() throws Exception {
         List<UserPatient> doctorList = null;
+        url = url + "?userType="+userType;
         try {
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder().url(url).build();

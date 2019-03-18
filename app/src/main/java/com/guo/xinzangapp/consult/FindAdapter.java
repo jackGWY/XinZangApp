@@ -37,14 +37,17 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder>{
     private List<UserPatient> doctorList;
     private String userName;
     private Context context;
+    private String userType;
 
 //    private SharedPreferences.Editor editor;
 //    private SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
 
-    public FindAdapter(List<UserPatient> doctorList, String userName, Context context) {
+
+    public FindAdapter(List<UserPatient> doctorList, String userName, Context context, String userType) {
         this.doctorList = doctorList;
         this.userName = userName;
         this.context = context;
+        this.userType = userType;
     }
 
     @Override
@@ -80,7 +83,13 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder>{
                 int position = holder.getAdapterPosition();
                 UserPatient userPatient = doctorList.get(position);//userName,userPatient.getUserName()
                 ExecutorService exec = Executors.newCachedThreadPool();
-                Future<String> result = exec.submit(new saveRelation(userName,userPatient.getUserName()));
+                Future<String> result = null;
+                if(userType.equals("patient")){
+                    result = exec.submit(new saveRelation(userName,userPatient.getUserName()));
+                } else {
+                    result = exec.submit(new saveRelation(userPatient.getUserName(),userName));
+                }
+//                Future<String> result = exec.submit(new saveRelation(userName,userPatient.getUserName()));
                 try {
                     count=result.get();
                 } catch (InterruptedException e) {

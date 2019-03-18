@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 
 import com.guo.xinzangapp.R;
+import com.guo.xinzangapp.consult.FindActivity;
 
 
 import butterknife.BindView;
@@ -16,20 +18,22 @@ import butterknife.OnClick;
 
 public class DocSwitchActivity extends AppCompatActivity {
 
-    private ImageButton imageButton;
-    private TextView textView;
+
+    private Button btnPatientFeeling,btnMyPatients;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doc_switch);
-        imageButton = (ImageButton)findViewById(R.id.image_patient);
-        textView = (TextView)findViewById(R.id.textView_doctor);
-        imageButton.setOnClickListener(new View.OnClickListener(){
+
+        btnPatientFeeling = (Button)findViewById(R.id.btn_patient_feeling);
+        btnMyPatients = (Button) findViewById(R.id.btn_my_patient);
+        btnMyPatients.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DocSwitchActivity.this,DocPatientRecordActivity.class));
+
+                startActivity(new Intent(DocSwitchActivity.this,FindActivity.class));
             }
         });
     }

@@ -1,34 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent"
-    tools:context="com.guo.xinzangapp.doctors.DocSwitchActivity">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView_doctor"
-            android:textSize="25sp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="20dp"
-            android:text="病人信息"/>
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/image_patient"
-            android:src="@drawable/patient"
-            android:background="@color/item_color"
-            android:scaleType="centerInside"
-            />
+        <Button
+            android:id="@+id/btn_my_patient"
+            android:text="我的病人"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn_blue"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btn_patient_feeling"
+            android:text="病人感受和日记"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn4"
+            android:textSize="18sp"/>
+
+        <!--<Button-->
+        <!--android:id="@+id/btn_consult_doctor"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--android:background="@drawable/bg_btn_green"-->
+        <!--android:text="图文问诊"-->
+        <!--android:textSize="18sp"/>-->
+
+
+
+        <!--<Button-->
+        <!--android:id="@+id/btn_search_busline"-->
+        <!--android:text="公交路线"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--android:background="@drawable/bg_btn4"-->
+        <!--android:textSize="18sp"/>-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btn_geocoder"-->
+        <!---->
+        <!--android:text="地理编码"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--android:background="@drawable/bg_btn4"-->
+        <!--android:textSize="18sp"/>-->
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

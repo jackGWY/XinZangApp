@@ -73,10 +73,16 @@ public class ChatActivity extends AppCompatActivity {
         //获取里面的Persion里面的数据
         doctor= (String) bundle.getSerializable("doctor");
 
-        c_with.setText("与"+doctor+"聊天");
+        c_with.setText("与 "+doctor+" 聊天");
 
         exec = Executors.newCachedThreadPool();
-        Future<List<Chat>> result = exec.submit(new GetChatList(userName,doctor));
+        Future<List<Chat>> result = null;
+        if(userType.equals("patient")){
+            result = exec.submit(new GetChatList(userName,doctor));
+        } else {
+            result = exec.submit(new GetChatList(doctor,userName));
+        }
+//        Future<List<Chat>> result = exec.submit(new GetChatList(userName,doctor));
         try {
             chatList=result.get();
             System.out.println("chatList............................"+chatList.toString());

@@ -36,9 +36,18 @@ public class FindActivity extends AppCompatActivity {
         SharedPreferences.Editor editor;
         pref = PreferenceManager.getDefaultSharedPreferences(this);
         final String userName = pref.getString("userName","");
+        final String userType = pref.getString("userType","");
 
         ExecutorService exec = Executors.newCachedThreadPool();
-        Future<List<UserPatient>> result = exec.submit(new GetUserPatients());
+        System.out.println("userType........................"+userType);
+        Future<List<UserPatient>> result = null;
+        if(userType.equals("patient")){
+            result = exec.submit(new GetUserPatients("doctor"));
+        }
+        else {
+            result = exec.submit(new GetUserPatients("patient"));
+        }
+//        Future<List<UserPatient>> result = exec.submit(new GetUserPatients(userType));
         try {
             doctorList=result.get();
         } catch (InterruptedException e) {
@@ -50,7 +59,7 @@ public class FindActivity extends AppCompatActivity {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RecyclerView_find_doctor);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        findAdapter = new FindAdapter(doctorList,userName,FindActivity.this);
+        findAdapter = new FindAdapter(doctorList,userName,FindActivity.this,userType);
         recyclerView.setAdapter(findAdapter);
     }
 }
