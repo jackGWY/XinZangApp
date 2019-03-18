@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.guo.xinzangapp.R;
 import com.guo.xinzangapp.consult.FindActivity;
+import com.guo.xinzangapp.consult.PatientListActivity;
 
 
 import butterknife.BindView;
@@ -28,6 +29,13 @@ public class DocSwitchActivity extends AppCompatActivity {
 
         btnPatientFeeling = (Button)findViewById(R.id.btn_patient_feeling);
         btnMyPatients = (Button) findViewById(R.id.btn_my_patient);
+        btnPatientFeeling.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DocSwitchActivity.this,PatientListActivity.class));
+            }
+        });
         btnMyPatients.setOnClickListener(new View.OnClickListener(){
 
             @Override

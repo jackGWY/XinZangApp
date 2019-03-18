@@ -47,8 +47,24 @@ public class FeelingListActivity extends AppCompatActivity {
         final String userName = pref.getString("userName","");
 
         ButterKnife.bind(this);
+
+        Intent intent=getIntent();
+// 实例化一个Bundle
+        Bundle bundle=intent.getExtras();
+//获取里面的Persion里面的数据
+
+        String d= (String) bundle.getSerializable("fromPatientListAdapter");
+        String patientName= (String) bundle.getSerializable("patientName");
+
         ExecutorService exec = Executors.newCachedThreadPool();
-        Future<List<Feelings>> result = exec.submit(new getFeelings(userName));
+        Future<List<Feelings>> result =null;
+        if(d.equals("fromPatientListAdapter")){
+            result = exec.submit(new getFeelings(patientName));
+        } else {
+            result = exec.submit(new getFeelings(userName));
+        }
+
+//        Future<List<Feelings>> result = exec.submit(new getFeelings(userName));
         try {
             feelingsList = result.get();
             for(Feelings f : feelingsList) {
