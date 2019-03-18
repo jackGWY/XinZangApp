@@ -48,18 +48,31 @@ public class FeelingListActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        Intent intent=getIntent();
-// 实例化一个Bundle
-        Bundle bundle=intent.getExtras();
-//获取里面的Persion里面的数据
+        Intent intent = getIntent();
+        //从intent取出bundle
+        Bundle bundle = intent.getBundleExtra("Message");
+        //获取数据
+        String d = bundle.getString("fromPatientListAdapter");
+        String patientName = bundle.getString("patientName");
 
-        String d= (String) bundle.getSerializable("fromPatientListAdapter");
-        String patientName= (String) bundle.getSerializable("patientName");
+
+//        Intent intent=getIntent();
+//// 实例化一个Bundle
+//        Bundle bundle=intent.getExtras();
+////获取里面的Persion里面的数据
+//
+//        String d= (String) bundle.getSerializable("fromPatientListAdapter");
+//        String patientName= (String) bundle.getSerializable("patientName");
+        System.out.println("d:"+d);
+        System.out.println("patientName:........................"+patientName);
 
         ExecutorService exec = Executors.newCachedThreadPool();
         Future<List<Feelings>> result =null;
         if(d.equals("fromPatientListAdapter")){
-            result = exec.submit(new getFeelings(patientName));
+            if(!(patientName.equals("nothing"))){
+                result = exec.submit(new getFeelings(patientName));
+            }
+
         } else {
             result = exec.submit(new getFeelings(userName));
         }

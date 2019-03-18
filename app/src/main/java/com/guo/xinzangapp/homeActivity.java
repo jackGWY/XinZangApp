@@ -164,7 +164,14 @@ public class homeActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this, FeelingListActivity.class));
+                Bundle bundle = new Bundle();
+//                bundle.putSerializable("fromPatientListAdapter","nothing");
+//                bundle.putSerializable("patientName","nothing");
+                bundle.putString("fromPatientListAdapter","nothing");
+                bundle.putString("patientName","nothing");
+                Intent intent =new Intent(homeActivity.this, FeelingListActivity.class);
+                intent.putExtra("Message",bundle);
+                startActivity(intent);
             }
         });
 
@@ -172,7 +179,15 @@ public class homeActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this, FeelingListActivity.class));
+
+                Bundle bundle = new Bundle();
+//                bundle.putSerializable("fromPatientListAdapter","nothing");
+//                bundle.putSerializable("patientName","nothing");
+                bundle.putString("fromPatientListAdapter","nothing");
+                bundle.putString("patientName","nothing");
+                Intent intent =new Intent(homeActivity.this, FeelingListActivity.class);
+                intent.putExtra("Message",bundle);
+                startActivity(intent);
             }
         });
     }
@@ -205,7 +220,15 @@ public class homeActivity extends AppCompatActivity {
                         startActivity(new Intent(homeActivity.this, diaryListActivity.class));
                         break;
                     case R.id.menu2:
-                        startActivity(new Intent(homeActivity.this, FeelingListActivity.class));
+//                        startActivity(new Intent(homeActivity.this, FeelingListActivity.class));
+                        Bundle bundle = new Bundle();
+//                bundle.putSerializable("fromPatientListAdapter","nothing");
+//                bundle.putSerializable("patientName","nothing");
+                        bundle.putString("fromPatientListAdapter","nothing");
+                        bundle.putString("patientName","nothing");
+                        Intent intent =new Intent(homeActivity.this, FeelingListActivity.class);
+                        intent.putExtra("Message",bundle);
+                        startActivity(intent);
                         break;
                     case R.id.menu3:
                         startActivity(new Intent(homeActivity.this, diaryListActivity.class));

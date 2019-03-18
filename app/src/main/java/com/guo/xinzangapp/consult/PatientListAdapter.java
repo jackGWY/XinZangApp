@@ -43,11 +43,18 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
                 int position = holder.getAdapterPosition();
                 UserPatient userPatient=patientList.get(position);
                 String patientName =userPatient.getUserName();
+
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("fromPatientListAdapter","fromPatientListAdapter");
-                bundle.putSerializable("patientName","patientName");
+                bundle.putString("fromPatientListAdapter","fromPatientListAdapter");
+                bundle.putString("patientName","patientName");
+
+//                Bundle bundle = new Bundle();
+//                bundle.putSerializable("fromPatientListAdapter","fromPatientListAdapter");
+//                bundle.putSerializable("patientName","patientName");
+
                 Intent intent = new Intent(context,FeelingListActivity.class);
-                intent.putExtras(bundle);
+//                intent.putExtras(bundle);
+                intent.putExtra("Message",bundle);
                 context.startActivity(intent);
             }
         });

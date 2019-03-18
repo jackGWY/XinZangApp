@@ -113,7 +113,17 @@ public class SportsActivity extends AppCompatActivity {
                 ExecutorService exec = Executors.newCachedThreadPool();
                 exec.submit(feelings);
                 Toast.makeText(SportsActivity.this,"保存成功", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(SportsActivity.this, FeelingListActivity.class));
+
+                Bundle bundle = new Bundle();
+//                bundle.putSerializable("fromPatientListAdapter","nothing");
+//                bundle.putSerializable("patientName","nothing");
+                bundle.putString("fromPatientListAdapter","nothing");
+                bundle.putString("patientName","nothing");
+
+                Intent intent = new Intent(SportsActivity.this, FeelingListActivity.class);
+//                intent.putExtras(bundle);
+                intent.putExtra("Message",bundle);
+                startActivity(intent);
                 break;
         }
     }
