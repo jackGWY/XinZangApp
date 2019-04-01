@@ -12,6 +12,28 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingTop="60dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="心管家用户注册"
+            android:textColor="@color/colorAccent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="28sp"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/user"
+                android:layout_marginRight="10dp"
+                android:layout_height="20dp" />
+
         <android.support.design.widget.TextInputLayout
             android:id="@+id/register_layout_name"
             android:layout_width="match_parent"
@@ -24,6 +46,20 @@
                 android:singleLine="true"
                 android:hint="用户名字" />
         </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/password"
+                android:layout_marginRight="10dp"
+                android:layout_height="20dp" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/register_layout_password"
@@ -39,6 +75,48 @@
 
         </android.support.design.widget.TextInputLayout>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/password"
+                android:layout_marginRight="10dp"
+                android:layout_height="20dp" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/confirm_password_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:hint="确认密码" />
+
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/phone"
+                android:layout_marginRight="10dp"
+                android:layout_height="20dp" />
+
         <android.support.design.widget.TextInputLayout
             android:id="@+id/register_layout_phone"
             android:layout_width="match_parent"
@@ -51,10 +129,9 @@
                 android:hint="手机号码"
                 android:inputType="textPhonetic"
                 />
-
         </android.support.design.widget.TextInputLayout>
 
-
+        </LinearLayout>
 
 
         <RadioGroup
@@ -86,8 +163,9 @@
 
 
         <Button android:id="@+id/btn_register"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
             android:text="注册"
             android:gravity="center"
             android:background="@color/colorPrimary"

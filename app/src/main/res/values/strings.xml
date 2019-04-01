@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">心管家</string>
+    <string name="app_name">Heart-Protector</string>
     <!--定义用户登陆和注册-->
     <string name="hint_name">用户名</string>
     <string name="hint_email">Email</string>

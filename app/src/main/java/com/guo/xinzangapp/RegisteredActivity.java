@@ -42,6 +42,8 @@ public class RegisteredActivity extends AppCompatActivity {
     TextInputLayout registerLayoutPhone;
     @BindView(R.id.register_password)
     EditText registerPassword;
+    @BindView(R.id.confirm_password)
+    EditText confirmPassword;
     @BindView(R.id.register_layout_password)
     TextInputLayout registerLayoutPassword;
     @BindView(R.id.btn_register)
@@ -68,6 +70,32 @@ public class RegisteredActivity extends AppCompatActivity {
     @OnClick(R.id.btn_register)
     public void onClick(final View view) {
         hideKeyboard();//隐藏键盘
+
+        if (!confirmPassword.getText().toString().trim().equals(registerPassword.getText().toString().trim())) {
+
+            Snackbar.make(view, "错误", Snackbar.LENGTH_INDEFINITE)
+                    .setAction("两次填写密码不一致", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(RegisteredActivity.this, "两次填写密码不一致", Toast.LENGTH_SHORT).show();
+                        }
+                    }).show();
+            confirmPassword.requestFocus();      // 控件获取焦点
+            return;                     // 结束函数的执行
+        }
+
+        if (confirmPassword.length() == 0) {
+
+            Snackbar.make(view, "错误", Snackbar.LENGTH_INDEFINITE)
+                    .setAction("请再次填写确认密码", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(RegisteredActivity.this, "请确认密码", Toast.LENGTH_SHORT).show();
+                        }
+                    }).show();
+            confirmPassword.requestFocus();      // 控件获取焦点
+            return;                     // 结束函数的执行
+        }
 
         if (registerPhone.length() == 0) {
             Snackbar.make(view, "错误", Snackbar.LENGTH_INDEFINITE)
