@@ -28,9 +28,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-/**
- * Created by Slope on 2016/9/11.
- */
+
 public class RegisteredActivity extends AppCompatActivity {
     @BindView(R.id.register_name)
     EditText registerName;
