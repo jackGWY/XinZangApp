@@ -14,7 +14,7 @@
         android:paddingTop="60dp">
         <TextView
             android:layout_width="wrap_content"
-            android:text="心管家系统登入"
+            android:text="系统登入"
             android:textColor="@color/colorAccent"
             android:layout_marginLeft="50dp"
             android:layout_marginBottom="20dp"

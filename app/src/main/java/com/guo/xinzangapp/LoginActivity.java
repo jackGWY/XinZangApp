@@ -116,16 +116,23 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 String uname=loginName.getText().toString().trim();
                 String regpass=loginPassword.getText().toString().trim();
-                ExecutorService exec = Executors.newCachedThreadPool();
-                Future<String> result = exec.submit(new saveUserNamePassword(uname, regpass));
+
                 String count = "";
                 try {
-                    count = result.get();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
+                    ExecutorService exec = Executors.newCachedThreadPool();
+                    Future<String> result = exec.submit(new saveUserNamePassword(uname, regpass));
+
+                    try {
+                        count = result.get();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    }
+                } catch (Exception e){
                     e.printStackTrace();
                 }
+
                 System.out.println("in LoginActivity: count =" + count);
                 if (count.equals("1")){
                     editor = pref.edit();
