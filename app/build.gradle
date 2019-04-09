@@ -63,4 +63,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.7'
     implementation files('libs/BaiduLBS_Android.jar')
     compile 'com.ashokvarma.android:bottom-navigation-bar:2.0.5'
+    implementation files('libs/achartengine-1.0.0.jar')
 }

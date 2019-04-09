@@ -21,6 +21,7 @@ import com.guo.xinzangapp.consult.ConsultSwitchActivity;
 import com.guo.xinzangapp.consult.consultActivity;
 import com.guo.xinzangapp.diary.diaryListActivity;
 import com.guo.xinzangapp.doctors.DocSwitchActivity;
+import com.guo.xinzangapp.heartrate.HeartRateActivity;
 import com.guo.xinzangapp.hospital.hospitalActivity;
 import com.guo.xinzangapp.hospital.hospitalSwitchActivity;
 import com.guo.xinzangapp.index.IndexSwitchActivity;
@@ -231,7 +232,8 @@ public class homeActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.menu3:
-                        startActivity(new Intent(homeActivity.this, diaryListActivity.class));
+
+                        startActivity(new Intent(homeActivity.this, HeartRateActivity.class));
                         break;
 //                    case R.id.menu4:
 //                        showContent = "点击 Item菜单4";
