@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_weight="1"
-        android:text="@string/show" >
+        android:text="你的心率是" >
     </TextView>
 
     <TextView
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_weight="1"
-        android:text="@string/show" >
+        android:text="平均像素值为" >
     </TextView>
 
     <TextView
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_weight="1"
-        android:text="@string/show" >
+        android:text="脉冲数为" >
     </TextView>
 
 </LinearLayout>

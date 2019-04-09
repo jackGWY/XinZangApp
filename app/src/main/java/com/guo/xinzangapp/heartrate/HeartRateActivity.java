@@ -83,21 +83,21 @@ public class HeartRateActivity extends AppCompatActivity {
         GREEN, RED
     };
 
-    //����Ĭ������
+
     private static TYPE currentType = TYPE.GREEN;
-    //��ȡ��ǰ����
+
     public static TYPE getCurrent() {
         return currentType;
     }
-    //�����±�ֵ
+
     private static int beatsIndex = 0;
-    //��������Ĵ�С
+
     private static final int beatsArraySize = 3;
-    //��������
+
     private static final int[] beatsArray = new int[beatsArraySize];
-    //��������
+
     private static double beats = 0;
-    //��ʼʱ��
+
     private static long startTime = 0;
 
 
@@ -110,15 +110,11 @@ public class HeartRateActivity extends AppCompatActivity {
         initConfig();
     }
 
-    /**
-     * ��ʼ������
-     */
     @SuppressWarnings("deprecation")
     private void initConfig() {
-        //����
+
         context = getApplicationContext();
 
-        //������main�����ϵĲ��֣�������ͼ���������������
         LinearLayout layout = (LinearLayout)findViewById(R.id.id_linearLayout_graph);
 
         //������������������ϵ����е㣬��һ����ļ��ϣ�������Щ�㻭������
@@ -354,7 +350,7 @@ public class HeartRateActivity extends AppCompatActivity {
             //ͼ����
             int imgAvg = ImageProcessing.decodeYUV420SPtoRedAvg(data.clone(),height,width);
             gx = imgAvg;
-            mTV_Avg_Pixel_Values.setText("ƽ������ֵ��" + String.valueOf(imgAvg));
+            mTV_Avg_Pixel_Values.setText("平均像素值为" + String.valueOf(imgAvg));
 
             if (imgAvg == 0 || imgAvg == 255) {
                 processing.set(false);
@@ -378,7 +374,7 @@ public class HeartRateActivity extends AppCompatActivity {
                 if (newType != currentType) {
                     beats++;
                     flag=0;
-                    mTV_pulse.setText("��������" + String.valueOf(beats));
+                    mTV_pulse.setText("脉冲数是" + String.valueOf(beats));
                 }
             } else if (imgAvg > rollingAverage) {
                 newType = TYPE.GREEN;
@@ -424,11 +420,7 @@ public class HeartRateActivity extends AppCompatActivity {
                     }
                 }
                 int beatsAvg = (beatsArrayAvg / beatsArrayCnt);
-                mTV_Heart_Rate.setText("����������"+String.valueOf(beatsAvg) +
-                        "  ֵ:" + String.valueOf(beatsArray.length) +
-                        "    " + String.valueOf(beatsIndex) +
-                        "    " + String.valueOf(beatsArrayAvg) +
-                        "    " + String.valueOf(beatsArrayCnt));
+                mTV_Heart_Rate.setText("你的心率是"+String.valueOf(beatsAvg));
                 //��ȡϵͳʱ�䣨ms��
                 startTime = System.currentTimeMillis();
                 beats = 0;
