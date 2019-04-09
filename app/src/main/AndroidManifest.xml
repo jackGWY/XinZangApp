@@ -35,11 +35,12 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!-- //使用步行AR导航，配置Camera权限 -->
@@ -110,7 +111,8 @@
         <activity android:name=".consult.FindActivity" />
         <activity android:name=".consult.ChatActivity" />
         <activity android:name=".consult.PatientListActivity" />
-        <activity android:name=".heartrate.HeartRateActivity"></activity>
+        <activity android:name=".heartrate.HeartRateActivity" />
+        <activity android:name=".BarChart.BarChartActivity"></activity>
     </application>
 
 </manifest>

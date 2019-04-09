@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.guo.xinzangapp.BarChart.BarChartActivity">
+
+
+    <com.guo.xinzangapp.BarChart.MyScrollview
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+        <com.guo.xinzangapp.BarChart.LBarChartView
+            android:id="@+id/frameNewBase"
+            android:layout_width="350dp"
+            android:layout_height="300dp"
+            app:barShowNumber="6"
+            app:borderColor="@color/colorAccent"
+            app:bottomTextSpace="20dp"
+            app:dataTextColor="@color/colorPrimaryDark"
+            app:dataTextSize="12sp"
+            app:descriptionTextColor="@color/colorPrimary"
+            app:descriptionTextSize="20sp"
+            app:isClickAnimation="true"
+            app:labelTextColor="@color/colorPrimary"
+            app:labelTextSize="10sp"
+            app:leftTextSpace="30dp"
+            app:title="柱状图实例"
+            app:titleTextColor="@color/colorPrimaryDark"
+            app:titleTextSize="20sp"
+            app:topTextSpace="50dp" />
+        </LinearLayout>
+    </com.guo.xinzangapp.BarChart.MyScrollview>
+
+</LinearLayout>

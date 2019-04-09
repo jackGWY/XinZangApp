@@ -16,7 +16,6 @@ import org.achartengine.model.XYSeries;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -39,9 +38,7 @@ import android.widget.Toast;
 
 public class HeartRateActivity extends AppCompatActivity {
 
-    //����
     private Timer timer = new Timer();
-    //Timer������Timer����ʹ��
     private TimerTask task;
     private static int gx;
     private static int j;
@@ -61,11 +58,11 @@ public class HeartRateActivity extends AppCompatActivity {
     int[] hua=new int[]{9,10,11,12,13,14,13,12,11,10,9,8,7,6,7,8,9,10,11,10,10};
 
     private static final AtomicBoolean processing = new AtomicBoolean(false);
-    //Android�ֻ�Ԥ���ؼ�
+
     private static SurfaceView preview = null;
-    //Ԥ��������Ϣ
+
     private static SurfaceHolder previewHolder = null;
-    //Android�ֻ�������
+
     private static Camera camera = null;
     //private static View image = null;
     private static TextView mTV_Heart_Rate = null;
@@ -76,9 +73,7 @@ public class HeartRateActivity extends AppCompatActivity {
     private static final int averageArraySize = 4;
     private static final int[] averageArray = new int[averageArraySize];
 
-    /**
-     * ����ö��
-     */
+
     public static enum TYPE {
         GREEN, RED
     };
@@ -117,34 +112,27 @@ public class HeartRateActivity extends AppCompatActivity {
 
         LinearLayout layout = (LinearLayout)findViewById(R.id.id_linearLayout_graph);
 
-        //������������������ϵ����е㣬��һ����ļ��ϣ�������Щ�㻭������
-        series = new XYSeries(title);
+          series = new XYSeries(title);
 
-        //����һ�����ݼ���ʵ����������ݼ�������������ͼ��
-        mDataset = new XYMultipleSeriesDataset();
+       mDataset = new XYMultipleSeriesDataset();
 
-        //���㼯��ӵ�������ݼ���
-        mDataset.addSeries(series);
+       mDataset.addSeries(series);
 
-        //���¶������ߵ���ʽ�����Եȵȵ����ã�renderer�൱��һ��������ͼ������Ⱦ�ľ��
         int color = Color.GREEN;
         PointStyle style = PointStyle.CIRCLE;
         renderer = buildRenderer(color, style, true);
 
-        //���ú�ͼ�����ʽ
         setChartSettings(renderer, "X", "Y", 0, 300, 4, 16, Color.WHITE, Color.WHITE);
 
-        //����ͼ��
+
         chart = ChartFactory.getLineChartView(context, mDataset, renderer);
 
-        //��ͼ����ӵ�������ȥ
+
         layout.addView(chart, new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
 
-        //�����Handlerʵ������������Timerʵ������ɶ�ʱ����ͼ��Ĺ���
         handler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
-                //ˢ��ͼ��
                 updateChart();
                 super.handleMessage(msg);
             }
@@ -159,8 +147,8 @@ public class HeartRateActivity extends AppCompatActivity {
             }
         };
 
-        timer.schedule(task, 1,20);           //����
-        //��ȡSurfaceView�ؼ�
+        timer.schedule(task, 1,20);
+
         preview = (SurfaceView) findViewById(R.id.id_preview);
         previewHolder = preview.getHolder();
         previewHolder.addCallback(surfaceCallback);
@@ -174,43 +162,28 @@ public class HeartRateActivity extends AppCompatActivity {
         wakeLock = pm.newWakeLock(PowerManager.FULL_WAKE_LOCK, "DoNotDimScreen");
     }
 
-    //	����
+
     @Override
     public void onDestroy() {
-        //����������ʱ�ص�Timer
+
         timer.cancel();
         super.onDestroy();
     };
 
-    /**
-     * ����ͼ��
-     */
+
     protected XYMultipleSeriesRenderer buildRenderer(int color, PointStyle style, boolean fill) {
         XYMultipleSeriesRenderer renderer = new XYMultipleSeriesRenderer();
 
-        //����ͼ�������߱������ʽ��������ɫ����Ĵ�С�Լ��ߵĴ�ϸ��
-        XYSeriesRenderer r = new XYSeriesRenderer();
+       XYSeriesRenderer r = new XYSeriesRenderer();
         r.setColor(Color.RED);
         r.setLineWidth(1);
         renderer.addSeriesRenderer(r);
         return renderer;
     }
 
-    /**
-     * ����ͼ�����ʽ
-     * @param renderer
-     * @param xTitle��x����
-     * @param yTitle��y����
-     * @param xMin��x��С����
-     * @param xMax��x��󳤶�
-     * @param yMin:y��С����
-     * @param yMax��y��󳤶�
-     * @param axesColor����ɫ
-     * @param labelsColor����ǩ
-     */
+
     protected void setChartSettings(XYMultipleSeriesRenderer renderer, String xTitle, String yTitle,
                                     double xMin, double xMax, double yMin, double yMax, int axesColor, int labelsColor) {
-        //�йض�ͼ�����Ⱦ�ɲο�api�ĵ�
         renderer.setChartTitle(title);
         renderer.setXTitle(xTitle);
         renderer.setYTitle(yTitle);
@@ -231,9 +204,7 @@ public class HeartRateActivity extends AppCompatActivity {
         renderer.setShowLegend(false);
     }
 
-    /**
-     * ����ͼ����Ϣ
-     */
+
     private void updateChart() {
         //���ú���һ����Ҫ���ӵĽڵ�
         if(flag == 1) {
@@ -259,11 +230,9 @@ public class HeartRateActivity extends AppCompatActivity {
             j++;
         }
 
-        //�Ƴ����ݼ��оɵĵ㼯
         mDataset.removeSeries(series);
 
-        //�жϵ�ǰ�㼯�е����ж��ٵ㣬��Ϊ��Ļ�ܹ�ֻ������100�������Ե���������100ʱ��������Զ��100
-        int length = series.getItemCount();
+         int length = series.getItemCount();
         int bz = 0;
         //addX = length;
         if (length > 300) {
@@ -271,28 +240,22 @@ public class HeartRateActivity extends AppCompatActivity {
             bz=1;
         }
         addX = length;
-        //���ɵĵ㼯��x��y����ֵȡ��������backup�У����ҽ�x��ֵ��1�������������ƽ�Ƶ�Ч��
         for (int i = 0; i < length; i++) {
             xv[i] = (int) series.getX(i) - bz;
             yv[i] = (int) series.getY(i);
         }
 
-        //�㼯����գ�Ϊ�������µĵ㼯��׼��
         series.clear();
         mDataset.addSeries(series);
-        //���²����ĵ����ȼ��뵽�㼯�У�Ȼ����ѭ�����н�����任���һϵ�е㶼���¼��뵽�㼯��
-        //�����������һ�°�˳��ߵ�������ʲôЧ������������ѭ���壬������²����ĵ�
-        series.add(addX, addY);
+         series.add(addX, addY);
         for (int k = 0; k < length; k++) {
             series.add(xv[k], yv[k]);
         }
-        //�����ݼ�������µĵ㼯
-        //mDataset.addSeries(series);
 
-        //��ͼ���£�û����һ�������߲�����ֶ�̬
-        //����ڷ�UI���߳��У���Ҫ����postInvalidate()������ο�api
+
+
         chart.invalidate();
-    } //����
+    }
 
 
     @Override
@@ -327,11 +290,7 @@ public class HeartRateActivity extends AppCompatActivity {
     }
 
 
-    /**
-     * ���Ԥ������
-     * ���������ʵ�ֶ�̬���½���UI�Ĺ��ܣ�
-     * ͨ����ȡ�ֻ�����ͷ�Ĳ�����ʵʱ��̬����ƽ������ֵ�����������Ӷ�ʵʱ��̬��������ֵ��
-     */
+
     private static PreviewCallback previewCallback = new PreviewCallback() {
         public void onPreviewFrame(byte[] data, Camera cam) {
             if (data == null) {
@@ -390,16 +349,16 @@ public class HeartRateActivity extends AppCompatActivity {
                 currentType = newType;
             }
 
-            //��ȡϵͳ����ʱ�䣨ms��
+
             long endTime = System.currentTimeMillis();
             double totalTimeInSecs = (endTime - startTime) / 1000d;
             if (totalTimeInSecs >= 2) {
                 double bps = (beats / totalTimeInSecs);
                 int dpm = (int) (bps * 60d);
                 if (dpm < 30 || dpm > 180|| imgAvg < 200) {
-                    //��ȡϵͳ��ʼʱ�䣨ms��
+
                     startTime = System.currentTimeMillis();
-                    //beats��������
+
                     beats = 0;
                     processing.set(false);
                     return;
@@ -429,11 +388,9 @@ public class HeartRateActivity extends AppCompatActivity {
         }
     };
 
-    /**
-     * Ԥ���ص��ӿ�
-     */
+
     private static SurfaceHolder.Callback surfaceCallback = new SurfaceHolder.Callback() {
-        //����ʱ����
+
         @Override
         public void surfaceCreated(SurfaceHolder holder) {
             try {
@@ -444,7 +401,6 @@ public class HeartRateActivity extends AppCompatActivity {
             }
         }
 
-        //��Ԥ���ı��ʱ��ص��˷���
         @Override
         public void surfaceChanged(SurfaceHolder holder, int format, int width,int height) {
             Camera.Parameters parameters = camera.getParameters();
@@ -457,16 +413,13 @@ public class HeartRateActivity extends AppCompatActivity {
             camera.startPreview();
         }
 
-        //���ٵ�ʱ�����
         @Override
         public void surfaceDestroyed(SurfaceHolder holder) {
 
         }
     };
 
-    /**
-     * ��ȡ�����С��Ԥ���ߴ�
-     */
+
     private static Camera.Size getSmallestPreviewSize(int width, int height, Camera.Parameters parameters) {
         Camera.Size result = null;
         for (Camera.Size size : parameters.getSupportedPreviewSizes()) {
