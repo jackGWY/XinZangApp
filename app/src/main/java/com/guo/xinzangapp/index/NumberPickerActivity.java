@@ -42,7 +42,13 @@ public class NumberPickerActivity extends AppCompatActivity {
     private NumberPicker numberPicker_blood_pressure;
     private View blood_pressure_view;
     private int bloodPressure = 70;
-
+    //chol血清胆固醇
+    private EditText et_chol;
+    private Button submit_chol;
+    private PopupWindow popupWindow_chol;
+    private NumberPicker numberPicker_chol;
+    private View chol_view;
+    private int chol = 50;
     //男女
     private RadioGroup mRg1;
     private String sex = "男";
@@ -97,6 +103,63 @@ public class NumberPickerActivity extends AppCompatActivity {
             }
         });
 
+        //血清胆固醇@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        et_chol = (EditText) findViewById(R.id.et_chol);
+        et_chol.setText(bloodPressure + "mmHg");
+        et_chol.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                // 设置初始值
+                numberPicker_chol.setValue(chol);
+
+                // 强制隐藏键盘
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+
+                // 填充布局并设置弹出窗体的宽,高
+                popupWindow_chol = new PopupWindow(chol_view,
+                        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                // 设置弹出窗体可点击
+                popupWindow_chol.setFocusable(true);
+                // 设置弹出窗体动画效果
+                popupWindow_chol.setAnimationStyle(R.style.AnimBottom);
+                // 触屏位置如果在选择框外面则销毁弹出框
+                popupWindow_chol.setOutsideTouchable(true);
+                // 设置弹出窗体的背景
+                popupWindow_chol.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                popupWindow_chol.showAtLocation(chol_view,
+                        Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+
+                // 设置背景透明度
+                WindowManager.LayoutParams lp = getWindow().getAttributes();
+                lp.alpha = 0.5f;
+                getWindow().setAttributes(lp);
+
+                // 添加窗口关闭事件
+                popupWindow_chol.setOnDismissListener(new PopupWindow.OnDismissListener() {
+
+                    @Override
+                    public void onDismiss() {
+                        WindowManager.LayoutParams lp = getWindow().getAttributes();
+                        lp.alpha = 1f;
+                        getWindow().setAttributes(lp);
+                    }
+
+                });
+            }
+        });
+
+        //
+        submit_chol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chol = numberPicker_chol.getValue();
+                System.out.println(chol+"胆固醇");
+                et_chol.setText(chol + "mmHg");
+                popupWindow_chol.dismiss();
+            }
+        });
         // 静息血压 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         etBloodPressure = (EditText) findViewById(R.id.et_blood_pressure);
         etBloodPressure.setText(bloodPressure + "mmHg");
@@ -241,6 +304,16 @@ public class NumberPickerActivity extends AppCompatActivity {
         numberPicker_blood_pressure.setFocusableInTouchMode(false);
         numberPicker_blood_pressure.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
         setNumberPickerDividerColor(numberPicker_blood_pressure);
+        // chol血清胆固醇
+        chol_view = LayoutInflater.from(NumberPickerActivity.this).inflate(R.layout.popwindow_chol, null);
+        submit_chol = (Button) chol_view.findViewById(R.id.submit_chol);
+        numberPicker_chol = (NumberPicker) chol_view.findViewById(R.id.numberPicker_chol);
+        numberPicker_chol.setMaxValue(200);
+        numberPicker_chol.setMinValue(0);
+        numberPicker_chol.setFocusable(false);
+        numberPicker_chol.setFocusableInTouchMode(false);
+        numberPicker_chol.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+        setNumberPickerDividerColor(numberPicker_chol);
     }
 
     /**
