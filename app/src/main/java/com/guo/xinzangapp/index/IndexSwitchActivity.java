@@ -35,7 +35,8 @@ public class IndexSwitchActivity extends AppCompatActivity {
         Intent intent = new Intent();
         switch (view.getId()) {
             case R.id.index_input:
-                intent = new Intent(IndexSwitchActivity.this,indexActivity.class);
+//                intent = new Intent(IndexSwitchActivity.this,indexActivity.class);
+                intent = new Intent(IndexSwitchActivity.this,NumberPickerActivity.class);
                 startActivity(intent);
                 break;
             case R.id.index_history:

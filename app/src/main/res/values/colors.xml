@@ -15,4 +15,12 @@
     <color name="drugTextColor">#000000</color>
     <color name="popwindow_text">#000000</color>
 
+
+    <color name="popupwindow_background">#E0F0F0F0</color>
+    <color name="numberpicker_line">#F08200</color>
+    <color name="numberpicker_text">#F08200</color>
+    <color name="year">#00A0E9</color>
+    <color name="button_background">#00A0E9</color>
+    <color name="button_text">#FFFFFF</color>
+
 </resources>

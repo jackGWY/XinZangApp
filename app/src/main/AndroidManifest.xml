@@ -112,7 +112,8 @@
         <activity android:name=".consult.ChatActivity" />
         <activity android:name=".consult.PatientListActivity" />
         <activity android:name=".heartrate.HeartRateActivity" />
-        <activity android:name=".BarChart.BarChartActivity"></activity>
+        <activity android:name=".BarChart.BarChartActivity" />
+        <activity android:name=".index.NumberPickerActivity"></activity>
     </application>
 
 </manifest>
