@@ -7,7 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.guo.xinzangapp.BarChart.BarChart;
+import com.guo.xinzangapp.BarChart.BarChartActivity;
 import com.guo.xinzangapp.R;
+import com.guo.xinzangapp.heartrate.HeartRateActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,13 +22,15 @@ public class IndexSwitchActivity extends AppCompatActivity {
     Button index_history;
     @BindView(R.id.index_input)
     Button index_input;
+    @BindView(R.id.btn_heart_predict)
+    Button btn_heart_predict;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index_switch);
         ButterKnife.bind(this);
     }
-    @OnClick({R.id.index_history,R.id.index_input})
+    @OnClick({R.id.index_history,R.id.index_input,R.id.btn_heart_predict})
     public void OnClick (View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
@@ -34,7 +39,11 @@ public class IndexSwitchActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.index_history:
-                intent = new Intent(IndexSwitchActivity.this,indexHistoryActivity.class);
+                intent = new Intent(IndexSwitchActivity.this,BarChartActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn_heart_predict:
+                intent = new Intent(IndexSwitchActivity.this,HeartRateActivity.class);
                 startActivity(intent);
                 break;
         }

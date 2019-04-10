@@ -7,7 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="10dp"
         android:padding="15dp"
         android:layout_centerInParent="true"
         android:orientation="vertical">
@@ -19,6 +19,15 @@
             android:layout_height="150dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/bg_btn4"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btn_heart_predict"
+            android:text="心率测定"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn_blue"
             android:textSize="18sp"/>
 
         <Button
