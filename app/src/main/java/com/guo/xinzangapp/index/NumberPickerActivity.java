@@ -64,6 +64,10 @@ public class NumberPickerActivity extends AppCompatActivity {
     private RadioGroup rg_chest_pain_type;
     private String chest_pain_type;
     private int painType=4;
+    //restecg 心电图
+    private RadioGroup rg_restecg;
+    private String str_restecg;
+    private int restecg_int=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +109,28 @@ public class NumberPickerActivity extends AppCompatActivity {
                 else {
                     painType = 4;
                 }
+//                System.out.println(painType+"");
+                Toast.makeText(NumberPickerActivity.this,radioButton.getText(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //心电图@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        rg_restecg=(RadioGroup)findViewById(R.id.rg_restecg);
+        rg_restecg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton radioButton=(RadioButton)group.findViewById(checkedId);
+                str_restecg = radioButton.getText().toString();
+                if(str_restecg.equals("轻微")){
+                    restecg_int = 0;
+                }
+                else if(str_restecg.equals("中等")){
+                    restecg_int = 1;
+                }
+                else if(str_restecg.equals("严重")){
+                    restecg_int = 2;
+                }
+
 //                System.out.println(painType+"");
                 Toast.makeText(NumberPickerActivity.this,radioButton.getText(),Toast.LENGTH_SHORT).show();
             }

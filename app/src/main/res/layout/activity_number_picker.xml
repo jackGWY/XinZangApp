@@ -127,7 +127,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:text="疼痛类型"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textColor="@color/colorAccent"
                 android:layout_height="wrap_content" />
             <RadioGroup
@@ -287,6 +287,62 @@
                 android:textColorHint="#C0C0C0"
                 android:textSize="15sp" />
 
+        </LinearLayout>
+
+        <View
+            android:layout_height="1px"
+
+            android:background="#000000"
+            android:layout_width="fill_parent">
+        </View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/line_style"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="心电图结果是否有T波，由轻到重为"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"
+                android:layout_height="wrap_content" />
+            <RadioGroup
+                android:id="@+id/rg_restecg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp"
+                >
+                <RadioButton
+                    android:id="@+id/rb_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="轻微"
+                    android:textSize="18sp"
+                    android:textColor="#1A1A1A"
+                    android:checked="true"
+                    />
+                <RadioButton
+                    android:id="@+id/rb_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="中等"
+                    android:textSize="18sp"
+                    android:textColor="#1A1A1A"
+                    />
+                <RadioButton
+                    android:id="@+id/rb_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="严重"
+                    android:textSize="18sp"
+                    android:textColor="#1A1A1A"
+                    android:checked="true"
+                    />
+
+            </RadioGroup>
         </LinearLayout>
 
         <View
