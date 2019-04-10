@@ -353,6 +353,45 @@
         </View>
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/line_style"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:text="达到的最大心跳数"
+                android:textColor="#606060"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/et_thalach"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:hint="点击选择您的最大心跳数"
+                android:textColor="#606060"
+                android:textColorHint="#C0C0C0"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_height="1px"
+
+            android:background="#000000"
+            android:layout_width="fill_parent">
+        </View>
+
+
+        <LinearLayout
             android:id="@+id/bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -56,6 +56,13 @@ public class NumberPickerActivity extends AppCompatActivity {
     private NumberPicker numberPicker_fbs;
     private View fbs_view;
     private int fbs = 80;
+    //thalach 最大心跳
+    private EditText et_thalach;
+    private Button submit_thalach;
+    private PopupWindow popupWindow_thalach;
+    private NumberPicker numberPicker_thalach;
+    private View thalach_view;
+    private int thalach = 72;
     //男女
     private RadioGroup mRg1;
     private String sex = "男";
@@ -136,6 +143,63 @@ public class NumberPickerActivity extends AppCompatActivity {
             }
         });
 
+        //thalach 最大心跳数@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        et_thalach = (EditText) findViewById(R.id.et_thalach);
+        et_thalach.setText(thalach + "跳/分钟");
+        et_thalach.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                // 设置初始值
+                numberPicker_thalach.setValue(thalach);
+
+                // 强制隐藏键盘
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+
+                // 填充布局并设置弹出窗体的宽,高
+                popupWindow_thalach = new PopupWindow(thalach_view,
+                        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                // 设置弹出窗体可点击
+                popupWindow_thalach.setFocusable(true);
+                // 设置弹出窗体动画效果
+                popupWindow_thalach.setAnimationStyle(R.style.AnimBottom);
+                // 触屏位置如果在选择框外面则销毁弹出框
+                popupWindow_thalach.setOutsideTouchable(true);
+                // 设置弹出窗体的背景
+                popupWindow_thalach.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                popupWindow_thalach.showAtLocation(thalach_view,
+                        Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+
+                // 设置背景透明度
+                WindowManager.LayoutParams lp = getWindow().getAttributes();
+                lp.alpha = 0.5f;
+                getWindow().setAttributes(lp);
+
+                // 添加窗口关闭事件
+                popupWindow_thalach.setOnDismissListener(new PopupWindow.OnDismissListener() {
+
+                    @Override
+                    public void onDismiss() {
+                        WindowManager.LayoutParams lp = getWindow().getAttributes();
+                        lp.alpha = 1f;
+                        getWindow().setAttributes(lp);
+                    }
+
+                });
+            }
+        });
+
+        //
+        submit_thalach.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                thalach = numberPicker_thalach.getValue();
+                System.out.println(thalach+"thalach");
+                et_thalach.setText(thalach + "跳/分钟");
+                popupWindow_thalach.dismiss();
+            }
+        });
         //fbs 空腹血糖 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         et_fbs = (EditText) findViewById(R.id.et_fbs);
         et_fbs.setText(fbs + "mg/dl");
@@ -414,6 +478,16 @@ public class NumberPickerActivity extends AppCompatActivity {
         numberPicker_fbs.setFocusableInTouchMode(false);
         numberPicker_fbs.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
         setNumberPickerDividerColor(numberPicker_fbs);
+        // thalach 最大心跳数
+        thalach_view = LayoutInflater.from(NumberPickerActivity.this).inflate(R.layout.popwindow_thalach, null);
+        submit_thalach = (Button) thalach_view.findViewById(R.id.submit_thalach);
+        numberPicker_thalach = (NumberPicker) thalach_view.findViewById(R.id.numberPicker_thalach);
+        numberPicker_thalach.setMaxValue(200);
+        numberPicker_thalach.setMinValue(0);
+        numberPicker_thalach.setFocusable(false);
+        numberPicker_thalach.setFocusableInTouchMode(false);
+        numberPicker_thalach.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+        setNumberPickerDividerColor(numberPicker_thalach);
     }
 
     /**
