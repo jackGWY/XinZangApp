@@ -35,6 +35,13 @@ public class NumberPickerActivity extends AppCompatActivity {
     private NumberPicker numberPicker;
     private View workingAge_view;
     private int workingAge = 0;
+    //血压
+    private EditText etBloodPressure;
+    private Button submit_bloodPressure;
+    private PopupWindow popupWindow_blood_pressure;
+    private NumberPicker numberPicker_blood_pressure;
+    private View blood_pressure_view;
+    private int bloodPressure = 70;
 
     //男女
     private RadioGroup mRg1;
@@ -43,12 +50,16 @@ public class NumberPickerActivity extends AppCompatActivity {
     //疼痛类型
     private RadioGroup rg_chest_pain_type;
     private String chest_pain_type;
-    private int painType;
+    private int painType=4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_number_picker);
+
+        initNumberPicker();
+        //预测提交按钮
+        submitWorkingAge = (Button) findViewById(R.id.submitWorkingAge);
 
         //男女@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         mRg1=(RadioGroup)findViewById(R.id.rg_1);
@@ -86,12 +97,68 @@ public class NumberPickerActivity extends AppCompatActivity {
             }
         });
 
-        // 年龄@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        submitWorkingAge = (Button) findViewById(R.id.submitWorkingAge);
-        edWorkingAge = (EditText) findViewById(R.id.edWorkingAge);
-        edWorkingAge.setText(workingAge + "年");
+        // 静息血压 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        etBloodPressure = (EditText) findViewById(R.id.et_blood_pressure);
+        etBloodPressure.setText(bloodPressure + "mmHg");
+        etBloodPressure.setOnClickListener(new View.OnClickListener(){
 
-        initNumberPicker();
+            @Override
+            public void onClick(View view) {
+                // 设置初始值
+                numberPicker_blood_pressure.setValue(bloodPressure);
+
+                // 强制隐藏键盘
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+
+                // 填充布局并设置弹出窗体的宽,高
+                popupWindow_blood_pressure = new PopupWindow(blood_pressure_view,
+                        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                // 设置弹出窗体可点击
+                popupWindow_blood_pressure.setFocusable(true);
+                // 设置弹出窗体动画效果
+                popupWindow_blood_pressure.setAnimationStyle(R.style.AnimBottom);
+                // 触屏位置如果在选择框外面则销毁弹出框
+                popupWindow_blood_pressure.setOutsideTouchable(true);
+                // 设置弹出窗体的背景
+                popupWindow_blood_pressure.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                popupWindow_blood_pressure.showAtLocation(blood_pressure_view,
+                        Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+
+                // 设置背景透明度
+                WindowManager.LayoutParams lp = getWindow().getAttributes();
+                lp.alpha = 0.5f;
+                getWindow().setAttributes(lp);
+
+                // 添加窗口关闭事件
+                popupWindow_blood_pressure.setOnDismissListener(new PopupWindow.OnDismissListener() {
+
+                    @Override
+                    public void onDismiss() {
+                        WindowManager.LayoutParams lp = getWindow().getAttributes();
+                        lp.alpha = 1f;
+                        getWindow().setAttributes(lp);
+                    }
+
+                });
+            }
+        });
+
+        //
+        submit_bloodPressure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bloodPressure = numberPicker_blood_pressure.getValue();
+                etBloodPressure.setText(bloodPressure + "mmHg");
+                popupWindow_blood_pressure.dismiss();
+            }
+        });
+        // 年龄@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+        edWorkingAge = (EditText) findViewById(R.id.edWorkingAge);
+        edWorkingAge.setText(workingAge + "岁");
+
+
 
         // 选择服务年限
         edWorkingAge.setOnClickListener(new View.OnClickListener() {
@@ -154,6 +221,7 @@ public class NumberPickerActivity extends AppCompatActivity {
      * 初始化滚动框布局
      */
     private void initNumberPicker() {
+        // 年龄
         workingAge_view = LayoutInflater.from(NumberPickerActivity.this).inflate(R.layout.popupwindow, null);
         submit_workingAge = (Button) workingAge_view.findViewById(R.id.submit_workingAge);
         numberPicker = (NumberPicker) workingAge_view.findViewById(R.id.numberPicker);
@@ -163,6 +231,16 @@ public class NumberPickerActivity extends AppCompatActivity {
         numberPicker.setFocusableInTouchMode(false);
         numberPicker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
         setNumberPickerDividerColor(numberPicker);
+        // 血压
+        blood_pressure_view = LayoutInflater.from(NumberPickerActivity.this).inflate(R.layout.popwindow_blood_pressure, null);
+        submit_bloodPressure = (Button) blood_pressure_view.findViewById(R.id.submit_bloodPressure);
+        numberPicker_blood_pressure = (NumberPicker) blood_pressure_view.findViewById(R.id.numberPicker_blood_pressure);
+        numberPicker_blood_pressure.setMaxValue(200);
+        numberPicker_blood_pressure.setMinValue(0);
+        numberPicker_blood_pressure.setFocusable(false);
+        numberPicker_blood_pressure.setFocusableInTouchMode(false);
+        numberPicker_blood_pressure.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+        setNumberPickerDividerColor(numberPicker_blood_pressure);
     }
 
     /**
@@ -183,5 +261,7 @@ public class NumberPickerActivity extends AppCompatActivity {
             }
         }
     }
+
+
 
 }
