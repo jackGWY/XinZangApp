@@ -10,9 +10,6 @@ import android.widget.NumberPicker;
 import com.guo.xinzangapp.R;
 
 
-/**
- * Created by liuwan on 2016/10/14.
- */
 public class CustomNumberPicker extends NumberPicker {
 
     public CustomNumberPicker(Context context) {
