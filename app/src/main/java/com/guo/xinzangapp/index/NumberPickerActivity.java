@@ -20,23 +20,74 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.PopupWindow;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import java.lang.reflect.Field;
 
 public class NumberPickerActivity extends AppCompatActivity {
 
+    //年龄
     private EditText edWorkingAge;
-    private Button submit_workingAge;
+    private Button submit_workingAge,submitWorkingAge;
     private PopupWindow popupWindow;
     private NumberPicker numberPicker;
     private View workingAge_view;
     private int workingAge = 0;
+
+    //男女
+    private RadioGroup mRg1;
+    private String sex = "男";
+
+    //疼痛类型
+    private RadioGroup rg_chest_pain_type;
+    private String chest_pain_type;
+    private int painType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_number_picker);
 
+        //男女@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        mRg1=(RadioGroup)findViewById(R.id.rg_1);
+        mRg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton radioButton=(RadioButton)group.findViewById(checkedId);
+                sex = radioButton.getText().toString();
+//                System.out.println(sex);
+                Toast.makeText(NumberPickerActivity.this,radioButton.getText(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // 疼痛类型@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  rg_chest_pain_type
+        rg_chest_pain_type=(RadioGroup)findViewById(R.id.rg_chest_pain_type);
+        rg_chest_pain_type.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton radioButton=(RadioButton)group.findViewById(checkedId);
+                chest_pain_type = radioButton.getText().toString();
+                if(chest_pain_type.equals("典型的心绞痛")){
+                    painType = 1;
+                }
+                else if(chest_pain_type.equals("非典型的心绞痛")){
+                    painType = 2;
+                }
+                else if(chest_pain_type.equals("非心绞痛的疼痛")){
+                    painType = 3;
+                }
+                else {
+                    painType = 4;
+                }
+//                System.out.println(painType+"");
+                Toast.makeText(NumberPickerActivity.this,radioButton.getText(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // 年龄@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        submitWorkingAge = (Button) findViewById(R.id.submitWorkingAge);
         edWorkingAge = (EditText) findViewById(R.id.edWorkingAge);
         edWorkingAge.setText(workingAge + "年");
 
@@ -106,7 +157,7 @@ public class NumberPickerActivity extends AppCompatActivity {
         workingAge_view = LayoutInflater.from(NumberPickerActivity.this).inflate(R.layout.popupwindow, null);
         submit_workingAge = (Button) workingAge_view.findViewById(R.id.submit_workingAge);
         numberPicker = (NumberPicker) workingAge_view.findViewById(R.id.numberPicker);
-        numberPicker.setMaxValue(50);
+        numberPicker.setMaxValue(100);
         numberPicker.setMinValue(0);
         numberPicker.setFocusable(false);
         numberPicker.setFocusableInTouchMode(false);
