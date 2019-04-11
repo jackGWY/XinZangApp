@@ -100,6 +100,10 @@ public class NumberPickerActivity extends AppCompatActivity {
     private RadioGroup rg_slop;
     private String str_slop;
     private int slop_int=0;
+    //thal 缺陷类型
+    private RadioGroup rg_thal;
+    private String str_thal;
+    private int thal_int=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,6 +145,28 @@ public class NumberPickerActivity extends AppCompatActivity {
                 else {
                     painType = 4;
                 }
+//                System.out.println(painType+"");
+                Toast.makeText(NumberPickerActivity.this,radioButton.getText(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // thal 缺陷种类
+        rg_thal=(RadioGroup)findViewById(R.id.rg_thal);
+        rg_thal.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton radioButton=(RadioButton)group.findViewById(checkedId);
+                str_thal = radioButton.getText().toString();
+                if(str_thal.equals("正常(normal)")){
+                    thal_int = 0;
+                }
+                else if(str_thal.equals("可逆缺陷(reversable defect)")){
+                    thal_int = 1;
+                }
+                else {
+                    thal_int = 2;
+                }
+
 //                System.out.println(painType+"");
                 Toast.makeText(NumberPickerActivity.this,radioButton.getText(),Toast.LENGTH_SHORT).show();
             }
@@ -675,7 +701,7 @@ public class NumberPickerActivity extends AppCompatActivity {
         ca_view = LayoutInflater.from(NumberPickerActivity.this).inflate(R.layout.popwindow_ca, null);
         submit_ca = (Button) ca_view.findViewById(R.id.submit_ca);
         numberPicker_ca = (NumberPicker) ca_view.findViewById(R.id.numberPicker_ca);
-        numberPicker_ca.setMaxValue(20);
+        numberPicker_ca.setMaxValue(3);
         numberPicker_ca.setMinValue(0);
         numberPicker_ca.setFocusable(false);
         numberPicker_ca.setFocusableInTouchMode(false);

@@ -568,6 +568,64 @@
         </View>
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/line_style"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="心脏缺陷种类，由轻到重为"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"
+                android:layout_height="wrap_content" />
+            <RadioGroup
+                android:id="@+id/rg_thal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp"
+                >
+                <RadioButton
+                    android:id="@+id/rb_41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="正常(normal)"
+                    android:textSize="18sp"
+                    android:textColor="#1A1A1A"
+                    android:checked="true"
+                    />
+
+                <RadioButton
+                    android:id="@+id/rb_43"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="可逆缺陷(reversable defect)"
+                    android:textSize="18sp"
+                    android:textColor="#1A1A1A"
+                    android:checked="true"
+                    />
+                <RadioButton
+                    android:id="@+id/rb_42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="先天性缺陷(fixed defect)"
+                    android:textSize="18sp"
+                    android:textColor="#1A1A1A"
+                    />
+
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <View
+            android:layout_height="1px"
+
+            android:background="#000000"
+            android:layout_width="fill_parent">
+        </View>
+
+        <LinearLayout
             android:id="@+id/bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
