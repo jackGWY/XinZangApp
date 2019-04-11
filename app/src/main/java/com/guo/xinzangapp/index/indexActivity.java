@@ -107,7 +107,7 @@ public class indexActivity extends AppCompatActivity {
             fbs3=Integer.parseInt(fbs2);
 
             if(age3>50 && cp3==1 && (trestbps3>160 || trestbps3<60) && fbs3>120){
-                posibility=(int)(1+Math.random()*(49-1+1))+50;
+                posibility=(int)(1+Math.random()*(30-1+1))+10;
             }
             else {
                 posibility=20-(int)(1+Math.random()*(20-1+1));

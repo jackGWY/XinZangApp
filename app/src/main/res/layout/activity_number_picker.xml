@@ -475,6 +475,63 @@
         </View>
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/line_style"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="心电图ST segment的倾斜度"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccent"
+                android:layout_height="wrap_content" />
+            <RadioGroup
+                android:id="@+id/rg_slop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp"
+                >
+                <RadioButton
+                    android:id="@+id/rb_31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="下降(down)"
+                    android:textSize="18sp"
+                    android:textColor="#1A1A1A"
+                    android:checked="true"
+                    />
+                <RadioButton
+                    android:id="@+id/rb_32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="平缓(flat)"
+                    android:textSize="18sp"
+                    android:textColor="#1A1A1A"
+                    />
+                <RadioButton
+                    android:id="@+id/rb_33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="上升(up)"
+                    android:textSize="18sp"
+                    android:textColor="#1A1A1A"
+                    android:checked="true"
+                    />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <View
+            android:layout_height="1px"
+
+            android:background="#000000"
+            android:layout_width="fill_parent">
+        </View>
+
+
+        <LinearLayout
             android:id="@+id/bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

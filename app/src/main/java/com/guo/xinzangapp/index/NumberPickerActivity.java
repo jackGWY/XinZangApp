@@ -89,6 +89,10 @@ public class NumberPickerActivity extends AppCompatActivity {
     private RadioGroup rg_exang;
     private String str_exang;
     private int exang_int=0;
+    //slop 心电图坡度
+    private RadioGroup rg_slop;
+    private String str_slop;
+    private int slop_int=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,6 +178,27 @@ public class NumberPickerActivity extends AppCompatActivity {
 //                    exang_int = 2;
 //                }
 
+//                System.out.println(painType+"");
+                Toast.makeText(NumberPickerActivity.this,radioButton.getText(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        rg_slop=(RadioGroup)findViewById(R.id.rg_slop);
+        rg_slop.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton radioButton=(RadioButton)group.findViewById(checkedId);
+                str_slop = radioButton.getText().toString();
+                System.out.println(str_slop);
+                if(str_slop.equals("下降(down)")){
+                    slop_int = 0;
+                }
+                else if(str_slop.equals("平缓(flat)")){
+                    slop_int = 1;
+                }
+                else {
+                    slop_int = 2;
+                }
 //                System.out.println(painType+"");
                 Toast.makeText(NumberPickerActivity.this,radioButton.getText(),Toast.LENGTH_SHORT).show();
             }
