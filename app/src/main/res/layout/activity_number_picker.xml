@@ -437,6 +437,42 @@
         </View>
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/line_style"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+
+                android:text="运动相对于休息的ST depression"
+
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/et_oldpeak"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:hint="点击选择您的ST depression数值"
+                android:textColor="#606060"
+                android:textColorHint="#C0C0C0"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_height="1px"
+
+            android:background="#000000"
+            android:layout_width="fill_parent">
+        </View>
 
         <LinearLayout
             android:id="@+id/bottom"

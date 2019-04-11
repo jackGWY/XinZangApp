@@ -63,6 +63,16 @@ public class NumberPickerActivity extends AppCompatActivity {
     private NumberPicker numberPicker_thalach;
     private View thalach_view;
     private int thalach = 72;
+    //oldpeak
+    private EditText et_oldpeak;
+    private Button submit_oldpeak;
+    private PopupWindow popupWindow_oldpeak;
+    private NumberPicker numberPicker_1;
+    private NumberPicker numberPicker_2;
+    private View oldpeak_view;
+    private int oldpeak1 = 2;
+    private int oldpeak2 = 1;
+    private double oldpeak = oldpeak1+oldpeak2 * 0.1;
     //男女sex
     private RadioGroup mRg1;
     private String sex = "男";
@@ -166,6 +176,66 @@ public class NumberPickerActivity extends AppCompatActivity {
 
 //                System.out.println(painType+"");
                 Toast.makeText(NumberPickerActivity.this,radioButton.getText(),Toast.LENGTH_SHORT).show();
+            }
+        });
+        // oldpeak 运动相对于休息的ST depression
+        et_oldpeak = (EditText) findViewById(R.id.et_oldpeak);
+        et_oldpeak.setText(oldpeak +"");
+        et_oldpeak.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                // 设置初始值
+                numberPicker_1.setValue(oldpeak1);
+                numberPicker_2.setValue(oldpeak2);
+
+                // 强制隐藏键盘
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+
+                // 填充布局并设置弹出窗体的宽,高
+                popupWindow_oldpeak = new PopupWindow(oldpeak_view,
+                        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                // 设置弹出窗体可点击
+                popupWindow_oldpeak.setFocusable(true);
+                // 设置弹出窗体动画效果
+                popupWindow_oldpeak.setAnimationStyle(R.style.AnimBottom);
+                // 触屏位置如果在选择框外面则销毁弹出框
+                popupWindow_oldpeak.setOutsideTouchable(true);
+                // 设置弹出窗体的背景
+                popupWindow_oldpeak.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                popupWindow_oldpeak.showAtLocation(oldpeak_view,
+                        Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+
+                // 设置背景透明度
+                WindowManager.LayoutParams lp = getWindow().getAttributes();
+                lp.alpha = 0.5f;
+                getWindow().setAttributes(lp);
+
+                // 添加窗口关闭事件
+                popupWindow_oldpeak.setOnDismissListener(new PopupWindow.OnDismissListener() {
+
+                    @Override
+                    public void onDismiss() {
+                        WindowManager.LayoutParams lp = getWindow().getAttributes();
+                        lp.alpha = 1f;
+                        getWindow().setAttributes(lp);
+                    }
+
+                });
+            }
+        });
+
+        //
+        submit_oldpeak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                oldpeak1 = numberPicker_1.getValue();
+                oldpeak2 = numberPicker_2.getValue();
+                oldpeak = oldpeak1+oldpeak2*0.1;
+                System.out.println(oldpeak+"oldpeak");
+                et_oldpeak.setText(oldpeak + "");
+                popupWindow_oldpeak.dismiss();
             }
         });
         //thalach 最大心跳数@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -513,6 +583,25 @@ public class NumberPickerActivity extends AppCompatActivity {
         numberPicker_thalach.setFocusableInTouchMode(false);
         numberPicker_thalach.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
         setNumberPickerDividerColor(numberPicker_thalach);
+        //oldpeak
+        oldpeak_view = LayoutInflater.from(NumberPickerActivity.this).inflate(R.layout.popwindow_oldpeak, null);
+        submit_oldpeak = (Button) oldpeak_view.findViewById(R.id.submit_oldpeak);
+
+        numberPicker_1 = (NumberPicker) oldpeak_view.findViewById(R.id.numberPicker_1);
+        numberPicker_1.setMaxValue(20);
+        numberPicker_1.setMinValue(0);
+        numberPicker_1.setFocusable(false);
+        numberPicker_1.setFocusableInTouchMode(false);
+        numberPicker_1.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+        setNumberPickerDividerColor(numberPicker_1);
+
+        numberPicker_2 = (NumberPicker) oldpeak_view.findViewById(R.id.numberPicker_2);
+        numberPicker_2.setMaxValue(20);
+        numberPicker_2.setMinValue(0);
+        numberPicker_2.setFocusable(false);
+        numberPicker_2.setFocusableInTouchMode(false);
+        numberPicker_2.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+        setNumberPickerDividerColor(numberPicker_2);
     }
 
     /**
