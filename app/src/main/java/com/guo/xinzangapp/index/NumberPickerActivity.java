@@ -56,6 +56,13 @@ public class NumberPickerActivity extends AppCompatActivity {
     private NumberPicker numberPicker_fbs;
     private View fbs_view;
     private int fbs = 80;
+    //ca 血管数目
+    private EditText et_ca;
+    private Button submit_ca;
+    private PopupWindow popupWindow_ca;
+    private NumberPicker numberPicker_ca;
+    private View ca_view;
+    private int ca = 0;
     //thalach 最大心跳
     private EditText et_thalach;
     private Button submit_thalach;
@@ -434,6 +441,62 @@ public class NumberPickerActivity extends AppCompatActivity {
                 popupWindow_chol.dismiss();
             }
         });
+        // ca 血管数目
+        et_ca = (EditText) findViewById(R.id.et_ca);
+        et_ca.setText(ca + "条");
+        et_ca.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                // 设置初始值
+                numberPicker_ca.setValue(ca);
+
+                // 强制隐藏键盘
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+
+                // 填充布局并设置弹出窗体的宽,高
+                popupWindow_ca = new PopupWindow(ca_view,
+                        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                // 设置弹出窗体可点击
+                popupWindow_ca.setFocusable(true);
+                // 设置弹出窗体动画效果
+                popupWindow_ca.setAnimationStyle(R.style.AnimBottom);
+                // 触屏位置如果在选择框外面则销毁弹出框
+                popupWindow_ca.setOutsideTouchable(true);
+                // 设置弹出窗体的背景
+                popupWindow_ca.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                popupWindow_ca.showAtLocation(ca_view,
+                        Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+
+                // 设置背景透明度
+                WindowManager.LayoutParams lp = getWindow().getAttributes();
+                lp.alpha = 0.5f;
+                getWindow().setAttributes(lp);
+
+                // 添加窗口关闭事件
+                popupWindow_ca.setOnDismissListener(new PopupWindow.OnDismissListener() {
+
+                    @Override
+                    public void onDismiss() {
+                        WindowManager.LayoutParams lp = getWindow().getAttributes();
+                        lp.alpha = 1f;
+                        getWindow().setAttributes(lp);
+                    }
+
+                });
+            }
+        });
+
+        //
+        submit_ca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ca = numberPicker_ca.getValue();
+                et_ca.setText(ca + "条");
+                popupWindow_ca.dismiss();
+            }
+        });
         // 静息血压 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         etBloodPressure = (EditText) findViewById(R.id.et_blood_pressure);
         etBloodPressure.setText(bloodPressure + "mmHg");
@@ -608,6 +671,16 @@ public class NumberPickerActivity extends AppCompatActivity {
         numberPicker_thalach.setFocusableInTouchMode(false);
         numberPicker_thalach.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
         setNumberPickerDividerColor(numberPicker_thalach);
+        // ca 血管数目
+        ca_view = LayoutInflater.from(NumberPickerActivity.this).inflate(R.layout.popwindow_ca, null);
+        submit_ca = (Button) ca_view.findViewById(R.id.submit_ca);
+        numberPicker_ca = (NumberPicker) ca_view.findViewById(R.id.numberPicker_ca);
+        numberPicker_ca.setMaxValue(20);
+        numberPicker_ca.setMinValue(0);
+        numberPicker_ca.setFocusable(false);
+        numberPicker_ca.setFocusableInTouchMode(false);
+        numberPicker_ca.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+        setNumberPickerDividerColor(numberPicker_ca);
         //oldpeak
         oldpeak_view = LayoutInflater.from(NumberPickerActivity.this).inflate(R.layout.popwindow_oldpeak, null);
         submit_oldpeak = (Button) oldpeak_view.findViewById(R.id.submit_oldpeak);

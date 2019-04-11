@@ -530,6 +530,42 @@
             android:layout_width="fill_parent">
         </View>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/line_style"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+
+                android:text="透视检查看到的血管数"
+
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/et_ca"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:hint="点击选择透视检查看到的血管数"
+                android:textColor="#606060"
+                android:textColorHint="#C0C0C0"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_height="1px"
+
+            android:background="#000000"
+            android:layout_width="fill_parent">
+        </View>
 
         <LinearLayout
             android:id="@+id/bottom"
