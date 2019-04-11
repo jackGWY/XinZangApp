@@ -63,7 +63,7 @@ public class NumberPickerActivity extends AppCompatActivity {
     private NumberPicker numberPicker_thalach;
     private View thalach_view;
     private int thalach = 72;
-    //男女
+    //男女sex
     private RadioGroup mRg1;
     private String sex = "男";
 
@@ -75,6 +75,10 @@ public class NumberPickerActivity extends AppCompatActivity {
     private RadioGroup rg_restecg;
     private String str_restecg;
     private int restecg_int=0;
+    //exang 运动诱发心绞痛
+    private RadioGroup rg_exang;
+    private String str_exang;
+    private int exang_int=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,6 +147,27 @@ public class NumberPickerActivity extends AppCompatActivity {
             }
         });
 
+        //exang 运动引发心绞痛
+        rg_exang=(RadioGroup)findViewById(R.id.rg_exang);
+        rg_exang.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton radioButton=(RadioButton)group.findViewById(checkedId);
+                str_exang = radioButton.getText().toString();
+                if(str_exang.equals("是")){
+                    exang_int = 1;
+                }
+                else if(str_exang.equals("否")){
+                    exang_int = 1;
+                }
+//                else if(str_exang.equals("严重")){
+//                    exang_int = 2;
+//                }
+
+//                System.out.println(painType+"");
+                Toast.makeText(NumberPickerActivity.this,radioButton.getText(),Toast.LENGTH_SHORT).show();
+            }
+        });
         //thalach 最大心跳数@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         et_thalach = (EditText) findViewById(R.id.et_thalach);
         et_thalach.setText(thalach + "跳/分钟");
