@@ -3,6 +3,7 @@ package com.guo.xinzangapp;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.Image;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -158,7 +159,13 @@ public class homeActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this, hospitalSwitchActivity.class));
+//                startActivity(new Intent(homeActivity.this, hospitalSwitchActivity.class));
+                Uri uri = Uri.parse("https://map.baidu.com/mobile/webapp/search/search/qt=con&wd=%E5%8C%BB%E9%99%A2&c=289&newmap=1&from=alamap&tpl=mapdots");
+                Intent intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                intent.setData(uri);
+                startActivity(intent);
+
             }
         });
 
