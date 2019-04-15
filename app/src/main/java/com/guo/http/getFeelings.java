@@ -6,12 +6,10 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.guo.beans.Feelings;
-import com.guo.beans.diary;
 
-
-import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.Callable;
 
@@ -49,12 +47,20 @@ public class getFeelings implements Callable<List<Feelings>> {
 
             ArrayList<Feelings> feelingsArrayListList = new ArrayList<>();
             //加强for循环遍历JsonArray
-            for (JsonElement element : jsonArray) {
-                //使用GSON，直接转成Bean对象
-
+            Iterator it=jsonArray.iterator();
+            while(it.hasNext()){
+                JsonElement element = (JsonElement)it.next();
                 Feelings feelings = gson.fromJson(element, Feelings.class);
+                System.out.println("自己gson解析的:"+feelings.toString());
                 feelingsArrayListList.add(feelings);
             }
+//            for (JsonElement element : jsonArray) {
+//                //使用GSON，直接转成Bean对象
+//
+//                Feelings feelings = gson.fromJson(element, Feelings.class);
+//                System.out.println("自己gson解析的:"+feelings.toString());
+//                feelingsArrayListList.add(feelings);
+//            }
             for (Feelings d : feelingsArrayListList) {
                 System.out.println("toString方法："+d.toString());
             }
@@ -62,7 +68,7 @@ public class getFeelings implements Callable<List<Feelings>> {
 
             List<Feelings> feelingList1 = gson.fromJson(responseData, new TypeToken<List<Feelings>>(){}.getType());
             for (Feelings d : feelingList1) {
-                System.out.println(d.toString());
+                System.out.println("feelingList1:"+d.toString());
             }
 //            if (jsonArray.size()>0) {
 //                for(int i=0;i<jsonArray.size();i++) {

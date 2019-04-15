@@ -11,14 +11,14 @@ public class Feelings implements Serializable {
     private String userName;
     private String sports;
     private String feeling;
-    private double bloodPressure;
-    private double heartRate;
+    private int bloodPressure;
+    private int heartRate;
     private String remark;
 
     public Feelings() {
     }
 
-    public Feelings(String userName, String sports, String feeling, double bloodPressure, double heartRate, String remark) {
+    public Feelings(String userName, String sports, String feeling, int bloodPressure, int heartRate, String remark) {
         this.userName = userName;
         this.sports = sports;
         this.feeling = feeling;
@@ -63,19 +63,19 @@ public class Feelings implements Serializable {
         this.feeling = feeling;
     }
 
-    public double getBloodPressure() {
+    public int getBloodPressure() {
         return bloodPressure;
     }
 
-    public void setBloodPressure(double bloodPressure) {
+    public void setBloodPressure(int bloodPressure) {
         this.bloodPressure = bloodPressure;
     }
 
-    public double getHeartRate() {
+    public int getHeartRate() {
         return heartRate;
     }
 
-    public void setHeartRate(double heartRate) {
+    public void setHeartRate(int heartRate) {
         this.heartRate = heartRate;
     }
 

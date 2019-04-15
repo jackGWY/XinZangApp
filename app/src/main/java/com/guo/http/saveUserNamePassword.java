@@ -21,10 +21,12 @@ public class saveUserNamePassword implements Callable<String>{
 
     String uname;
     String regpass;
+    String userType;
 
-    public saveUserNamePassword(String uname, String regpass) {
+    public saveUserNamePassword(String uname, String regpass, String userType) {
         this.uname = uname;
         this.regpass = regpass;
+        this.userType = userType;
     }
 
     String url = MyURL.SERVER;
@@ -32,7 +34,7 @@ public class saveUserNamePassword implements Callable<String>{
     @Override
     public String call() throws Exception {
         String count = null;
-        url = url + "/login/doLogin?uname="+uname+"&regpass="+regpass;
+        url = url + "/login/doLogin?uname="+uname+"&regpass="+regpass+"&userType="+userType;
         try {
             System.out.println("url:" + url);
             OkHttpClient client = new OkHttpClient();

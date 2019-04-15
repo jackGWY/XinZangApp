@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 RadioButton radioButton=(RadioButton)group.findViewById(checkedId);
                 userType = (String)radioButton.getText();
-//                System.out.println("userType" + userType);
+                System.out.println("userType" + userType);
 
             }
         });
@@ -120,7 +120,7 @@ public class LoginActivity extends AppCompatActivity {
                 String count = "";
                 try {
                     ExecutorService exec = Executors.newCachedThreadPool();
-                    Future<String> result = exec.submit(new saveUserNamePassword(uname, regpass));
+                    Future<String> result = exec.submit(new saveUserNamePassword(uname, regpass,userType));
 
                     try {
                         count = result.get();

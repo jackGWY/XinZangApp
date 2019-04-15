@@ -1,8 +1,15 @@
 package com.guo.xinzangapp.index;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.guo.http.HttpRequestor;
+import com.guo.http.MyURL;
+import com.guo.http.SaveIndex;
+import com.guo.http.SaveRegist;
 import com.guo.xinzangapp.R;
 
 import android.content.Context;
@@ -24,7 +31,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
 import java.lang.reflect.Field;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class NumberPickerActivity extends AppCompatActivity {
 
@@ -48,7 +60,7 @@ public class NumberPickerActivity extends AppCompatActivity {
     private PopupWindow popupWindow_chol;
     private NumberPicker numberPicker_chol;
     private View chol_view;
-    private int chol = 50;
+    private int chol = 110;
     //fbs 空腹血糖
     private EditText et_fbs;
     private Button submit_fbs;
@@ -105,14 +117,70 @@ public class NumberPickerActivity extends AppCompatActivity {
     private String str_thal;
     private int thal_int=0;
 
+    private int posibility = 50;
+//    private String str_posibility="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_number_picker);
 
+        SharedPreferences pref;
+        SharedPreferences.Editor editor;
+        pref = PreferenceManager.getDefaultSharedPreferences(this);
+        final String userName = pref.getString("userName","");
+
+
+
         initNumberPicker();
         //预测提交按钮
         submitWorkingAge = (Button) findViewById(R.id.submitWorkingAge);
+        submitWorkingAge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                new Thread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        String url = MyURL.SERVER+"/zhibiao/saveInput?userName="+userName+"&age="+workingAge+
+//                                "&sex="+sex+"&cp="+chest_pain_type+"&trestbps="+bloodPressure+"&chol="+chol+"&fbs="+fbs+
+//                                "&restecg="+restecg_int+"&thalach="+thalach+"&exang="+exang_int+"&oldpeak="+oldpeak+
+//                                "&slop="+slop_int+"&ca="+ca+"&thal="+thal_int;
+//                        try {
+//                            String jsonString=new HttpRequestor().doGet(url);
+//                            JSONObject jsonObject = new JSONObject(jsonString);
+//                            final String result = jsonObject.getString("result");
+//
+//                        } catch (Exception e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                }).start();
+
+                try{
+                    ExecutorService exec = Executors.newCachedThreadPool();
+                    SaveIndex saveIndex = new SaveIndex(userName,workingAge,sex,painType,bloodPressure,chol,fbs,restecg_int,thalach,exang_int,oldpeak,slop_int,ca,thal_int);
+                    exec.submit(saveIndex);
+                } catch (Exception e){
+                    e.printStackTrace();
+                    System.out.println("saveIndex.................");
+                }
+
+
+
+                if(workingAge>50 && painType==1 && (bloodPressure>160 || bloodPressure<60) && fbs>120){
+                    posibility=(int)(1+Math.random()*(30-1+1))+10;
+                }
+                else {
+                    posibility=20-(int)(1+Math.random()*(20-1+1));
+                }
+                String str_posible = posibility + "%";
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("str_posible",str_posible);
+                Intent intent = new Intent(NumberPickerActivity.this,PosibleActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
 
         //男女@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         mRg1=(RadioGroup)findViewById(R.id.rg_1);
