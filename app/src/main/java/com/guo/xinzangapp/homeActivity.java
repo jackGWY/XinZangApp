@@ -20,6 +20,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.guo.xinzangapp.BarChart.BarChartActivity;
 import com.guo.xinzangapp.consult.ConsultSwitchActivity;
+import com.guo.xinzangapp.consult.FindActivity;
 import com.guo.xinzangapp.consult.consultActivity;
 import com.guo.xinzangapp.diary.diaryListActivity;
 import com.guo.xinzangapp.doctors.DocSwitchActivity;
@@ -243,7 +244,7 @@ public class homeActivity extends AppCompatActivity {
                     case R.id.menu3:
 
 //                        startActivity(new Intent(homeActivity.this, HeartRateActivity.class));
-                        startActivity(new Intent(homeActivity.this, BarChartActivity.class));
+                        startActivity(new Intent(homeActivity.this, FindActivity.class));
                         break;
 //                    case R.id.menu4:
 //                        showContent = "点击 Item菜单4";
