@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_drug_info"
+            android:text="心脏病相关药物信息"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_drug_height"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn4"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btn_records"
+            android:text="我的病历单"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_drug_height"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn_blue"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btn_news"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_drug_height"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn_green"
+            android:text="心脏病资讯"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btn_buy_drug"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_drug_height"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn_green"
+            android:text="购买药物"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

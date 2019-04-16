@@ -70,7 +70,7 @@
                             android:id="@+id/image_button_medicine"
                             android:scaleType="centerInside"
                             android:background="@color/item_color"
-                            android:src="@drawable/medicine"
+                            android:src="@drawable/drug2"
                             />
                     </LinearLayout>
 

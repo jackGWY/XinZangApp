@@ -28,6 +28,7 @@ import com.guo.xinzangapp.hospital.hospitalActivity;
 import com.guo.xinzangapp.hospital.hospitalSwitchActivity;
 import com.guo.xinzangapp.index.IndexSwitchActivity;
 import com.guo.xinzangapp.index.indexActivity;
+import com.guo.xinzangapp.medicine.DrugSwitch2Activity;
 import com.guo.xinzangapp.medicine.drugSwitchActivity;
 import com.guo.xinzangapp.sports.FeelingListActivity;
 import com.guo.xinzangapp.sports.SportsActivity;
@@ -92,7 +93,7 @@ public class homeActivity extends AppCompatActivity {
         mtvMedicine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this, drugSwitchActivity.class));
+                startActivity(new Intent(homeActivity.this, DrugSwitch2Activity.class));
 //                Toast.makeText(homeActivity.this,"btn_4我被点击了",Toast.LENGTH_SHORT).show();
             }
         });
@@ -100,7 +101,7 @@ public class homeActivity extends AppCompatActivity {
         imageMedicine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this, drugSwitchActivity.class));
+                startActivity(new Intent(homeActivity.this, DrugSwitch2Activity.class));
 //                Toast.makeText(homeActivity.this,"btn_4我被点击了",Toast.LENGTH_SHORT).show();
             }
         });
