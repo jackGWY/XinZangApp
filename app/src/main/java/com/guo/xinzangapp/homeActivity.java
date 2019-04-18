@@ -249,9 +249,10 @@ public class homeActivity extends AppCompatActivity {
 //                    case R.id.menu4:
 //                        showContent = "点击 Item菜单4";
 //                        break;
-//                    case R.id.menu5:
-//                        showContent = "点击 Item菜单5" ;
-//                        break;
+                    case R.id.menu5:
+                        showContent = "点击 Item菜单5" ;
+                        startActivity(new Intent(homeActivity.this, MyActivity.class));
+                        break;
                 }
 //                Toast.makeText(homeActivity.this,showContent,Toast.LENGTH_SHORT).show();
             }
@@ -260,6 +261,6 @@ public class homeActivity extends AppCompatActivity {
         contentView.findViewById(R.id.menu2).setOnClickListener(listener);
         contentView.findViewById(R.id.menu3).setOnClickListener(listener);
 //        contentView.findViewById(R.id.menu4).setOnClickListener(listener);
-//        contentView.findViewById(R.id.menu5).setOnClickListener(listener);
+        contentView.findViewById(R.id.menu5).setOnClickListener(listener);
     }
 }

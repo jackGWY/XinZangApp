@@ -20,19 +20,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//import com.example.slope.androiddriver.shared.SharedPreferencesManager;
-
-import com.guo.beans.MessageBoard;
-import com.guo.http.HttpRequestor;
-import com.guo.http.MyURL;
-import com.guo.http.saveDiary;
 import com.guo.http.saveUserNamePassword;
-import com.guo.util.SharedPreferencesManager;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

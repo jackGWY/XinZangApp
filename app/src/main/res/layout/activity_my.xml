@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.guo.xinzangapp.MyActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="我的信息"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line_style"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:text="用户名"
+
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/et_username"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:hint="修改用户名"
+            android:textColor="#606060"
+            android:textColorHint="#C0C0C0"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line_style"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:text="密码"
+
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/et_userpassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:hint="修改密码"
+            android:textColor="#606060"
+            android:textColorHint="#C0C0C0"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line_style"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:text="电话号码"
+
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:hint="修改电话号码"
+            android:textColor="#606060"
+            android:textColorHint="#C0C0C0"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <Button android:id="@+id/btn_update"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="确定"
+
+        android:layout_marginLeft="110dp"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="40dp"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>
