@@ -43,6 +43,8 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <!-- //使用步行AR导航，配置Camera权限 -->
     <application
         android:allowBackup="true"

@@ -12,6 +12,15 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/btn_call"
+            android:text="拨打急救电话"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn4"
+            android:textSize="18sp"/>
+
+        <Button
             android:id="@+id/btn_find_dorctor"
             android:text="寻找医生或者患者"
             android:layout_width="match_parent"

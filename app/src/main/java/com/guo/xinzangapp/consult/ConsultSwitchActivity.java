@@ -1,6 +1,7 @@
 package com.guo.xinzangapp.consult;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,8 @@ public class ConsultSwitchActivity extends AppCompatActivity {
 //    Button communicate;
     @BindView(R.id.btn_find_dorctor)
     Button find_doctor;
+    @BindView(R.id.btn_call)
+    Button btn_call;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,7 @@ public class ConsultSwitchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_consult_switch);
         ButterKnife.bind(this);
     }
-    @OnClick({R.id.btn_discuss,R.id.btn_find_dorctor})
+    @OnClick({R.id.btn_discuss,R.id.btn_find_dorctor,R.id.btn_call})
     public void onClick(final View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
@@ -45,6 +48,15 @@ public class ConsultSwitchActivity extends AppCompatActivity {
                 intent = new Intent(ConsultSwitchActivity.this, FindActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.btn_call:
+                call("120");
+                break;
         }
+    }
+
+    private void call(String phone) {
+        Intent intent = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:"+phone));
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }
