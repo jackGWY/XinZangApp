@@ -246,9 +246,14 @@ public class homeActivity extends AppCompatActivity {
 //                        startActivity(new Intent(homeActivity.this, HeartRateActivity.class));
                         startActivity(new Intent(homeActivity.this, FindActivity.class));
                         break;
-//                    case R.id.menu4:
-//                        showContent = "点击 Item菜单4";
-//                        break;
+                    case R.id.menu4:
+                        showContent = "点击 Item菜单4";
+                        Uri uri = Uri.parse("http://diml.ecnu.edu.cn/download/heartapp.html");
+                        Intent intent3 = new Intent();
+                        intent3.setAction("android.intent.action.VIEW");
+                        intent3.setData(uri);
+                        startActivity(intent3);
+                        break;
                     case R.id.menu5:
                         showContent = "点击 Item菜单5" ;
                         startActivity(new Intent(homeActivity.this, MyActivity.class));
@@ -260,7 +265,7 @@ public class homeActivity extends AppCompatActivity {
         contentView.findViewById(R.id.menu1).setOnClickListener(listener);
         contentView.findViewById(R.id.menu2).setOnClickListener(listener);
         contentView.findViewById(R.id.menu3).setOnClickListener(listener);
-//        contentView.findViewById(R.id.menu4).setOnClickListener(listener);
+        contentView.findViewById(R.id.menu4).setOnClickListener(listener);
         contentView.findViewById(R.id.menu5).setOnClickListener(listener);
     }
 }
