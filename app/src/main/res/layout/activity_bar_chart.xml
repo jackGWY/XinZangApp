@@ -38,7 +38,7 @@
             app:labelTextColor="@color/colorPrimary"
             app:labelTextSize="10sp"
             app:leftTextSpace="30dp"
-            app:title="柱状图实例"
+            app:title="我的数据展示"
             app:titleTextColor="@color/colorPrimaryDark"
             app:titleTextSize="20sp"
             app:topTextSpace="50dp" />
