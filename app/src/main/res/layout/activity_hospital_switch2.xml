@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_find_hospital"
+            android:text="寻找医院"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn_blue"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btn_guahao"
+            android:text="医院挂号"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn4"
+            android:textSize="18sp"/>
+
+
+
+        <!--<Button-->
+            <!--android:id="@+id/index_history"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="150dp"-->
+            <!--android:layout_marginBottom="20dp"-->
+            <!--android:background="@drawable/bg_btn_green"-->
+            <!--android:text="我的数据展示"-->
+            <!--android:textSize="18sp"/>-->
+
+    </LinearLayout>
+
+
+</RelativeLayout>

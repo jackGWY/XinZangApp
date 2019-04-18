@@ -25,6 +25,7 @@ import com.guo.xinzangapp.consult.consultActivity;
 import com.guo.xinzangapp.diary.diaryListActivity;
 import com.guo.xinzangapp.doctors.DocSwitchActivity;
 import com.guo.xinzangapp.heartrate.HeartRateActivity;
+import com.guo.xinzangapp.hospital.HospitalSwitch2Activity;
 import com.guo.xinzangapp.hospital.hospitalActivity;
 import com.guo.xinzangapp.hospital.hospitalSwitchActivity;
 import com.guo.xinzangapp.index.IndexSwitchActivity;
@@ -161,12 +162,12 @@ public class homeActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(homeActivity.this, hospitalSwitchActivity.class));
-                Uri uri = Uri.parse("https://map.baidu.com/mobile/webapp/search/search/qt=con&wd=%E5%8C%BB%E9%99%A2&c=289&newmap=1&from=alamap&tpl=mapdots");
-                Intent intent = new Intent();
-                intent.setAction("android.intent.action.VIEW");
-                intent.setData(uri);
-                startActivity(intent);
+                startActivity(new Intent(homeActivity.this, HospitalSwitch2Activity.class));
+//                Uri uri = Uri.parse("https://map.baidu.com/mobile/webapp/search/search/qt=con&wd=%E5%8C%BB%E9%99%A2&c=289&newmap=1&from=alamap&tpl=mapdots");
+//                Intent intent = new Intent();
+//                intent.setAction("android.intent.action.VIEW");
+//                intent.setData(uri);
+//                startActivity(intent);
 
             }
         });

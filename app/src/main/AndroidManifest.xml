@@ -42,7 +42,6 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <!-- //使用步行AR导航，配置Camera权限 -->
@@ -117,7 +116,8 @@
         <activity android:name=".BarChart.BarChartActivity" />
         <activity android:name=".index.NumberPickerActivity" />
         <activity android:name=".medicine.DrugSwitch2Activity" />
-        <activity android:name=".MyActivity"></activity>
+        <activity android:name=".MyActivity" />
+        <activity android:name=".hospital.HospitalSwitch2Activity"></activity>
     </application>
 
 </manifest>
