@@ -13,15 +13,6 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/index_input"
-            android:text="心脏病概率预测"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/bg_btn4"
-            android:textSize="18sp"/>
-
-        <Button
             android:id="@+id/btn_heart_predict"
             android:text="心率测定"
             android:layout_width="match_parent"
@@ -31,12 +22,23 @@
             android:textSize="18sp"/>
 
         <Button
+            android:id="@+id/index_input"
+            android:text="心脏病概率预测"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn4"
+            android:textSize="18sp"/>
+
+
+
+        <Button
             android:id="@+id/index_history"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/bg_btn_green"
-            android:text="我的数据"
+            android:text="我的数据展示"
             android:textSize="18sp"/>
 
     </LinearLayout>

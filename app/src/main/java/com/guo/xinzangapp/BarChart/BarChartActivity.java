@@ -21,6 +21,8 @@ public class BarChartActivity extends AppCompatActivity {
 
     List<Double> datas = new ArrayList<>();
     List<String> description = new ArrayList<>();
+    List<Double> datas_blood = new ArrayList<>();
+    List<String> description_blood = new ArrayList<>();
     private List<Feelings> feelingsList;
     private int yellowColor = Color.argb(255, 253, 197, 53);
     private int greenColor = Color.argb(255, 27, 147, 76);
@@ -28,6 +30,7 @@ public class BarChartActivity extends AppCompatActivity {
     private int blueColor = Color.argb(255, 76, 139, 245);
 
     LBarChartView LBarChartView;
+    LBarChartView LBarChartView_blood;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,12 +62,15 @@ public class BarChartActivity extends AppCompatActivity {
             for(int i=0;i<feelingsList.size();i++){
                 datas.add(feelingsList.get(i).getHeartRate()*1.0);
                 description.add((i+1)+"");
+                datas_blood.add(feelingsList.get(i).getBloodPressure()*1.0);
+                description_blood.add((i+1)+"");
             }
         }
 
 
 
         LBarChartView = (LBarChartView) findViewById(R.id.frameNewBase);
+        LBarChartView_blood = (LBarChartView) findViewById(R.id.frameNewBase_blood);
         initNewBarDatas();
     }
 
@@ -102,6 +108,7 @@ public class BarChartActivity extends AppCompatActivity {
 //        description.add("eight5");
 
         LBarChartView.setDatas(datas, description, true);
+        LBarChartView_blood.setDatas(datas_blood, description_blood, true);
 //        LBarChartView.setDragInerfaces(new DragInerfaces() {
 //            @Override
 //            public void onEnd() {
