@@ -47,6 +47,19 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.ViewHolder>{
                 context.startActivity(intent);
             }
         });
+        holder.time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = holder.getAdapterPosition();
+                diary d = diaryList.get(position);
+                System.out.println(d.getTime());
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("diary",d);
+                Intent intent = new Intent(context,DiaryDetailActivity.class);
+                intent.putExtras(bundle);
+                context.startActivity(intent);
+            }
+        });
         return holder;
     }
 

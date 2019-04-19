@@ -9,6 +9,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            android:text="病历记录"
+            android:layout_height="wrap_content" />
+
     <TextView
         android:layout_width="match_parent"
         android:textSize="20sp"
@@ -47,7 +57,7 @@
         android:layout_width="match_parent"
         android:textSize="20sp"
         android:padding="@dimen/diaryItemPadding"
-        android:text="使用药物："
+        android:text="就诊医院："
         android:layout_height="wrap_content" />
 
     <TextView
@@ -64,7 +74,7 @@
         android:layout_width="match_parent"
         android:textSize="20sp"
         android:padding="@dimen/diaryItemPadding"
-        android:text="就诊医院：："
+        android:text="使用药物：："
         android:layout_height="wrap_content" />
 
 
