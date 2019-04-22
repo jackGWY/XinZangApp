@@ -46,9 +46,15 @@ public class BarChartActivity extends AppCompatActivity {
         Future<List<Feelings>> result =exec.submit(new getFeelings(userName));
         try {
             feelingsList = result.get();
-            for(Feelings f : feelingsList) {
-                System.out.println(f.toString());
+            if(feelingsList!=null && feelingsList.size()!=0){
+                for(Feelings f : feelingsList) {
+                    System.out.println(f.toString());
+                }
             }
+            else {
+                System.out.println("feelingList is null  in BarChartActivity...");
+            }
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -63,6 +69,14 @@ public class BarChartActivity extends AppCompatActivity {
                 datas.add(feelingsList.get(i).getHeartRate()*1.0);
                 description.add((i+1)+"");
                 datas_blood.add(feelingsList.get(i).getBloodPressure()*1.0);
+                description_blood.add((i+1)+"");
+            }
+        }
+        else {
+            for(int i=0;i<3;i++){
+                datas.add(0.0);
+                description.add((i+1)+"");
+                datas_blood.add(0.0);
                 description_blood.add((i+1)+"");
             }
         }
