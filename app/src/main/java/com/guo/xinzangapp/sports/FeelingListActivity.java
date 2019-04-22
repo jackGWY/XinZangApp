@@ -80,9 +80,22 @@ public class FeelingListActivity extends AppCompatActivity {
 //        Future<List<Feelings>> result = exec.submit(new getFeelings(userName));
         try {
             feelingsList = result.get();
-            for(Feelings f : feelingsList) {
-                System.out.println(f.toString());
+            if(feelingsList!=null && feelingsList.size()!=0){
+                for(Feelings f : feelingsList) {
+                    System.out.println(f.toString());
+                }
             }
+            else {
+                Feelings f = new Feelings();
+                f.setBloodPressure(0);
+                f.setFeeling("没有数据");
+                f.setHeartRate(0);
+                f.setRemark("没有数据");
+                f.setSports("没有数据");
+                f.setUserName(userName);
+                feelingsList.add(f);
+            }
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
