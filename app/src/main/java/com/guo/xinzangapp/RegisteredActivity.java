@@ -159,6 +159,17 @@ public class RegisteredActivity extends AppCompatActivity {
             Toast.makeText(RegisteredActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(RegisteredActivity.this, LoginActivity.class));
         }
+        else if(count.equals("9")){
+            Snackbar.make(view, "用户名已经存在", Snackbar.LENGTH_INDEFINITE)
+                    .setAction("请重新选择用户名", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(RegisteredActivity.this, "请重新选择用户名", Toast.LENGTH_SHORT).show();
+                        }
+                    }).show();
+            registerName.requestFocus();      // 控件获取焦点
+            return;
+        }
 //        new Thread(new Runnable(){
 //            @Override
 //            public void run() {

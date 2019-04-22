@@ -47,10 +47,22 @@ public class diaryListActivity extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+        if(diaryList!=null && diaryList.size()!=0){
+            for(diary d : diaryList) {
+                System.out.println("diaryListActivity:"+d);
+            }
+        }
+        else {
+            diary d = new diary();
+            d.setDrugUsed("没有数据");
+            d.setHospital("没有数据");
+            d.setReason("请添加数据");
+            d.setTime("请添加数据");
+            d.setUserName(userName);
+            diaryList.add(d);
+        }
 
-//        for(diary d : diaryList) {
-//            System.out.println("diary:"+d);
-//        }
+
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RecyclerView_diary_list);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);

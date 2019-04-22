@@ -98,6 +98,7 @@ public class MyActivity extends AppCompatActivity {
 
                     try {
                         count = result.get();
+                        System.out.println("in myavtivity,count:"+count);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     } catch (ExecutionException e) {

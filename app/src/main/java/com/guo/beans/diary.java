@@ -15,6 +15,9 @@ public class diary implements Serializable {
     private String hospital;
     private String userName;
 
+    public diary() {
+    }
+
     public diary(String time, String reason, String drugUsed, String hospital, String userName) {
         this.time = time;
         this.reason = reason;

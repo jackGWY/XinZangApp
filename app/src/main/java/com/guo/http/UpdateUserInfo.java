@@ -57,21 +57,28 @@ public class UpdateUserInfo implements Callable<String> {
     @Override
     public String call() throws Exception {
         String count = "";
-        url=url+"?userName="+userName+"originName="+originName+"userPassword="+userPassword+"phone="+phone;
+        //http://192.168.123.226:8080/heart/user/updateUserPatient?originName=1&userName=1&userPassword=1&phone=999999
+        url=url+"?userName="+userName+"&originName="+originName+"&userPassword="+userPassword+"&phone="+phone;
         try {
+//            System.out.println("url:" + url);
+//            OkHttpClient client = new OkHttpClient();
+//            Request request = new Request.Builder().url(url).build();
+//            Response response = client.newCall(request).execute();
+//            String responseData = response.body().string();
+//            System.out.println("responseData:"+ responseData);
+//
+//            JsonObject jsonObject = (JsonObject) new JsonParser().parse(responseData);
+//            count = jsonObject.get("count").getAsString();
+//            System.out.println("count after jsonObjec.get:" + count);
             System.out.println("url:" + url);
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder().url(url).build();
             Response response = client.newCall(request).execute();
             String responseData = response.body().string();
-            System.out.println("responseData:"+ responseData);
 
             JsonObject jsonObject = (JsonObject) new JsonParser().parse(responseData);
             count = jsonObject.get("count").getAsString();
-            System.out.println("count after jsonObjec.get:" + count);
-//            Gson gson = new Gson();
-//            count = gson.fromJson(responseData, new TypeToken<String>(){}.getType());
-//            System.out.println("count:"+count);
+            System.out.println("result:"+count);
         } catch (Exception e) {
             e.printStackTrace();
         }
