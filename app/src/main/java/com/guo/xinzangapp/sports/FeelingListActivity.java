@@ -72,6 +72,9 @@ public class FeelingListActivity extends AppCompatActivity {
             if(!(patientName.equals("nothing"))){
                 result = exec.submit(new getFeelings(patientName));
             }
+            else {
+                result = exec.submit(new getFeelings(patientName));
+            }
 
         } else {
             result = exec.submit(new getFeelings(userName));

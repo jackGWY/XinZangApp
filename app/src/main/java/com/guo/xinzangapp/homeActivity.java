@@ -154,7 +154,11 @@ public class homeActivity extends AppCompatActivity {
         mtvDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(homeActivity.this, ConsultSwitchActivity.class));
+                if (userType.equals("doctor")) {
+                    startActivity(new Intent(homeActivity.this, DocSwitchActivity.class));
+                } else {
+                    startActivity(new Intent(homeActivity.this, ConsultSwitchActivity.class));
+                }
             }
         });
 

@@ -29,14 +29,14 @@ public class DocSwitchActivity extends AppCompatActivity {
 
         btnPatientFeeling = (Button)findViewById(R.id.btn_patient_feeling);
         btnMyPatients = (Button) findViewById(R.id.btn_my_patient);
-        btnPatientFeeling.setOnClickListener(new View.OnClickListener(){
+        btnMyPatients.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DocSwitchActivity.this,PatientListActivity.class));
+                startActivity(new Intent(DocSwitchActivity.this,DoctorsPatientListActivity.class));
             }
         });
-        btnMyPatients.setOnClickListener(new View.OnClickListener(){
+        btnPatientFeeling.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
