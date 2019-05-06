@@ -29,6 +29,15 @@
             android:background="@drawable/bg_btn4"
             android:textSize="18sp"/>
 
+        <Button
+            android:id="@+id/btn_doc_discuss"
+            android:text="发帖讨论"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn_green"
+            android:textSize="18sp"/>
+
         <!--<Button-->
         <!--android:id="@+id/btn_consult_doctor"-->
         <!--android:layout_width="match_parent"-->

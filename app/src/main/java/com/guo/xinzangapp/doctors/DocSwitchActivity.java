@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.guo.xinzangapp.R;
 import com.guo.xinzangapp.consult.FindActivity;
 import com.guo.xinzangapp.consult.PatientListActivity;
+import com.guo.xinzangapp.consult.consultActivity;
 
 
 import butterknife.BindView;
@@ -20,7 +21,7 @@ import butterknife.OnClick;
 public class DocSwitchActivity extends AppCompatActivity {
 
 
-    private Button btnPatientFeeling,btnMyPatients;
+    private Button btnPatientFeeling,btnMyPatients,btn_discuss;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,19 +30,30 @@ public class DocSwitchActivity extends AppCompatActivity {
 
         btnPatientFeeling = (Button)findViewById(R.id.btn_patient_feeling);
         btnMyPatients = (Button) findViewById(R.id.btn_my_patient);
-        btnMyPatients.setOnClickListener(new View.OnClickListener(){
+
+        btnPatientFeeling.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DocSwitchActivity.this,DoctorsPatientListActivity.class));
             }
         });
-        btnPatientFeeling.setOnClickListener(new View.OnClickListener(){
+        btnMyPatients.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
 
                 startActivity(new Intent(DocSwitchActivity.this,FindActivity.class));
+            }
+        });
+
+        btn_discuss = (Button)findViewById(R.id.btn_doc_discuss);
+        btn_discuss.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(DocSwitchActivity.this,consultActivity.class));
             }
         });
     }
