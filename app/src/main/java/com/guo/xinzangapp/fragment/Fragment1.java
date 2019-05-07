@@ -16,6 +16,7 @@ import com.guo.xinzangapp.consult.consultActivity;
 import com.guo.xinzangapp.diary.diaryActivity;
 import com.guo.xinzangapp.heartrate.HeartRateActivity;
 import com.guo.xinzangapp.medicine.drugTypeListActivity;
+import com.guo.xinzangapp.medicineArticle.newListActivity;
 
 public class Fragment1 extends Fragment {
     private View view;
@@ -81,6 +82,18 @@ public class Fragment1 extends Fragment {
                 Intent intent = new Intent();
                 //SoilsenerActivity.class为想要跳转的Activity
                 intent.setClass(getActivity(), diaryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // 新闻资料 ***************************
+        ImageView image_news=(ImageView) view.findViewById(R.id.image_news);
+        image_news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                //SoilsenerActivity.class为想要跳转的Activity
+                intent.setClass(getActivity(), newListActivity.class);
                 startActivity(intent);
             }
         });
