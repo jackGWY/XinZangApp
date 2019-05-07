@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import com.guo.xinzangapp.BarChart.BarChartActivity;
 import com.guo.xinzangapp.FoodActivity;
+import com.guo.xinzangapp.MyActivity;
 import com.guo.xinzangapp.R;
 import com.guo.xinzangapp.consult.ChatActivity;
 import com.guo.xinzangapp.consult.FindActivity;
@@ -135,6 +136,18 @@ public class Fragment1 extends Fragment {
                 Intent intent = new Intent();
                 //SoilsenerActivity.class为想要跳转的Activity
                 intent.setClass(getActivity(), BarChartActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // 修改个人信息***************************
+        ImageView image_modify=(ImageView) view.findViewById(R.id.image_modify);
+        image_modify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                //SoilsenerActivity.class为想要跳转的Activity
+                intent.setClass(getActivity(), MyActivity.class);
                 startActivity(intent);
             }
         });
