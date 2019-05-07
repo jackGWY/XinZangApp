@@ -17,6 +17,7 @@ import com.guo.xinzangapp.consult.FindActivity;
 import com.guo.xinzangapp.consult.consultActivity;
 import com.guo.xinzangapp.diary.diaryActivity;
 import com.guo.xinzangapp.heartrate.HeartRateActivity;
+import com.guo.xinzangapp.index.NumberPickerActivity;
 import com.guo.xinzangapp.medicine.drugTypeListActivity;
 import com.guo.xinzangapp.medicineArticle.newListActivity;
 
@@ -108,6 +109,18 @@ public class Fragment1 extends Fragment {
                 Intent intent = new Intent();
                 //SoilsenerActivity.class为想要跳转的Activity
                 intent.setClass(getActivity(), FoodActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // 预测 ***************************
+        ImageView image_predict=(ImageView) view.findViewById(R.id.predict);
+        image_predict.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                //SoilsenerActivity.class为想要跳转的Activity
+                intent.setClass(getActivity(), NumberPickerActivity.class);
                 startActivity(intent);
             }
         });
