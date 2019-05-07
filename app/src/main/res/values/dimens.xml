@@ -43,4 +43,10 @@
     <dimen name="popwindow_title">15sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="btn_drug_height">120dp</dimen>
+
+
+
+    <dimen name="navigation_icon_size">18dp</dimen>
+
+
 </resources>

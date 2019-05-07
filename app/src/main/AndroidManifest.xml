@@ -120,7 +120,10 @@
         <activity android:name=".doctors.DoctorsPaitensActivity" />
         <activity android:name=".doctors.DoctorsPatientListActivity" />
         <activity android:name=".doctors.DoctorsPatientFeelingActivity" />
-        <activity android:name=".doctors.DoctorFeelingListActivity"></activity>
+        <activity android:name=".doctors.DoctorFeelingListActivity" />
+        <activity
+            android:name=".BottomActivity"
+            android:label="@string/title_activity_bottom"></activity>
     </application>
 
 </manifest>

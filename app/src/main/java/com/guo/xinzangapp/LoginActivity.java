@@ -128,7 +128,8 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putString("userPassword", regpass);
                     editor.putString("userType", userType);
                     editor.apply();
-                    startActivity(new Intent(LoginActivity.this,homeActivity.class));
+//                    startActivity(new Intent(LoginActivity.this,homeActivity.class));
+                    startActivity(new Intent(LoginActivity.this,BottomActivity.class));
                     //finish();
                 }
                 else if (count.equals("0")){
