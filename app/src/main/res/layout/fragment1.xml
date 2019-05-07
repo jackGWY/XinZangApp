@@ -291,7 +291,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/btn6"
+                        android:id="@+id/l797"
                         android:layout_width="0dp"
                         android:layout_height="72dp"
                         android:layout_weight="1"
@@ -304,18 +304,19 @@
                         <ImageView
                             android:layout_width="48dp"
                             android:layout_height="48dp"
+                            android:id="@+id/image_binglidan"
                             android:padding="12dp"
-                            android:src="@drawable/web"
+                            android:src="@drawable/binglidan"
                             android:tint="#4fc3f7" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="官网" />
+                            android:text="病例单" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/btn7"
+                        android:id="@+id/l43"
                         android:layout_width="0dp"
                         android:layout_height="72dp"
                         android:layout_weight="1"

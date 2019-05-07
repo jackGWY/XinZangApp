@@ -13,6 +13,7 @@ import com.guo.xinzangapp.R;
 import com.guo.xinzangapp.consult.ChatActivity;
 import com.guo.xinzangapp.consult.FindActivity;
 import com.guo.xinzangapp.consult.consultActivity;
+import com.guo.xinzangapp.diary.diaryActivity;
 import com.guo.xinzangapp.heartrate.HeartRateActivity;
 import com.guo.xinzangapp.medicine.drugTypeListActivity;
 
@@ -68,6 +69,18 @@ public class Fragment1 extends Fragment {
                 Intent intent = new Intent();
                 //SoilsenerActivity.class为想要跳转的Activity
                 intent.setClass(getActivity(), drugTypeListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // 病历单 ***************************
+        ImageView image_binglidan=(ImageView) view.findViewById(R.id.image_binglidan);
+        image_binglidan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                //SoilsenerActivity.class为想要跳转的Activity
+                intent.setClass(getActivity(), diaryActivity.class);
                 startActivity(intent);
             }
         });
