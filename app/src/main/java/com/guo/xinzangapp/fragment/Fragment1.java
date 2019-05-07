@@ -155,11 +155,19 @@ public class Fragment1 extends Fragment {
                 intent.setAction("android.intent.action.VIEW");
                 intent.setData(uri);
                 startActivity(intent);
+            }
+        });
 
-//                Intent intent = new Intent();
-//                //SoilsenerActivity.class为想要跳转的Activity
-//                intent.setClass(getActivity(), newListActivity.class);
-//                startActivity(intent);
+        // 查找医院***************************
+        ImageView image_hospital=(ImageView) view.findViewById(R.id.image_hospital2);
+        image_hospital.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://map.baidu.com/mobile/webapp/search/search/qt=con&wd=%E5%8C%BB%E9%99%A2&c=289&newmap=1&from=alamap&tpl=mapdots");
+                Intent intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                intent.setData(uri);
+                startActivity(intent);
             }
         });
 
