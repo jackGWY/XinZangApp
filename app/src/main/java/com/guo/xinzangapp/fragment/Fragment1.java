@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.guo.xinzangapp.FoodActivity;
 import com.guo.xinzangapp.R;
 import com.guo.xinzangapp.consult.ChatActivity;
 import com.guo.xinzangapp.consult.FindActivity;
@@ -95,6 +96,18 @@ public class Fragment1 extends Fragment {
                 Intent intent = new Intent();
                 //SoilsenerActivity.class为想要跳转的Activity
                 intent.setClass(getActivity(), newListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // 食物推荐 ***************************
+        ImageView image_food=(ImageView) view.findViewById(R.id.image_food);
+        image_food.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                //SoilsenerActivity.class为想要跳转的Activity
+                intent.setClass(getActivity(), FoodActivity.class);
                 startActivity(intent);
             }
         });

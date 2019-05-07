@@ -330,9 +330,10 @@
 
                         <ImageView
                             android:layout_width="48dp"
+                            android:id="@+id/image_food"
                             android:layout_height="48dp"
                             android:padding="12dp"
-                            android:src="@drawable/hospital"
+                            android:src="@drawable/shiwu"
                             android:tint="#37474f" />
 
                         <TextView
