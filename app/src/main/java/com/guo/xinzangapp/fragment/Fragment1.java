@@ -171,6 +171,18 @@ public class Fragment1 extends Fragment {
             }
         });
 
+        // 更新app***************************
+        ImageView image_gengxin=(ImageView) view.findViewById(R.id.image_gengxin);
+        image_gengxin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("http://diml.ecnu.edu.cn/download/heartapp.html");
+                Intent intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                intent.setData(uri);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 

@@ -199,6 +199,7 @@
 
                         <ImageView
                             android:layout_width="48dp"
+                            android:id="@+id/image_gengxin"
                             android:layout_height="48dp"
                             android:padding="12dp"
                             android:src="@drawable/web"
