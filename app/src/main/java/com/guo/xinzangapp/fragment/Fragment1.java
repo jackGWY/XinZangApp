@@ -196,11 +196,40 @@ public class Fragment1 extends Fragment {
                 startActivity(intent);
             }
         });
+
+        // 挂号***************************
+        ImageView image_guahao=(ImageView) view.findViewById(R.id.image_guahao);
+        image_guahao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://shanghai.guahao.com/");
+                Intent intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                intent.setData(uri);
+                startActivity(intent);
+            }
+        });
+
+        // 急救电话
+        ImageView image_phone=(ImageView) view.findViewById(R.id.image_phone);
+        image_phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                call("120");
+            }
+        });
+
         return view;
     }
 
     private void initView() {
 
+    }
+
+    private void call(String phone) {
+        Intent intent = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:"+phone));
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
 

@@ -405,7 +405,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/l797"
+                        android:id="@+id/l8977777"
                         android:layout_width="0dp"
                         android:layout_height="72dp"
                         android:layout_weight="1"
@@ -418,19 +418,19 @@
                         <ImageView
                             android:layout_width="48dp"
                             android:layout_height="48dp"
-                            android:id="@+id/image_binglidan"
+                            android:id="@+id/image_phone"
                             android:padding="12dp"
-                            android:src="@drawable/binglidan"
+                            android:src="@drawable/phone"
                             android:tint="#4fc3f7" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="病例单" />
+                            android:text="急救电话" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/l43"
+                        android:id="@+id/l234"
                         android:layout_width="0dp"
                         android:layout_height="72dp"
                         android:layout_weight="1"
@@ -442,16 +442,16 @@
 
                         <ImageView
                             android:layout_width="48dp"
-                            android:id="@+id/image_food"
+                            android:id="@+id/image_guahao"
                             android:layout_height="48dp"
                             android:padding="12dp"
-                            android:src="@drawable/shiwu"
+                            android:src="@drawable/guahao"
                             android:tint="#37474f" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="食物推荐" />
+                            android:text="挂号" />
                     </LinearLayout>
 
                     <LinearLayout
