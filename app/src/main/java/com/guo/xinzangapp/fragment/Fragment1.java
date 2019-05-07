@@ -14,6 +14,7 @@ import com.guo.xinzangapp.consult.ChatActivity;
 import com.guo.xinzangapp.consult.FindActivity;
 import com.guo.xinzangapp.consult.consultActivity;
 import com.guo.xinzangapp.heartrate.HeartRateActivity;
+import com.guo.xinzangapp.medicine.drugTypeListActivity;
 
 public class Fragment1 extends Fragment {
     private View view;
@@ -58,6 +59,19 @@ public class Fragment1 extends Fragment {
                 startActivity(intent);
             }
         });
+
+        // 药物信息 ***************************
+        ImageView image_drug_info=(ImageView) view.findViewById(R.id.image_drug_info);
+        image_drug_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                //SoilsenerActivity.class为想要跳转的Activity
+                intent.setClass(getActivity(), drugTypeListActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
 
