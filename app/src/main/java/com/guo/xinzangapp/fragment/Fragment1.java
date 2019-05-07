@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.guo.xinzangapp.R;
+import com.guo.xinzangapp.consult.ChatActivity;
+import com.guo.xinzangapp.consult.FindActivity;
 import com.guo.xinzangapp.heartrate.HeartRateActivity;
 
 public class Fragment1 extends Fragment {
@@ -21,16 +23,28 @@ public class Fragment1 extends Fragment {
         view = (View) inflater.inflate(R.layout.fragment1, null);
         initView();
 
-//        ImageView image_heart_rate=(ImageView) view.findViewById(R.id.image_heart_rate);
-//        image_heart_rate.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent();
-//                //SoilsenerActivity.class为想要跳转的Activity
-//                intent.setClass(getActivity(), HeartRateActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        ImageView image_heart_rate=(ImageView) view.findViewById(R.id.image_heart_rate);
+        image_heart_rate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                //SoilsenerActivity.class为想要跳转的Activity
+                intent.setClass(getActivity(), HeartRateActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // 聊天 ***************************
+        ImageView image_chart=(ImageView) view.findViewById(R.id.image_chat);
+        image_chart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                //SoilsenerActivity.class为想要跳转的Activity
+                intent.setClass(getActivity(), FindActivity.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
