@@ -20,6 +20,7 @@ import com.guo.xinzangapp.heartrate.HeartRateActivity;
 import com.guo.xinzangapp.index.NumberPickerActivity;
 import com.guo.xinzangapp.medicine.drugTypeListActivity;
 import com.guo.xinzangapp.medicineArticle.newListActivity;
+import com.guo.xinzangapp.sports.FeelingListActivity;
 
 public class Fragment1 extends Fragment {
     private View view;
@@ -121,6 +122,24 @@ public class Fragment1 extends Fragment {
                 Intent intent = new Intent();
                 //SoilsenerActivity.class为想要跳转的Activity
                 intent.setClass(getActivity(), NumberPickerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // feeling 日记 ***************************
+        ImageView image_feeling=(ImageView) view.findViewById(R.id.image_feeling);
+        image_feeling.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+
+                bundle.putString("fromPatientListAdapter","nothing");
+                bundle.putString("patientName","nothing");
+                Intent intent = new Intent();
+
+                //SoilsenerActivity.class为想要跳转的Activity
+                intent.setClass(getActivity(), FeelingListActivity.class);
+                intent.putExtra("Message",bundle);
                 startActivity(intent);
             }
         });
