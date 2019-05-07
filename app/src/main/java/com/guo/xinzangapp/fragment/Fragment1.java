@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import com.guo.xinzangapp.R;
 import com.guo.xinzangapp.consult.ChatActivity;
 import com.guo.xinzangapp.consult.FindActivity;
+import com.guo.xinzangapp.consult.consultActivity;
 import com.guo.xinzangapp.heartrate.HeartRateActivity;
 
 public class Fragment1 extends Fragment {
@@ -42,6 +43,18 @@ public class Fragment1 extends Fragment {
                 Intent intent = new Intent();
                 //SoilsenerActivity.class为想要跳转的Activity
                 intent.setClass(getActivity(), FindActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // 发帖讨论 ***************************
+        ImageView image_discuss=(ImageView) view.findViewById(R.id.image_discuss2);
+        image_discuss.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                //SoilsenerActivity.class为想要跳转的Activity
+                intent.setClass(getActivity(), consultActivity.class);
                 startActivity(intent);
             }
         });
