@@ -1,148 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.guo.xinzangapp.BottomActivity">
-
     <TextView
-        android:layout_width="match_parent"
-        android:id="@+id/tv_my_title"
-        android:text="我的用户名字"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:text="讨论问题列表"
         android:textColor="@color/colorAccent"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        android:layout_height="wrap_content" />
+        android:padding="10dp"
+        android:layout_marginBottom="40dp"
+        />
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
-        android:id="@+id/linear_modify"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/RecyclerView_message_board"
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/question_add"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/line_style"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:orientation="horizontal">
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:srcCompat="@drawable/ic_action_add" />
 
-        <ImageView
-            android:layout_width="70dp"
-            android:padding="@dimen/my_padding"
-            android:src="@drawable/modified"
-            android:layout_height="match_parent" />
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_marginLeft="@dimen/my_margin_left"
-            android:layout_height="50dp"
-            android:text="修改"
-            android:textSize="17sp" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:id="@+id/linear_binglidan"
-        android:layout_height="wrap_content"
-        android:background="@drawable/line_style"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="70dp"
-            android:padding="@dimen/my_padding"
-            android:src="@drawable/binglidan"
-            android:layout_height="match_parent" />
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_marginLeft="@dimen/my_margin_left"
-            android:layout_height="50dp"
-            android:text="病例单"
-            android:textSize="17sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/line_style"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="70dp"
-            android:padding="@dimen/my_padding"
-            android:src="@drawable/md_pencil"
-            android:layout_height="match_parent" />
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_marginLeft="@dimen/my_margin_left"
-            android:layout_height="50dp"
-            android:text="运动日记"
-            android:textSize="17sp" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/line_style"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="70dp"
-            android:padding="@dimen/my_padding"
-            android:src="@drawable/people2"
-            android:layout_height="match_parent" />
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_marginLeft="@dimen/my_margin_left"
-            android:layout_height="50dp"
-            android:text="我的病人"
-            android:textSize="17sp" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/line_style"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="70dp"
-            android:padding="@dimen/my_padding"
-            android:src="@drawable/gengxin"
-            android:layout_height="match_parent" />
-
-        <TextView
-            android:layout_width="200dp"
-            android:layout_marginLeft="@dimen/my_margin_left"
-            android:layout_height="50dp"
-            android:text="跟新和下载app"
-            android:textSize="17sp" />
-    </LinearLayout>
-
-
-
-    <!--<Button android:id="@+id/btn_update"-->
-        <!--android:layout_width="100dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="确定"-->
-
-        <!--android:layout_marginLeft="110dp"-->
-        <!--android:gravity="center"-->
-        <!--android:background="@color/colorPrimary"-->
-        <!--android:layout_marginTop="40dp"-->
-        <!--android:textColor="@android:color/white"/>-->
-
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
