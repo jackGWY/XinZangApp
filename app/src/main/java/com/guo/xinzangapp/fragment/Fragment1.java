@@ -2,6 +2,7 @@ package com.guo.xinzangapp.fragment;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -95,6 +96,25 @@ public class Fragment1 extends Fragment {
                 //SoilsenerActivity.class为想要跳转的Activity
                 intent.setClass(getActivity(), newListActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        // 购买药物 ***************************
+        ImageView image_buy_drug=(ImageView) view.findViewById(R.id.image_buy_drug);
+        image_buy_drug.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Uri uri = Uri.parse("https://pages.tmall.com/wow/yao/act/ziyinghome?from=zebra:offline");
+                Intent intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                intent.setData(uri);
+                startActivity(intent);
+
+//                Intent intent = new Intent();
+//                //SoilsenerActivity.class为想要跳转的Activity
+//                intent.setClass(getActivity(), newListActivity.class);
+//                startActivity(intent);
             }
         });
 

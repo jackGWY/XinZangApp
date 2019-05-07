@@ -246,6 +246,7 @@
 
                         <ImageView
                             android:layout_width="48dp"
+                            android:id="@+id/image_buy_drug"
                             android:layout_height="48dp"
                             android:padding="12dp"
                             android:src="@drawable/drug"
