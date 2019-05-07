@@ -49,5 +49,8 @@
     <dimen name="my_margin_left">20dp</dimen>
     <dimen name="my_padding">10dp</dimen>
 
+    <dimen name="my_width">70dp</dimen>
+    <dimen name="my_height">40dp</dimen>
+
 
 </resources>

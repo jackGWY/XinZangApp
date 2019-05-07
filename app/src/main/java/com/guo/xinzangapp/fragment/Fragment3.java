@@ -2,13 +2,16 @@ package com.guo.xinzangapp.fragment;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.guo.xinzangapp.MyActivity;
 import com.guo.xinzangapp.R;
@@ -24,6 +27,13 @@ public class Fragment3 extends Fragment {
         view = (View) inflater.inflate(R.layout.fragment3, null);
         initView();
 
+        SharedPreferences pref;
+        SharedPreferences.Editor editor;
+        pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        final String userName = pref.getString("userName","");
+
+        TextView tv_my_name = (TextView) view.findViewById(R.id.tv_my_title);
+        tv_my_name.setText(userName);
         LinearLayout linear_modify = (LinearLayout)view.findViewById(R.id.linear_modify);
         linear_modify.setOnClickListener(new View.OnClickListener() {
             @Override
