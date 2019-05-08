@@ -45,7 +45,7 @@
         android:layout_alignParentBottom="true"
         android:overScrollMode="never"
         android:scrollbars="none"
-        app:itemBackground="@color/colorPrimaryDark"
+        app:itemBackground="@color/white"
         app:itemIconTint="@color/colorAccent"
         app:itemTextColor="@drawable/text_color"
         app:menu="@menu/navigation">

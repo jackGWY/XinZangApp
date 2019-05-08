@@ -77,8 +77,15 @@ public class medicineActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor;
                 pref = PreferenceManager.getDefaultSharedPreferences(medicineActivity.this);
                 final String userName = pref.getString("userName","");
+                final String userType = pref.getString("userType","");
                 Log.d("consultActivity",userName);
-                dialog();
+                if(userType.equals("patient")){
+                    Toast ss = Toast.makeText(medicineActivity.this, "病人不能添加药物",Toast.LENGTH_LONG);
+                    ss.show();
+                }
+                else {
+                    dialog();
+                }
                 break;
         }
     }

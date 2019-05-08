@@ -93,7 +93,7 @@
                             android:layout_height="48dp"
                             android:padding="12dp"
                             android:id="@+id/image_chat"
-                            android:src="@drawable/chat"
+                            android:src="@drawable/chat2"
                             android:tint="#455A64" />
 
                         <TextView
