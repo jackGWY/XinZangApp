@@ -86,7 +86,7 @@ public class BottomActivity extends AppCompatActivity {
         count.setText(String.valueOf(10));
 
         //如果没有消息，不需要显示的时候那只需要将它隐藏即可
-//        count.setVisibility(View.GONE);
+        count.setVisibility(View.GONE);
     }
 
     /**
