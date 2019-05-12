@@ -23,6 +23,7 @@ import com.guo.xinzangapp.index.NumberPickerActivity;
 import com.guo.xinzangapp.medicine.drugTypeListActivity;
 import com.guo.xinzangapp.medicineArticle.newListActivity;
 import com.guo.xinzangapp.sports.FeelingListActivity;
+import com.guo.xinzangapp.step.StepMainActivity;
 
 public class Fragment1 extends Fragment {
     private View view;
@@ -197,16 +198,21 @@ public class Fragment1 extends Fragment {
             }
         });
 
-        // 更新app***************************
+        // 官网更新app***************************
         ImageView image_gengxin=(ImageView) view.findViewById(R.id.image_gengxin);
         image_gengxin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("http://diml.ecnu.edu.cn/download/heartapp.html");
+//                Uri uri = Uri.parse("http://diml.ecnu.edu.cn/download/heartapp.html");
+//                Intent intent = new Intent();
+//                intent.setAction("android.intent.action.VIEW");
+//                intent.setData(uri);
+//                startActivity(intent);
                 Intent intent = new Intent();
-                intent.setAction("android.intent.action.VIEW");
-                intent.setData(uri);
+                //SoilsenerActivity.class为想要跳转的Activity
+                intent.setClass(getActivity(), StepMainActivity.class);
                 startActivity(intent);
+
             }
         });
 
