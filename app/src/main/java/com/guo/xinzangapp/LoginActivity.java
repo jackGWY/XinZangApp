@@ -118,6 +118,7 @@ public class LoginActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 } catch (Exception e){
+                    Toast.makeText(LoginActivity.this, "登入错误，服务器或者网络错误", Toast.LENGTH_LONG).show();
                     e.printStackTrace();
                 }
 

@@ -37,8 +37,6 @@ import java.util.concurrent.Future;
 public class Fragment2 extends Fragment {
     private View view;
 
-    FloatingActionButton imageAdd;
-
     List<MessageTitle> messageTitleList = new ArrayList<>();
 
     private MessageTitleAdapter messageTitleAdapter;

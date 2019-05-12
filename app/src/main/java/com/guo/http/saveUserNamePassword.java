@@ -33,7 +33,7 @@ public class saveUserNamePassword implements Callable<String>{
 
     @Override
     public String call() throws Exception {
-        String count = null;
+        String count = "";
         url = url + "/login/doLogin?uname="+uname+"&regpass="+regpass+"&userType="+userType;
         try {
             System.out.println("url:" + url);
