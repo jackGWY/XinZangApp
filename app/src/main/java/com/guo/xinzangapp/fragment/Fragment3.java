@@ -20,6 +20,8 @@ import com.guo.xinzangapp.diary.diaryActivity;
 import com.guo.xinzangapp.diary.diaryListActivity;
 import com.guo.xinzangapp.sports.FeelingListActivity;
 
+import org.w3c.dom.Text;
+
 public class Fragment3 extends Fragment {
     private View view;
 
@@ -32,6 +34,14 @@ public class Fragment3 extends Fragment {
         SharedPreferences.Editor editor;
         pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
         final String userName = pref.getString("userName","");
+        final String userType = pref.getString("userType","");
+        TextView tv_mypatiens = (TextView) view.findViewById(R.id.tv_mypatients);
+
+        if(userType.equals("patient")){
+            tv_mypatiens.setText("我的医生");
+        } else {
+            tv_mypatiens.setText("我的病人");
+        }
 
         TextView tv_my_name = (TextView) view.findViewById(R.id.tv_my_title);
         tv_my_name.setText(userName);
