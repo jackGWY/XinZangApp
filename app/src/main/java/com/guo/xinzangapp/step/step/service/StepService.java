@@ -96,7 +96,7 @@ public class StepService extends Service implements SensorEventListener {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d(TAG, "onCreate()");
+        Log.d(TAG, "stepService ....onCreate()");
         initNotification();
         initTodayData();
         initBroadcastReceiver();
@@ -419,14 +419,14 @@ public class StepService extends Service implements SensorEventListener {
         Sensor detectorSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
         if (countSensor != null) {
             stepSensorType = Sensor.TYPE_STEP_COUNTER;
-            Log.v(TAG, "Sensor.TYPE_STEP_COUNTER");
+            Log.d(TAG, "Sensor.TYPE_STEP_COUNTER");
             sensorManager.registerListener(StepService.this, countSensor, SensorManager.SENSOR_DELAY_NORMAL);
         } else if (detectorSensor != null) {
             stepSensorType = Sensor.TYPE_STEP_DETECTOR;
-            Log.v(TAG, "Sensor.TYPE_STEP_DETECTOR");
+            Log.d(TAG, "Sensor.TYPE_STEP_DETECTOR");
             sensorManager.registerListener(StepService.this, detectorSensor, SensorManager.SENSOR_DELAY_NORMAL);
         } else {
-            Log.v(TAG, "Count sensor not available!");
+            Log.d(TAG, "Count sensor not available!");
             addBasePedometerListener();
         }
     }
@@ -450,6 +450,7 @@ public class StepService extends Service implements SensorEventListener {
         if (stepSensorType == Sensor.TYPE_STEP_COUNTER) {
             //获取当前传感器返回的临时步数
             int tempStep = (int) event.values[0];
+            System.out.println("stepServiece......tempStep......................."+tempStep);
             //首次如果没有获取手机系统中已有的步数则获取一次系统中APP还未开始记步的步数
             if (!hasRecord) {
                 hasRecord = true;

@@ -18,6 +18,7 @@ import com.guo.xinzangapp.consult.ChatActivity;
 import com.guo.xinzangapp.consult.FindActivity;
 import com.guo.xinzangapp.consult.consultActivity;
 import com.guo.xinzangapp.diary.diaryActivity;
+import com.guo.xinzangapp.diary.diaryListActivity;
 import com.guo.xinzangapp.heartrate.HeartRateActivity;
 import com.guo.xinzangapp.index.NumberPickerActivity;
 import com.guo.xinzangapp.medicine.drugTypeListActivity;
@@ -88,7 +89,7 @@ public class Fragment1 extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 //SoilsenerActivity.class为想要跳转的Activity
-                intent.setClass(getActivity(), diaryActivity.class);
+                intent.setClass(getActivity(), diaryListActivity.class);
                 startActivity(intent);
             }
         });
@@ -203,15 +204,15 @@ public class Fragment1 extends Fragment {
         image_gengxin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Uri uri = Uri.parse("http://diml.ecnu.edu.cn/download/heartapp.html");
-//                Intent intent = new Intent();
-//                intent.setAction("android.intent.action.VIEW");
-//                intent.setData(uri);
-//                startActivity(intent);
+                Uri uri = Uri.parse("http://diml.ecnu.edu.cn/download/heartapp.html");
                 Intent intent = new Intent();
-                //SoilsenerActivity.class为想要跳转的Activity
-                intent.setClass(getActivity(), StepMainActivity.class);
+                intent.setAction("android.intent.action.VIEW");
+                intent.setData(uri);
                 startActivity(intent);
+//                Intent intent = new Intent();
+//                //SoilsenerActivity.class为想要跳转的Activity
+//                intent.setClass(getActivity(), StepMainActivity.class);
+//                startActivity(intent);
 
             }
         });

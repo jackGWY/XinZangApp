@@ -20,6 +20,8 @@ import com.guo.xinzangapp.R;
 import org.json.JSONObject;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -64,9 +66,19 @@ public class diaryActivity extends AppCompatActivity {
                 ExecutorService exec = Executors.newCachedThreadPool();
                 exec.submit(new saveDiary(date2,reason2,hospital2,drug_used2,userName));
 
-                Intent intent = new Intent(diaryActivity.this,diaryListActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(diaryActivity.this,diaryListActivity.class);
+//                startActivity(intent);
+                Timer timer = new Timer();
+                timer.schedule(new Task(),1000);
                 break;
+        }
+    }
+
+    private class Task extends TimerTask {
+
+        @Override
+        public void run() {
+            startActivity(new Intent(diaryActivity.this,diaryListActivity.class));
         }
     }
 }

@@ -54,7 +54,7 @@ public class StepMainActivity extends AppCompatActivity implements View.OnClickL
         //获取用户设置的计划锻炼步数，没有设置过的话默认7000
         String planWalk_QTY = (String) sp.getParam("planWalk_QTY", "7000");
         //设置当前步数为0
-        cc.setCurrentCount(Integer.parseInt(planWalk_QTY), 0);
+        cc.setCurrentCount(Integer.parseInt(planWalk_QTY), 1000);
         tv_isSupport.setText("计步中...");
         setupService();
     }
@@ -66,7 +66,7 @@ public class StepMainActivity extends AppCompatActivity implements View.OnClickL
      * 开启计步服务
      */
     private void setupService() {
-        Intent intent = new Intent(this, StepService.class);
+        Intent intent = new Intent(StepMainActivity.this, StepService.class);
         isBind = bindService(intent, conn, Context.BIND_AUTO_CREATE);
         startService(intent);
     }

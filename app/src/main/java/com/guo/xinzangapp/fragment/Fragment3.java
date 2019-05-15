@@ -17,6 +17,7 @@ import com.guo.xinzangapp.MyActivity;
 import com.guo.xinzangapp.R;
 import com.guo.xinzangapp.consult.FindActivity;
 import com.guo.xinzangapp.diary.diaryActivity;
+import com.guo.xinzangapp.diary.diaryListActivity;
 import com.guo.xinzangapp.sports.FeelingListActivity;
 
 public class Fragment3 extends Fragment {
@@ -51,7 +52,7 @@ public class Fragment3 extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 //SoilsenerActivity.class为想要跳转的Activity
-                intent.setClass(getActivity(), diaryActivity.class);
+                intent.setClass(getActivity(), diaryListActivity.class);
                 startActivity(intent);
             }
         });

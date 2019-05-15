@@ -1,11 +1,14 @@
 package com.guo.xinzangapp.diary;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.guo.beans.diary;
 import com.guo.beans.drugInfo;
@@ -22,16 +25,26 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class diaryListActivity extends AppCompatActivity {
 
     private List<diary> diaryList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diary_list);
 
+        FloatingActionButton FAdd = (FloatingActionButton)findViewById(R.id.binglidan_add);
+        FAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(diaryListActivity.this,diaryActivity.class);
+                startActivity(intent);
+            }
+        });
         SharedPreferences pref;
         SharedPreferences.Editor editor;
         pref = PreferenceManager.getDefaultSharedPreferences(this);

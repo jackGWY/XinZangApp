@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.guo.beans.Feelings;
+import com.guo.beans.MessageTitle;
 import com.guo.beans.diary;
 import com.guo.xinzangapp.R;
 import com.guo.xinzangapp.diary.DiaryAdapter;
@@ -92,5 +93,14 @@ public class FeelingAdapter extends RecyclerView.Adapter<FeelingAdapter.ViewHold
             sports = (TextView) view.findViewById(R.id.sport_title);
             feeling = (TextView) view.findViewById(R.id.feeling_title);
         }
+    }
+
+    //添加数据
+    public void addItem(Feelings data) {
+        feelingList.add(data);
+        int position = feelingList.size()-1;
+        notifyItemInserted(position);//通知演示插入动画
+        notifyDataSetChanged();//通知重新绑定所有数据与界面
+        //notifyItemRangeChanged(position,MessageTitleList.size()-position);//通知数据与界面重新绑定
     }
 }
