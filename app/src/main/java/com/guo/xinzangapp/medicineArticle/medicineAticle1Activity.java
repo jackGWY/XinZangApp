@@ -11,6 +11,7 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.guo.beans.HeartNews;
 import com.guo.beans.News;
 import com.guo.xinzangapp.R;
 
@@ -23,8 +24,10 @@ public class medicineAticle1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_medicine_aticle1);
         Intent intent = getIntent();
         Bundle bundle=intent.getExtras();
-        News news =(News) bundle.getSerializable("news");
-        url = news.getNews_url();
+//        News news =(News) bundle.getSerializable("news");
+//        url = news.getNews_url();
+        HeartNews heartNews = (HeartNews) bundle.getSerializable("news");
+        url = heartNews.getNewsurl();
         mWv1=(WebView) findViewById(R.id.wv1);
         mWv1.getSettings().setJavaScriptEnabled(true);//设置支持javascript
         mWv1.setWebViewClient(new MyWebViewClient());

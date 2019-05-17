@@ -21,6 +21,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.guo.http.saveUserNamePassword;
+import com.guo.xinzangapp.diary.diaryActivity;
+
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -110,6 +114,8 @@ public class LoginActivity extends AppCompatActivity {
                     ExecutorService exec = Executors.newCachedThreadPool();
                     Future<String> result = exec.submit(new saveUserNamePassword(uname, regpass,userType));
 
+                    Timer timer = new Timer();
+                    timer.schedule(new Task2(),1000);
                     try {
                         count = result.get();
                     } catch (InterruptedException e) {
@@ -180,7 +186,13 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    private class Task2 extends TimerTask{
 
+        @Override
+        public void run() {
+            System.out.println("it is TimerTask，to wait time");
+        }
+    }
 }
 
 

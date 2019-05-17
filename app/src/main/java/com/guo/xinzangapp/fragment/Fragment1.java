@@ -22,6 +22,7 @@ import com.guo.xinzangapp.diary.diaryListActivity;
 import com.guo.xinzangapp.heartrate.HeartRateActivity;
 import com.guo.xinzangapp.index.NumberPickerActivity;
 import com.guo.xinzangapp.medicine.drugTypeListActivity;
+import com.guo.xinzangapp.medicineArticle.heartNewsListActivity;
 import com.guo.xinzangapp.medicineArticle.newListActivity;
 import com.guo.xinzangapp.sports.FeelingListActivity;
 import com.guo.xinzangapp.step.StepMainActivity;
@@ -101,7 +102,7 @@ public class Fragment1 extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 //SoilsenerActivity.class为想要跳转的Activity
-                intent.setClass(getActivity(), newListActivity.class);
+                intent.setClass(getActivity(), heartNewsListActivity.class);
                 startActivity(intent);
             }
         });

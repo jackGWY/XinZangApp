@@ -43,7 +43,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
-    <!--计歩-->
+    <!-- 计歩 -->
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
@@ -135,14 +135,15 @@
         <activity android:name=".hospital.HospitalSwitch2Activity" />
         <activity android:name=".doctors.DoctorsPaitensActivity" />
         <activity android:name=".doctors.DoctorsPatientListActivity" />
-        <!--<activity android:name=".doctors.DoctorsPatientFeelingActivity" />-->
+        <!-- <activity android:name=".doctors.DoctorsPatientFeelingActivity" /> -->
         <activity android:name=".doctors.DoctorFeelingListActivity" />
         <activity
             android:name=".BottomActivity"
             android:label="@string/title_activity_bottom" />
         <activity android:name=".step.StepMainActivity" />
         <activity android:name=".step.HistoryActivity" />
-        <activity android:name=".step.SetPlanActivity"></activity>
+        <activity android:name=".step.SetPlanActivity" />
+        <activity android:name=".medicineArticle.heartNewsListActivity"></activity>
     </application>
 
 </manifest>
