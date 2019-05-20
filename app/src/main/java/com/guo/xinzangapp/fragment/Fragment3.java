@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.guo.xinzangapp.BarChart.BarChartActivity;
 import com.guo.xinzangapp.MyActivity;
 import com.guo.xinzangapp.R;
 import com.guo.xinzangapp.consult.FindActivity;
@@ -174,6 +175,47 @@ public class Fragment3 extends Fragment {
                 intent.setAction("android.intent.action.VIEW");
                 intent.setData(uri);
                 startActivity(intent);
+            }
+        });
+
+        //linear_mydata
+        LinearLayout linear_mydata = (LinearLayout)view.findViewById(R.id.linear_mydata);
+        TextView tv_data=(TextView)view.findViewById(R.id.tv_data);
+        if(!userType.equals("patient")) {
+            tv_data.setText("病人数据展示");
+        }
+        linear_mydata.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(userType.equals("patient")){
+//                    Intent intent = new Intent();
+//                    //SoilsenerActivity.class为想要跳转的Activity
+//                    intent.setClass(getActivity(), BarChartActivity.class);
+//                    startActivity(intent);
+
+                    Bundle bundle = new Bundle();
+                    bundle.putString("patientName","nothing");
+
+                    Intent intent = new Intent(getActivity(),BarChartActivity.class);
+//                intent.putExtras(bundle);
+                    intent.putExtra("Message",bundle);
+                    startActivity(intent);
+                }
+                else {
+//                    Intent intent = new Intent();
+//                    //SoilsenerActivity.class为想要跳转的Activity
+//                    intent.setClass(getActivity(), DocSwitchActivity.class);
+//                    startActivity(intent);
+                    Bundle bundle = new Bundle();
+
+                    bundle.putString("fromWhere","data");
+                    Intent intent = new Intent();
+
+                    //SoilsenerActivity.class为想要跳转的Activity
+                    intent.setClass(getActivity(), DoctorsPatientListActivity.class);
+                    intent.putExtra("Message",bundle);
+                    startActivity(intent);
+                }
             }
         });
 

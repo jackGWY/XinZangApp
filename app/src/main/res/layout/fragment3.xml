@@ -114,7 +114,32 @@
             android:id="@+id/tv_mypatients"
             android:layout_height="50dp"
             android:padding="@dimen/my_padding"
-            android:text="我的医生(病人)"
+            android:text="我的医生"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/linear_mydata"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line_style"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/my_width"
+            android:padding="@dimen/my_padding"
+            android:src="@drawable/people2"
+            android:layout_height="@dimen/my_height" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_marginLeft="@dimen/my_margin_left"
+            android:id="@+id/tv_data"
+            android:layout_height="50dp"
+            android:padding="@dimen/my_padding"
+            android:text="我的数据"
             android:textSize="17sp" />
     </LinearLayout>
 
