@@ -18,6 +18,7 @@ import com.guo.xinzangapp.R;
 import com.guo.xinzangapp.consult.FindActivity;
 import com.guo.xinzangapp.diary.diaryActivity;
 import com.guo.xinzangapp.diary.diaryListActivity;
+import com.guo.xinzangapp.doctors.DocSwitchActivity;
 import com.guo.xinzangapp.doctors.DoctorsPatientListActivity;
 import com.guo.xinzangapp.sports.FeelingListActivity;
 
@@ -148,10 +149,19 @@ public class Fragment3 extends Fragment {
         linear_mypatients.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                //SoilsenerActivity.class为想要跳转的Activity
-                intent.setClass(getActivity(), FindActivity.class);
-                startActivity(intent);
+                if(userType.equals("patient")){
+                    Intent intent = new Intent();
+                    //SoilsenerActivity.class为想要跳转的Activity
+                    intent.setClass(getActivity(), FindActivity.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent();
+                    //SoilsenerActivity.class为想要跳转的Activity
+                    intent.setClass(getActivity(), DocSwitchActivity.class);
+                    startActivity(intent);
+                }
+
             }
         });
 
