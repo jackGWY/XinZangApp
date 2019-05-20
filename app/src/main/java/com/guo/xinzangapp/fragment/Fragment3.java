@@ -18,6 +18,7 @@ import com.guo.xinzangapp.R;
 import com.guo.xinzangapp.consult.FindActivity;
 import com.guo.xinzangapp.diary.diaryActivity;
 import com.guo.xinzangapp.diary.diaryListActivity;
+import com.guo.xinzangapp.doctors.DoctorsPatientListActivity;
 import com.guo.xinzangapp.sports.FeelingListActivity;
 
 import org.w3c.dom.Text;
@@ -57,30 +58,88 @@ public class Fragment3 extends Fragment {
         });
 
         LinearLayout linear_binglidan = (LinearLayout)view.findViewById(R.id.linear_binglidan);
+        TextView tv_doc_binglidan = (TextView) view.findViewById(R.id.tv_doc_binglidan);
+        if(userType.equals("doctor")){
+            tv_doc_binglidan.setText("病人病历单");
+        }
         linear_binglidan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                //SoilsenerActivity.class为想要跳转的Activity
-                intent.setClass(getActivity(), diaryListActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent();
+//                //SoilsenerActivity.class为想要跳转的Activity
+//                intent.setClass(getActivity(), diaryListActivity.class);
+//                startActivity(intent);
+
+                if(userType.equals("patient")){
+//                    Intent intent = new Intent();
+//                    //SoilsenerActivity.class为想要跳转的Activity
+//                    intent.setClass(getActivity(), diaryListActivity.class);
+//                    startActivity(intent);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("patientName","nothing");
+
+                    Intent intent = new Intent(getActivity(),diaryListActivity.class);
+//                intent.putExtras(bundle);
+                    intent.putExtra("Message",bundle);
+                    startActivity(intent);
+                }
+                else {
+                    Bundle bundle = new Bundle();
+
+                    bundle.putString("fromWhere","binglidan");
+                    Intent intent = new Intent();
+
+                    //SoilsenerActivity.class为想要跳转的Activity
+                    intent.setClass(getActivity(), DoctorsPatientListActivity.class);
+                    intent.putExtra("Message",bundle);
+                    startActivity(intent);
+                }
             }
         });
 
         LinearLayout linear_diary = (LinearLayout)view.findViewById(R.id.linear_diary);
+        TextView tv_doc_feeling = (TextView)view.findViewById(R.id.tv_doc_feeling);
+        if(userType.equals("doctor")){
+            tv_doc_feeling.setText("病人运动日记");
+        }
         linear_diary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle = new Bundle();
+//                Bundle bundle = new Bundle();
+//
+//                bundle.putString("fromPatientListAdapter","nothing");
+//                bundle.putString("patientName","nothing");
+//                Intent intent = new Intent();
+//
+//                //SoilsenerActivity.class为想要跳转的Activity
+//                intent.setClass(getActivity(), FeelingListActivity.class);
+//                intent.putExtra("Message",bundle);
+//                startActivity(intent);
 
-                bundle.putString("fromPatientListAdapter","nothing");
-                bundle.putString("patientName","nothing");
-                Intent intent = new Intent();
+                if(userType.equals("patient")){
+                    Bundle bundle = new Bundle();
 
-                //SoilsenerActivity.class为想要跳转的Activity
-                intent.setClass(getActivity(), FeelingListActivity.class);
-                intent.putExtra("Message",bundle);
-                startActivity(intent);
+                    bundle.putString("fromPatientListAdapter","nothing");
+                    bundle.putString("patientName","nothing");
+                    Intent intent = new Intent();
+
+                    //SoilsenerActivity.class为想要跳转的Activity
+                    intent.setClass(getActivity(), FeelingListActivity.class);
+                    intent.putExtra("Message",bundle);
+                    startActivity(intent);
+                }
+                else {
+                    // DoctorsPatientListActivity
+                    Bundle bundle = new Bundle();
+
+                    bundle.putString("fromWhere","feeling");
+                    Intent intent = new Intent();
+
+                    //SoilsenerActivity.class为想要跳转的Activity
+                    intent.setClass(getActivity(), DoctorsPatientListActivity.class);
+                    intent.putExtra("Message",bundle);
+                    startActivity(intent);
+                }
             }
         });
 
