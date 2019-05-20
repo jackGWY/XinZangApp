@@ -35,7 +35,17 @@ public class DocSwitchActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DocSwitchActivity.this,DoctorsPatientListActivity.class));
+                //startActivity(new Intent(DocSwitchActivity.this,DoctorsPatientListActivity.class));
+                // DoctorsPatientListActivity
+                Bundle bundle = new Bundle();
+
+                bundle.putString("fromWhere","feeling");
+                Intent intent = new Intent();
+
+                //SoilsenerActivity.class为想要跳转的Activity
+                intent.setClass(DocSwitchActivity.this, DoctorsPatientListActivity.class);
+                intent.putExtra("Message",bundle);
+                startActivity(intent);
             }
         });
         btnMyPatients.setOnClickListener(new View.OnClickListener(){
@@ -53,7 +63,16 @@ public class DocSwitchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(DocSwitchActivity.this,consultActivity.class));
+                //startActivity(new Intent(DocSwitchActivity.this,consultActivity.class));
+                Bundle bundle = new Bundle();
+
+                bundle.putString("fromWhere","data");
+                Intent intent = new Intent();
+
+                //SoilsenerActivity.class为想要跳转的Activity
+                intent.setClass(DocSwitchActivity.this, DoctorsPatientListActivity.class);
+                intent.putExtra("Message",bundle);
+                startActivity(intent);
             }
         });
     }

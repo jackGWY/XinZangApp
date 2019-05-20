@@ -13,7 +13,7 @@
 
         <Button
             android:id="@+id/btn_my_patient"
-            android:text="我的病人"
+            android:text="联系病人"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginBottom="20dp"
@@ -31,7 +31,7 @@
 
         <Button
             android:id="@+id/btn_doc_discuss"
-            android:text="发帖讨论"
+            android:text="病人数据"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginBottom="20dp"
