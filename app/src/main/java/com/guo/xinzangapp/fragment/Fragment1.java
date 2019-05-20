@@ -2,13 +2,16 @@ package com.guo.xinzangapp.fragment;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.guo.xinzangapp.BarChart.BarChartActivity;
 import com.guo.xinzangapp.FoodActivity;
@@ -19,6 +22,8 @@ import com.guo.xinzangapp.consult.FindActivity;
 import com.guo.xinzangapp.consult.consultActivity;
 import com.guo.xinzangapp.diary.diaryActivity;
 import com.guo.xinzangapp.diary.diaryListActivity;
+import com.guo.xinzangapp.doctors.DocSwitchActivity;
+import com.guo.xinzangapp.doctors.DoctorsPatientListActivity;
 import com.guo.xinzangapp.heartrate.HeartRateActivity;
 import com.guo.xinzangapp.index.NumberPickerActivity;
 import com.guo.xinzangapp.medicine.drugTypeListActivity;
@@ -35,6 +40,12 @@ public class Fragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = (View) inflater.inflate(R.layout.fragment1, null);
         initView();
+
+        SharedPreferences pref;
+        SharedPreferences.Editor editor;
+        pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        final String userName = pref.getString("userName","");
+        final String userType = pref.getString("userType","");
 
         ImageView image_heart_rate=(ImageView) view.findViewById(R.id.image_heart_rate);
         image_heart_rate.setOnClickListener(new View.OnClickListener() {
@@ -133,12 +144,23 @@ public class Fragment1 extends Fragment {
 
         // data我的数据 ***************************
         ImageView image_data=(ImageView) view.findViewById(R.id.image_data);
+        TextView tv_patient_data = view.findViewById(R.id.tv_patient_data);
+        if(!userType.equals("patient")) {
+            tv_patient_data.setText("病人数据");
+        }
         image_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                //SoilsenerActivity.class为想要跳转的Activity
-                intent.setClass(getActivity(), BarChartActivity.class);
+                if(userType.equals("patient")){
+                    //SoilsenerActivity.class为想要跳转的Activity
+                    intent.setClass(getActivity(), BarChartActivity.class);
+                }
+                else {
+                    //SoilsenerActivity.class为想要跳转的Activity
+                    intent.setClass(getActivity(), DocSwitchActivity.class);
+                }
+
                 startActivity(intent);
             }
         });
@@ -157,19 +179,38 @@ public class Fragment1 extends Fragment {
 
         // feeling 日记 ***************************
         ImageView image_feeling=(ImageView) view.findViewById(R.id.image_feeling);
+        TextView tv_patient_diary = (TextView) view.findViewById(R.id.tv_patient_diary);
+        if(userType.equals("doctor")){
+            tv_patient_diary.setText("病人日记");
+        }
         image_feeling.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle = new Bundle();
+                if(userType.equals("patient")){
+                    Bundle bundle = new Bundle();
 
-                bundle.putString("fromPatientListAdapter","nothing");
-                bundle.putString("patientName","nothing");
-                Intent intent = new Intent();
+                    bundle.putString("fromPatientListAdapter","nothing");
+                    bundle.putString("patientName","nothing");
+                    Intent intent = new Intent();
 
-                //SoilsenerActivity.class为想要跳转的Activity
-                intent.setClass(getActivity(), FeelingListActivity.class);
-                intent.putExtra("Message",bundle);
-                startActivity(intent);
+                    //SoilsenerActivity.class为想要跳转的Activity
+                    intent.setClass(getActivity(), FeelingListActivity.class);
+                    intent.putExtra("Message",bundle);
+                    startActivity(intent);
+                }
+                else {
+                    // DoctorsPatientListActivity
+                    Bundle bundle = new Bundle();
+
+                    bundle.putString("fromWhere","feeling");
+                    Intent intent = new Intent();
+
+                    //SoilsenerActivity.class为想要跳转的Activity
+                    intent.setClass(getActivity(), DoctorsPatientListActivity.class);
+                    intent.putExtra("Message",bundle);
+                    startActivity(intent);
+                }
+
             }
         });
 

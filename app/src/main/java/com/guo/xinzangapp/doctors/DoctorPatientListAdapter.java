@@ -24,13 +24,19 @@ public class DoctorPatientListAdapter extends RecyclerView.Adapter<DoctorPatient
 
     private List<UserPatient> patientList;
     private Context context;
+    private String fromWhere;
 
-    public DoctorPatientListAdapter(List<UserPatient> patientList, Context context) {
+//    public DoctorPatientListAdapter(List<UserPatient> patientList, Context context) {
+//        this.patientList = patientList;
+//        this.context = context;
+//    }
+
+
+    public DoctorPatientListAdapter(List<UserPatient> patientList, Context context, String fromWhere) {
         this.patientList = patientList;
         this.context = context;
+        this.fromWhere = fromWhere;
     }
-
-
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -45,14 +51,16 @@ public class DoctorPatientListAdapter extends RecyclerView.Adapter<DoctorPatient
                 UserPatient userPatient=patientList.get(position);
                 String patientName =userPatient.getUserName();
 
+                if(fromWhere.equals("feeling")){
+                    Bundle bundle = new Bundle();
+                    bundle.putString("patientName",patientName);
 
-                Bundle bundle = new Bundle();
-                bundle.putString("patientName",patientName);
-
-                Intent intent = new Intent(context,DoctorFeelingListActivity.class);
+                    Intent intent = new Intent(context,DoctorFeelingListActivity.class);
 //                intent.putExtras(bundle);
-                intent.putExtra("Message",bundle);
-                context.startActivity(intent);
+                    intent.putExtra("Message",bundle);
+                    context.startActivity(intent);
+                }
+
             }
         });
         return holder;

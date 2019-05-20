@@ -1,5 +1,6 @@
 package com.guo.xinzangapp.doctors;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -36,6 +37,12 @@ public class DoctorsPatientListActivity extends AppCompatActivity {
         final String userName = pref.getString("userName","");
         final String userType = pref.getString("userType","");
 
+        Intent intent = getIntent();
+//从intent取出bundle
+        Bundle bundle = intent.getBundleExtra("Message");
+//获取数据
+        String fromWhere = bundle.getString("fromWhere");// 得到feeling
+
         ExecutorService exec = Executors.newCachedThreadPool();
         System.out.println("userType........................"+userType);
         Future<List<UserPatient>> result = exec.submit(new GetUserPatients("patient"));
@@ -49,7 +56,7 @@ public class DoctorsPatientListActivity extends AppCompatActivity {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RecyclerView_doctorsPatientList);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        doctorPatientListAdapter = new DoctorPatientListAdapter(patientList,DoctorsPatientListActivity.this);
+        doctorPatientListAdapter = new DoctorPatientListAdapter(patientList,DoctorsPatientListActivity.this,fromWhere);
         recyclerView.setAdapter(doctorPatientListAdapter);
     }
 }
