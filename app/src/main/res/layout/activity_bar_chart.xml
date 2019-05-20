@@ -38,7 +38,7 @@
             app:labelTextColor="@color/colorPrimary"
             app:labelTextSize="10sp"
             app:leftTextSpace="30dp"
-            app:title="我的心跳数据展示"
+            app:title="心跳数据展示"
             app:titleTextColor="@color/colorPrimaryDark"
             app:titleTextSize="20sp"
             app:topTextSpace="50dp" />
@@ -58,7 +58,7 @@
                 app:labelTextColor="@color/colorPrimary"
                 app:labelTextSize="10sp"
                 app:leftTextSpace="30dp"
-                app:title="我的血压数据展示"
+                app:title="血压数据展示"
                 app:titleTextColor="@color/colorPrimaryDark"
                 app:titleTextSize="20sp"
                 app:topTextSpace="50dp" />

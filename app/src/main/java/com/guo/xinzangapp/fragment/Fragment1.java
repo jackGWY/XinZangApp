@@ -175,17 +175,38 @@ public class Fragment1 extends Fragment {
         image_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+
                 if(userType.equals("patient")){
-                    //SoilsenerActivity.class为想要跳转的Activity
-                    intent.setClass(getActivity(), BarChartActivity.class);
+//                    Intent intent = new Intent();
+//                    //SoilsenerActivity.class为想要跳转的Activity
+//                    intent.setClass(getActivity(), BarChartActivity.class);
+//                    startActivity(intent);
+
+                    Bundle bundle = new Bundle();
+                    bundle.putString("patientName","nothing");
+
+                    Intent intent = new Intent(getActivity(),BarChartActivity.class);
+//                intent.putExtras(bundle);
+                    intent.putExtra("Message",bundle);
+                    startActivity(intent);
                 }
                 else {
+//                    Intent intent = new Intent();
+//                    //SoilsenerActivity.class为想要跳转的Activity
+//                    intent.setClass(getActivity(), DocSwitchActivity.class);
+//                    startActivity(intent);
+                    Bundle bundle = new Bundle();
+
+                    bundle.putString("fromWhere","data");
+                    Intent intent = new Intent();
+
                     //SoilsenerActivity.class为想要跳转的Activity
-                    intent.setClass(getActivity(), DocSwitchActivity.class);
+                    intent.setClass(getActivity(), DoctorsPatientListActivity.class);
+                    intent.putExtra("Message",bundle);
+                    startActivity(intent);
                 }
 
-                startActivity(intent);
+
             }
         });
 

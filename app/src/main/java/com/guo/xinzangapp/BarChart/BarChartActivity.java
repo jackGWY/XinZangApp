@@ -1,5 +1,6 @@
 package com.guo.xinzangapp.BarChart;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.preference.PreferenceManager;
@@ -41,9 +42,23 @@ public class BarChartActivity extends AppCompatActivity {
         SharedPreferences.Editor editor;
         pref = PreferenceManager.getDefaultSharedPreferences(this);
         final String userName = pref.getString("userName","");
+        final String userType = pref.getString("userType","");
+
+        Intent intent = getIntent();
+//从intent取出bundle
+        Bundle bundle = intent.getBundleExtra("Message");
+//获取数据
+        String patientName = bundle.getString("patientName");
 
         ExecutorService exec = Executors.newCachedThreadPool();
-        Future<List<Feelings>> result =exec.submit(new getFeelings(userName));
+        Future<List<Feelings>> result = null;
+        if(userType.equals("patient")) {
+            result =exec.submit(new getFeelings(userName));
+        }
+        else {
+            result =exec.submit(new getFeelings(patientName));
+        }
+        //Future<List<Feelings>> result =exec.submit(new getFeelings(userName));
         try {
             feelingsList = result.get();
             if(feelingsList!=null && feelingsList.size()!=0){
