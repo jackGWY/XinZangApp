@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.guo.beans.UserPatient;
 import com.guo.xinzangapp.R;
 import com.guo.xinzangapp.consult.PatientListAdapter;
+import com.guo.xinzangapp.diary.diaryListActivity;
 import com.guo.xinzangapp.sports.FeelingListActivity;
 
 import java.util.List;
@@ -56,6 +57,15 @@ public class DoctorPatientListAdapter extends RecyclerView.Adapter<DoctorPatient
                     bundle.putString("patientName",patientName);
 
                     Intent intent = new Intent(context,DoctorFeelingListActivity.class);
+//                intent.putExtras(bundle);
+                    intent.putExtra("Message",bundle);
+                    context.startActivity(intent);
+                }
+                else if(fromWhere.equals("binglidan")) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("patientName",patientName);
+
+                    Intent intent = new Intent(context,diaryListActivity.class);
 //                intent.putExtras(bundle);
                     intent.putExtra("Message",bundle);
                     context.startActivity(intent);

@@ -49,10 +49,24 @@ public class diaryListActivity extends AppCompatActivity {
         SharedPreferences.Editor editor;
         pref = PreferenceManager.getDefaultSharedPreferences(this);
         final String userName = pref.getString("userName","");
-
+        final String userType = pref.getString("userType","");
         ButterKnife.bind(this);
         ExecutorService exec = Executors.newCachedThreadPool();
-        Future<List<diary>> result = exec.submit(new GetDiaryList(userName));
+
+        Intent intent = getIntent();
+//从intent取出bundle
+        Bundle bundle = intent.getBundleExtra("Message");
+//获取数据
+        String patientName = bundle.getString("patientName");
+
+        Future<List<diary>> result = null;
+        if(userType.equals("patient")){
+            result = exec.submit(new GetDiaryList(userName));
+        }
+        else {
+            result = exec.submit(new GetDiaryList(patientName));
+        }
+        //Future<List<diary>> result = exec.submit(new GetDiaryList(userName));
         try {
             diaryList = result.get();
         } catch (InterruptedException e) {

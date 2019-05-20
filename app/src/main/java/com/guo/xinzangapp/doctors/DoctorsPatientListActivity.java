@@ -41,7 +41,7 @@ public class DoctorsPatientListActivity extends AppCompatActivity {
 //从intent取出bundle
         Bundle bundle = intent.getBundleExtra("Message");
 //获取数据
-        String fromWhere = bundle.getString("fromWhere");// 得到feeling
+        String fromWhere = bundle.getString("fromWhere");// 得到feeling,binglidan
 
         ExecutorService exec = Executors.newCachedThreadPool();
         System.out.println("userType........................"+userType);

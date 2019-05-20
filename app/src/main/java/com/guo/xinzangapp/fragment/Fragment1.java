@@ -96,13 +96,37 @@ public class Fragment1 extends Fragment {
 
         // 病历单 ***************************
         ImageView image_binglidan=(ImageView) view.findViewById(R.id.image_binglidan);
+        TextView tv_binglidan = (TextView) view.findViewById(R.id.tv_binglidan);
+        if(userType.equals("doctor")){
+            tv_binglidan.setText("病人病历单");
+        }
         image_binglidan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                //SoilsenerActivity.class为想要跳转的Activity
-                intent.setClass(getActivity(), diaryListActivity.class);
-                startActivity(intent);
+                if(userType.equals("patient")){
+//                    Intent intent = new Intent();
+//                    //SoilsenerActivity.class为想要跳转的Activity
+//                    intent.setClass(getActivity(), diaryListActivity.class);
+//                    startActivity(intent);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("patientName","nothing");
+
+                    Intent intent = new Intent(getActivity(),diaryListActivity.class);
+//                intent.putExtras(bundle);
+                    intent.putExtra("Message",bundle);
+                    startActivity(intent);
+                }
+                else {
+                    Bundle bundle = new Bundle();
+
+                    bundle.putString("fromWhere","binglidan");
+                    Intent intent = new Intent();
+
+                    //SoilsenerActivity.class为想要跳转的Activity
+                    intent.setClass(getActivity(), DoctorsPatientListActivity.class);
+                    intent.putExtra("Message",bundle);
+                    startActivity(intent);
+                }
             }
         });
 
