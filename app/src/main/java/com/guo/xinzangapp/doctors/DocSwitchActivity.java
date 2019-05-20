@@ -75,6 +75,22 @@ public class DocSwitchActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button btn_doc_binglidan = (Button) findViewById(R.id.btn_doc_binglidan);
+        btn_doc_binglidan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+
+                bundle.putString("fromWhere","binglidan");
+                Intent intent = new Intent();
+
+                //SoilsenerActivity.class为想要跳转的Activity
+                intent.setClass(DocSwitchActivity.this, DoctorsPatientListActivity.class);
+                intent.putExtra("Message",bundle);
+                startActivity(intent);
+            }
+        });
     }
 
 //    @OnClick({R.id.image_patient, R.id.textView_doctor})
