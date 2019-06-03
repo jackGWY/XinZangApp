@@ -1,15 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="android.my.com.myandroid.MainActivity"
-    android:orientation="vertical">
+    tools:context="com.guo.xinzangapp.BottomActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="4"
-        android:layout_centerInParent="true"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--<ss.com.bannerslider.Slider-->
+            <!--android:id="@+id/banner_slider1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="200dp"-->
+            <!--/>-->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:src="@drawable/banner"
+                android:scaleType="centerInside"
+                android:background="@color/item_color"
+                android:id="@+id/banner"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="16dp"
+                android:textSize="20sp"
+                android:text="外部服务功能" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/white"
+                android:elevation="2dp"
+                android:divider="@drawable/divider"
+                android:showDividers="middle"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/divider"
+                    android:showDividers="middle"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/l234"
+                        android:layout_width="0dp"
+                        android:layout_height="72dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:id="@+id/image_guahao"
+                            android:layout_height="48dp"
+                            android:padding="12dp"
+                            android:src="@drawable/guahao"
+                            android:tint="#37474f" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="挂号" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn6"
+                        android:layout_width="0dp"
+                        android:layout_height="72dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:id="@+id/image_gengxin"
+                            android:layout_height="48dp"
+                            android:padding="12dp"
+                            android:src="@drawable/web"
+                            android:tint="#4fc3f7" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="官网" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn7"
+                        android:layout_width="0dp"
+                        android:layout_height="72dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:id="@+id/image_hospital2"
+                            android:layout_height="48dp"
+                            android:padding="12dp"
+                            android:src="@drawable/hospital"
+                            android:tint="#37474f" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="医院" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn8"
+                        android:layout_width="0dp"
+                        android:layout_height="72dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:id="@+id/image_buy_drug"
+                            android:layout_height="48dp"
+                            android:padding="12dp"
+                            android:src="@drawable/drug"
+                            android:tint="#795548" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="买药" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

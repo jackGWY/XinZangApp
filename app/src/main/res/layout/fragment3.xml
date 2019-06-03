@@ -130,7 +130,7 @@
         <ImageView
             android:layout_width="@dimen/my_width"
             android:padding="@dimen/my_padding"
-            android:src="@drawable/people2"
+            android:src="@drawable/data"
             android:layout_height="@dimen/my_height" />
 
         <TextView

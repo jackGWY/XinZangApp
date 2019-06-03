@@ -10,6 +10,10 @@
         android:id="@+id/navigation_2"
         android:icon="@drawable/md_help_circle_outline"
         android:title="问答" />
+    <item
+        android:id="@+id/navigation_4"
+        android:icon="@drawable/service3"
+        android:title="服务" />
 
     <item
         android:id="@+id/navigation_3"

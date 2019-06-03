@@ -153,115 +153,141 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:divider="@drawable/divider"
-                    android:showDividers="middle"
-                    android:orientation="horizontal">
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:divider="@drawable/divider"-->
+                    <!--android:showDividers="middle"-->
+                    <!--android:orientation="horizontal">-->
 
-                    <LinearLayout
-                        android:id="@+id/btn5"
-                        android:layout_width="0dp"
-                        android:layout_height="72dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:focusable="true"
+                    <!--&lt;!&ndash;<LinearLayout&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:id="@+id/btn5"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_width="0dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_height="72dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_weight="1"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:clickable="true"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:focusable="true"&ndash;&gt;-->
 
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
+                        <!--&lt;!&ndash;android:foreground="?android:attr/selectableItemBackground"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:gravity="center_horizontal"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:orientation="vertical">&ndash;&gt;-->
 
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:id="@+id/image_feeling"
-                            android:layout_height="48dp"
-                            android:padding="12dp"
-                            android:src="@drawable/md_pencil"
-                            android:tint="#0091EA" />
+                        <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_width="48dp"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:id="@+id/image_feeling"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_height="48dp"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:padding="12dp"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:src="@drawable/md_pencil"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:tint="#0091EA" />&ndash;&gt;-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:id="@+id/tv_patient_diary"
-                            android:layout_height="wrap_content"
-                            android:text="日记" />
-                    </LinearLayout>
+                        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:id="@+id/tv_patient_diary"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:text="日记" />&ndash;&gt;-->
+                    <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
 
-                    <LinearLayout
-                        android:id="@+id/btn6"
-                        android:layout_width="0dp"
-                        android:layout_height="72dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/l234"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="72dp"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:clickable="true"-->
+                        <!--android:focusable="true"-->
+                        <!--android:foreground="?android:attr/selectableItemBackground"-->
+                        <!--android:gravity="center_horizontal"-->
+                        <!--android:orientation="vertical">-->
 
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:id="@+id/image_gengxin"
-                            android:layout_height="48dp"
-                            android:padding="12dp"
-                            android:src="@drawable/web"
-                            android:tint="#4fc3f7" />
+                        <!--<ImageView-->
+                            <!--android:layout_width="48dp"-->
+                            <!--android:id="@+id/image_guahao"-->
+                            <!--android:layout_height="48dp"-->
+                            <!--android:padding="12dp"-->
+                            <!--android:src="@drawable/guahao"-->
+                            <!--android:tint="#37474f" />-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="官网" />
-                    </LinearLayout>
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="挂号" />-->
+                    <!--</LinearLayout>-->
 
-                    <LinearLayout
-                        android:id="@+id/btn7"
-                        android:layout_width="0dp"
-                        android:layout_height="72dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:id="@+id/image_hospital2"
-                            android:layout_height="48dp"
-                            android:padding="12dp"
-                            android:src="@drawable/hospital"
-                            android:tint="#37474f" />
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/btn6"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="72dp"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:clickable="true"-->
+                        <!--android:focusable="true"-->
+                        <!--android:foreground="?android:attr/selectableItemBackground"-->
+                        <!--android:gravity="center_horizontal"-->
+                        <!--android:orientation="vertical">-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="医院" />
-                    </LinearLayout>
+                        <!--<ImageView-->
+                            <!--android:layout_width="48dp"-->
+                            <!--android:id="@+id/image_gengxin"-->
+                            <!--android:layout_height="48dp"-->
+                            <!--android:padding="12dp"-->
+                            <!--android:src="@drawable/web"-->
+                            <!--android:tint="#4fc3f7" />-->
 
-                    <LinearLayout
-                        android:id="@+id/btn8"
-                        android:layout_width="0dp"
-                        android:layout_height="72dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="官网" />-->
+                    <!--</LinearLayout>-->
 
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:id="@+id/image_buy_drug"
-                            android:layout_height="48dp"
-                            android:padding="12dp"
-                            android:src="@drawable/drug"
-                            android:tint="#795548" />
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/btn7"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="72dp"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:clickable="true"-->
+                        <!--android:focusable="true"-->
+                        <!--android:foreground="?android:attr/selectableItemBackground"-->
+                        <!--android:gravity="center_horizontal"-->
+                        <!--android:orientation="vertical">-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="买药" />
-                    </LinearLayout>
-                </LinearLayout>
+                        <!--<ImageView-->
+                            <!--android:layout_width="48dp"-->
+                            <!--android:id="@+id/image_hospital2"-->
+                            <!--android:layout_height="48dp"-->
+                            <!--android:padding="12dp"-->
+                            <!--android:src="@drawable/hospital"-->
+                            <!--android:tint="#37474f" />-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="医院" />-->
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/btn8"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="72dp"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:clickable="true"-->
+                        <!--android:focusable="true"-->
+                        <!--android:foreground="?android:attr/selectableItemBackground"-->
+                        <!--android:gravity="center_horizontal"-->
+                        <!--android:orientation="vertical">-->
+
+                        <!--<ImageView-->
+                            <!--android:layout_width="48dp"-->
+                            <!--android:id="@+id/image_buy_drug"-->
+                            <!--android:layout_height="48dp"-->
+                            <!--android:padding="12dp"-->
+                            <!--android:src="@drawable/drug"-->
+                            <!--android:tint="#795548" />-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="买药" />-->
+                    <!--</LinearLayout>-->
+                <!--</LinearLayout>-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -432,30 +458,34 @@
                             android:text="急救电话" />
                     </LinearLayout>
 
+
                     <LinearLayout
-                        android:id="@+id/l234"
+                        android:id="@+id/btn5"
                         android:layout_width="0dp"
                         android:layout_height="72dp"
                         android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
+
                         android:foreground="?android:attr/selectableItemBackground"
                         android:gravity="center_horizontal"
                         android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="48dp"
-                            android:id="@+id/image_guahao"
+                            android:id="@+id/image_feeling"
                             android:layout_height="48dp"
                             android:padding="12dp"
-                            android:src="@drawable/guahao"
-                            android:tint="#37474f" />
+                            android:src="@drawable/md_pencil"
+                            android:tint="#0091EA" />
 
                         <TextView
                             android:layout_width="wrap_content"
+                            android:id="@+id/tv_patient_diary"
                             android:layout_height="wrap_content"
-                            android:text="挂号" />
+                            android:text="日记" />
                     </LinearLayout>
+
 
                     <LinearLayout
                         android:id="@+id/l77"

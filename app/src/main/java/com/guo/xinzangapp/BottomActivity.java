@@ -33,7 +33,7 @@ public class BottomActivity extends AppCompatActivity {
     Fragment1 fragment1;
     Fragment2 fragment2;
     Fragment3 fragment3;
-//    Fragment4 fragment4;
+    Fragment4 fragment4;
 //    Fragment5 fragment5;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -51,9 +51,9 @@ public class BottomActivity extends AppCompatActivity {
                 case R.id.navigation_3:
                     setMyFragment(3);
                     break;
-//                case R.id.navigation_4:
-//                    setMyFragment(4);
-//                    break;
+                case R.id.navigation_4:
+                    setMyFragment(4);
+                    break;
 //                case R.id.navigation_5:
 //                    setMyFragment(5);
 //                    break;
@@ -105,9 +105,9 @@ public class BottomActivity extends AppCompatActivity {
         if (fragment3 != null) {
             transaction.hide(fragment3);
         }
-//        if (fragment4 != null) {
-//            transaction.hide(fragment4);
-//        }
+        if (fragment4 != null) {
+            transaction.hide(fragment4);
+        }
 //        if (fragment5 != null) {
 //            transaction.hide(fragment5);
 //        }
@@ -141,14 +141,14 @@ public class BottomActivity extends AppCompatActivity {
                     transaction.show(fragment3);
                 }
                 break;
-//            case 4:
-//                if (fragment4 == null) {
-//                    fragment4 = new Fragment4();
-//                    transaction.add(R.id.framelayout_main, fragment4);
-//                } else {
-//                    transaction.show(fragment4);
-//                }
-//                break;
+            case 4:
+                if (fragment4 == null) {
+                    fragment4 = new Fragment4();
+                    transaction.add(R.id.framelayout_main, fragment4);
+                } else {
+                    transaction.show(fragment4);
+                }
+                break;
 //            case 5:
 //                if (fragment5 == null) {
 //                    fragment5 = new Fragment5();
