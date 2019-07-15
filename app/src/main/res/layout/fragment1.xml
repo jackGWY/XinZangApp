@@ -149,7 +149,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="资料" />
+                            android:text="资讯" />
                     </LinearLayout>
                 </LinearLayout>
 
