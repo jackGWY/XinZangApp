@@ -69,16 +69,15 @@ public class RegisteredActivity extends AppCompatActivity {
     public void onClick(final View view) {
         hideKeyboard();//隐藏键盘
 
-        if (!confirmPassword.getText().toString().trim().equals(registerPassword.getText().toString().trim())) {
-
+        if (registerPassword.length() == 0 || registerPassword.length() <7) {
             Snackbar.make(view, "错误", Snackbar.LENGTH_INDEFINITE)
-                    .setAction("两次填写密码不一致", new View.OnClickListener() {
+                    .setAction("请填写密码 或者检查长度是否小于7", new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Toast.makeText(RegisteredActivity.this, "两次填写密码不一致", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisteredActivity.this, "请填写密码", Toast.LENGTH_SHORT).show();
                         }
                     }).show();
-            confirmPassword.requestFocus();      // 控件获取焦点
+            registerPassword.requestFocus();      // 控件获取焦点
             return;                     // 结束函数的执行
         }
 
@@ -117,21 +116,46 @@ public class RegisteredActivity extends AppCompatActivity {
             registerName.requestFocus();      // 控件获取焦点
             return;                     // 结束函数的执行
         }
-        if (registerPassword.length() == 0) {
+
+        if (!confirmPassword.getText().toString().trim().equals(registerPassword.getText().toString().trim())) {
+
             Snackbar.make(view, "错误", Snackbar.LENGTH_INDEFINITE)
-                    .setAction("请填写密码", new View.OnClickListener() {
+                    .setAction("两次填写密码不一致", new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Toast.makeText(RegisteredActivity.this, "请填写密码", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisteredActivity.this, "两次填写密码不一致", Toast.LENGTH_SHORT).show();
                         }
                     }).show();
-            registerPassword.requestFocus();      // 控件获取焦点
+            confirmPassword.requestFocus();      // 控件获取焦点
             return;                     // 结束函数的执行
         }
 
         String phone = registerPhone.getText().toString().trim();
         String uname = registerName.getText().toString().trim();
         String regpass=registerPassword.getText().toString().trim();
+
+        boolean hasChar = false, hasNumber = false;
+        for(int i=0;i<regpass.length();i++){
+            char ch = regpass.charAt(i);
+            if(Character.isDigit(regpass.charAt(i))) {
+                hasNumber = true;
+            }
+            if ((ch >='a' && ch <= 'z') || (ch >='A' && ch <= 'Z')) {
+                hasChar = true;
+            }
+        }
+        if(!(hasChar && hasNumber)) {
+            Snackbar.make(view, "错误", Snackbar.LENGTH_INDEFINITE)
+                    .setAction("必须包含数字和字母", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(RegisteredActivity.this, "必须包含数字和字母", Toast.LENGTH_SHORT).show();
+                        }
+                    }).show();
+            confirmPassword.requestFocus();      // 控件获取焦点
+            return;
+        }
+
 
         ExecutorService exec = Executors.newCachedThreadPool();
         Future<String> result = exec.submit(new SaveRegist(uname,regpass,phone,userType));
