@@ -2,12 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/backgroud_doc"
-        android:layout_marginTop="3dp"
+        android:background="@drawable/bg_login"
         android:orientation="vertical"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -15,10 +15,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:text="系统登入"
-            android:textColor="@color/colorAccent"
-            android:layout_marginLeft="50dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="110dp"
             android:layout_marginBottom="20dp"
-            android:textSize="28sp"
+            android:textSize="20sp"
             android:layout_height="wrap_content" />
 
         <LinearLayout
@@ -100,24 +100,56 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"/>
         </RadioGroup>
-        <Button android:id="@+id/btn_login"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="登录"
 
-            android:layout_marginLeft="110dp"
-            android:gravity="center"
-            android:background="@color/colorPrimary"
-            android:layout_marginTop="40dp"
-            android:textColor="@android:color/white"/>
-        <TextView
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/bg_login_submit"
+            android:elevation="0dp"
+            android:outlineProvider="none"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_18"
+            tools:targetApi="lollipop" />
+
+        <Button
             android:id="@+id/login_registered"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="没有账号？注册一个"
-            android:textColor="@color/PrimaryDarkColor"
-            android:layout_gravity="right"
-            android:layout_marginTop="10dp"/>
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/bg_login_register"
+            android:elevation="0dp"
+            android:outlineProvider="none"
+            android:text="@string/login_register_hint"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_18"
+            android:translationZ="0dp"
+            tools:targetApi="lollipop" />
+
+        <!--<Button android:id="@+id/btn_login"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="登录"-->
+
+            <!--android:layout_marginLeft="110dp"-->
+            <!--android:gravity="center"-->
+            <!--android:background="@color/colorPrimary"-->
+            <!--android:layout_marginTop="40dp"-->
+            <!--android:textColor="@android:color/white"/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/login_registered"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="没有账号？注册一个"-->
+            <!--android:textColor="@color/PrimaryDarkColor"-->
+            <!--android:layout_gravity="right"-->
+            <!--android:layout_marginTop="10dp"/>-->
     </LinearLayout>
 
 
