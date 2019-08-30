@@ -117,9 +117,16 @@ public class RoutePlanDemo extends Activity implements BaiduMap.OnMapClickListen
         mBtnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startNodeStr = edit_start.getText().toString().trim();
-                endNodeStr = edit_end.getText().toString().trim();
-                edit_city = city.getText().toString().trim();
+                if(edit_start.getText().toString().trim().equals("") || edit_end.getText().toString().trim().equals("") || city.getText().toString().trim().equals("")){
+                    startNodeStr = "环球港";
+                    endNodeStr = "上海南站";
+                    edit_city = "上海";
+                } else {
+                    startNodeStr = edit_start.getText().toString().trim();
+                    endNodeStr = edit_end.getText().toString().trim();
+                    edit_city = city.getText().toString().trim();
+                }
+
 
             }
         });

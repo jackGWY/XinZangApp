@@ -8,6 +8,7 @@ android {
             storeFile file('C:/Users/guo_w/.android/devil_release.jks')
             storePassword '1qaz@WSX'
         }
+        useLibrary'org.apache.http.legacy'
     }
     compileSdkVersion 26
     defaultConfig {
@@ -66,4 +67,7 @@ dependencies {
     implementation files('libs/achartengine-1.0.0.jar')
     compile 'com.orhanobut:logger:1.15'
     implementation files('libs/lite-orm-1.7.0.jar')
+    implementation files('libs/httpcore-4.3.jar')
+    implementation files('libs/httpmime-4.3.4.jar')
+//    compile 'commons-httpclient:commons-httpclient:3.1'
 }

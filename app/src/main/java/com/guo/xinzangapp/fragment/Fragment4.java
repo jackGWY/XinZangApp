@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.guo.xinzangapp.R;
+import com.guo.xinzangapp.heartrate.HeartRateActivity;
+import com.guo.xinzangapp.hospital.hospitalSwitchActivity;
+import com.guo.xinzangapp.uploadImage.UploadActivity;
 
 public class Fragment4 extends Fragment {
     private View view;
@@ -40,10 +43,15 @@ public class Fragment4 extends Fragment {
         image_hospital.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://map.baidu.com/mobile/webapp/search/search/qt=con&wd=%E5%8C%BB%E9%99%A2&c=289&newmap=1&from=alamap&tpl=mapdots");
+//                Uri uri = Uri.parse("https://map.baidu.com/mobile/webapp/search/search/qt=con&wd=%E5%8C%BB%E9%99%A2&c=289&newmap=1&from=alamap&tpl=mapdots");
+//                Intent intent = new Intent();
+//                intent.setAction("android.intent.action.VIEW");
+//                intent.setData(uri);
+//                startActivity(intent);
+
                 Intent intent = new Intent();
-                intent.setAction("android.intent.action.VIEW");
-                intent.setData(uri);
+                //SoilsenerActivity.class为想要跳转的Activity
+                intent.setClass(getActivity(), hospitalSwitchActivity.class);
                 startActivity(intent);
             }
         });
@@ -53,15 +61,16 @@ public class Fragment4 extends Fragment {
         image_gengxin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("http://diml.ecnu.edu.cn/download/heartapp.html");
-                Intent intent = new Intent();
-                intent.setAction("android.intent.action.VIEW");
-                intent.setData(uri);
-                startActivity(intent);
+//                Uri uri = Uri.parse("http://diml.ecnu.edu.cn/download/heartapp.html");
 //                Intent intent = new Intent();
-//                //SoilsenerActivity.class为想要跳转的Activity
-//                intent.setClass(getActivity(), StepMainActivity.class);
+//                intent.setAction("android.intent.action.VIEW");
+//                intent.setData(uri);
 //                startActivity(intent);
+
+                Intent intent = new Intent();
+                //SoilsenerActivity.class为想要跳转的Activity
+                intent.setClass(getActivity(), UploadActivity.class);
+                startActivity(intent);
 
             }
         });
