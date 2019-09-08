@@ -8,3 +8,5 @@
 /captures
 .externalNativeBuild
 /.idea/*.xml
+/app/libs/httpmime-4.3.4.jar
+/app/libs/httpcore-4.3.jar
