@@ -46,7 +46,7 @@ public class NumberPickerActivity extends AppCompatActivity {
     private PopupWindow popupWindow;
     private NumberPicker numberPicker;
     private View workingAge_view;
-    private int workingAge = 0;
+    private int workingAge = 45;
     //血压
     private EditText etBloodPressure;
     private Button submit_bloodPressure;
@@ -700,7 +700,7 @@ public class NumberPickerActivity extends AppCompatActivity {
 
         });
 
-        // 确定服务年限
+        // 年龄
         submit_workingAge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -719,8 +719,8 @@ public class NumberPickerActivity extends AppCompatActivity {
         workingAge_view = LayoutInflater.from(NumberPickerActivity.this).inflate(R.layout.popupwindow, null);
         submit_workingAge = (Button) workingAge_view.findViewById(R.id.submit_workingAge);
         numberPicker = (NumberPicker) workingAge_view.findViewById(R.id.numberPicker);
-        numberPicker.setMaxValue(100);
-        numberPicker.setMinValue(0);
+        numberPicker.setMaxValue(85);
+        numberPicker.setMinValue(10);
         numberPicker.setFocusable(false);
         numberPicker.setFocusableInTouchMode(false);
         numberPicker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);

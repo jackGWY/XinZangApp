@@ -61,16 +61,16 @@ public class Fragment4 extends Fragment {
         image_gengxin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Uri uri = Uri.parse("http://diml.ecnu.edu.cn/download/heartapp.html");
-//                Intent intent = new Intent();
-//                intent.setAction("android.intent.action.VIEW");
-//                intent.setData(uri);
-//                startActivity(intent);
-
+                Uri uri = Uri.parse("http://diml.ecnu.edu.cn/download/heartapp.html");
                 Intent intent = new Intent();
-                //SoilsenerActivity.class为想要跳转的Activity
-                intent.setClass(getActivity(), UploadActivity.class);
+                intent.setAction("android.intent.action.VIEW");
+                intent.setData(uri);
                 startActivity(intent);
+
+//                Intent intent = new Intent();
+//                //SoilsenerActivity.class为想要跳转的Activity
+//                intent.setClass(getActivity(), UploadActivity.class);
+//                startActivity(intent);
 
             }
         });
